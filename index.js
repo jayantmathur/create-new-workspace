@@ -269,7 +269,7 @@ const handleClose = async () => {
   //   cwd: space.name,
   // }).then(handleFullFilled, handleError);
 
-  await exec(`pnpm reinstall`, {
+  await exec(`pnpm install`, {
     cwd: space.name,
   }).then(handleFullFilled, handleError);
 
