@@ -19,13 +19,9 @@ const localDest = `${process.cwd()}\\.backup`;
 
 const source = path.basename(path.resolve(process.cwd(), src));
 
-const destination =
-  path.resolve(
-    process.cwd(),
-    (existsSync(localDest) && (await readFile(localDest, "utf-8"))) || dest,
-  ) +
-  "\\" +
-  source;
+let destination = existsSync(localDest)
+  ? await readFile(localDest, "utf-8")
+  : dest;
 
 const deleteFolder = async (path = "") => {
   const folder = path.split("\\").pop();
@@ -68,23 +64,21 @@ const main = async () => {
   if (!destination) {
     console.error(chalk.red("Destination path (absolute) is required"));
     process.exit(1);
+  } else {
+    destination = path.resolve(process.cwd(), destination) + "\\" + source;
   }
 
-  existsSync(destination) && (await deleteFolder(destination));
-  await copyFolder(src, destination);
+  if (sync) {
+    existsSync(destination) && (await copyFolder(destination, src, true));
+    console.log(`Syncing local copy with backup`);
+  } else {
+    existsSync(destination) && (await deleteFolder(destination));
+    await copyFolder(src, destination);
+
+    console.log(`Updating backup with source`);
+  }
 };
 
-const syncLocal = async () => {
-  await copyFolder(destination, src, true);
-};
-
-if (sync) {
-  await syncLocal();
-
-  console.log(`Syncing local copy with backup`);
-} else {
-  await main();
-  console.log(`Updating backup with source`);
-}
+await main();
 
 console.log(chalk.green("Done"));
