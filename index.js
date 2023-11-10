@@ -265,9 +265,9 @@ const createDocument = async () => {
 };
 
 const handleClose = async () => {
-  await exec(`pnpm store prune`, {
-    cwd: space.name,
-  }).then(handleFullFilled, handleError);
+  // await exec(`pnpm store prune`, {
+  //   cwd: space.name,
+  // }).then(handleFullFilled, handleError);
 
   await exec(`pnpm reinstall`, {
     cwd: space.name,
@@ -301,11 +301,12 @@ const main = async () => {
 
   const tasks = await getTasks();
 
-  if (tasks.length < 1) return;
+  tasks.length > 0 && console.log("Running tasks...\n");
+
   tasks.includes("app") && (await createApp());
   tasks.includes("doc") && (await createDocument());
 
-  console.log(chalk.blueBright("Copying common files...\n"));
+  console.log("Copying common files...\n");
 
   await copyFolder(`${__dirname}\\common`, space.name);
 };
