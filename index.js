@@ -112,8 +112,11 @@ const createWorkspace = async () => {
   );
 
   await appendJson(`${name}/package.json`, {
+    description: "A new workspace",
+    author: author,
     scripts: {
       do: "pnpm run --parallel --recursive --if-present",
+      save: "node .\\packages\\backup",
     },
   });
 
@@ -262,7 +265,7 @@ const createDocument = async () => {
 };
 
 const handleClose = async () => {
-  await exec(`pnpm install`, {
+  await exec(`pnpm store prune; pnpm reinstall`, {
     cwd: space.name,
   }).then(handleFullFilled, handleError);
 
