@@ -21,7 +21,7 @@
     "postpush": "pnpm backup & npm install -g & git push & echo Pushed new version",
     "format": "prettier --write \"./**/*.{js,json}\" --log-level silent",
     "backup": "node ./common/packages/backup",
-    "handle:git": "git add . & git commit -m \"repo: misc update\""
+    "handle:git": "git add . & git commit -m \"save work\""
   },
   "keywords": [],
   "author": "Jayant",
