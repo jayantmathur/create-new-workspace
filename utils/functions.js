@@ -2,7 +2,8 @@ import { readFile, writeFile } from "fs/promises";
 import fse from "fs-extra";
 import { basename } from "path";
 import crypto from "crypto";
-import { merge } from "lodash";
+import lodash from "lodash";
+const { merge } = lodash;
 
 const sleep = async (ms = 1000) =>
   new Promise((resolve) => setTimeout(resolve, ms));
