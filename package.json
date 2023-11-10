@@ -16,12 +16,12 @@
     "public"
   ],
   "scripts": {
-    "prepush": "pnpm format",
+    "prepush": "pnpm format & pnpm handle:git",
     "push": "pnpm version",
-    "postpush": "pnpm backup && npm install -g && pnpm gitpush && echo Pushed new version",
+    "postpush": "pnpm backup & npm install -g & git push & echo Pushed new version",
     "format": "prettier --write \"./**/*.{js,json}\" --log-level silent",
     "backup": "node ./common/packages/backup",
-    "gitpush": "git add . & git commit -m \"repo: misc update\" & git push"
+    "handle:git": "git add . & git commit -m \"repo: misc update\""
   },
   "keywords": [],
   "author": "Jayant",
