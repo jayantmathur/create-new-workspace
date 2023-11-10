@@ -113,7 +113,7 @@ const createWorkspace = async () => {
 
   await appendJson(`${name}/package.json`, {
     scripts: {
-      do: "pnpm run --parallel --recursive --if-present",
+      dev: "pnpm run --parallel --recursive --if-present",
     },
   });
 
