@@ -1,48 +1,26 @@
 #!/usr/bin/env node
 
 import { clear } from "console";
-import { dirname, basename } from "path";
+import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { existsSync } from "fs";
-import fse from "fs-extra";
 import { readdir, mkdir, writeFile } from "fs/promises";
 import { exec as syncExec } from "child_process";
 import { promisify } from "util";
-import crypto from "crypto";
 import chalk from "chalk";
 import { input, select, checkbox } from "@inquirer/prompts";
 import { createSpinner } from "nanospinner";
 
+import {
+  sleep,
+  getRandomName,
+  copyFolder,
+  appendJson,
+} from "./utils/functions.js";
+
 import json from "./package.json" assert { type: "json" };
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-
-const sleep = async (ms = 1000) =>
-  new Promise((resolve) => setTimeout(resolve, ms));
-
-const getRandomName = async (length = 6) => {
-  let randomName = "";
-  while (randomName.length < length) {
-    const byte = crypto.randomBytes(1)[0];
-    if ((byte >= 65 && byte <= 90) || (byte >= 97 && byte <= 122)) {
-      randomName += String.fromCharCode(byte);
-    }
-  }
-  return randomName.toLowerCase();
-};
-
-const copyFolder = async (src = "", dest = "") => {
-  const excludeFolders = ["node_modules", ".git", "venv", ".backup"]; // add the folders you want to exclude
-
-  try {
-    fse.copy(src, dest, {
-      overwrite: true,
-      filter: (srcPath) => !excludeFolders.includes(basename(srcPath)),
-    });
-  } catch (err) {
-    console.error(err);
-  }
-};
 
 const spinner = createSpinner();
 
@@ -132,6 +110,12 @@ const createWorkspace = async () => {
     `packages: ["apps/*","docs/*","packages/*"]`,
     (err) => err && handleError(),
   );
+
+  await appendJson(`${name}/package.json`, {
+    scripts: {
+      do: "pnpm run --parallel --recursive --if-present",
+    },
+  });
 
   spinner.success({ text: chalk.greenBright("Workspace created!") });
 };
