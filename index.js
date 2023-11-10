@@ -265,11 +265,11 @@ const createDocument = async () => {
 };
 
 const handleClose = async () => {
-  // await exec(`pnpm store prune`, {
-  //   cwd: space.name,
-  // }).then(handleFullFilled, handleError);
+  await exec(`pnpm install --force`, {
+    cwd: space.name,
+  }).then(handleFullFilled, handleError);
 
-  await exec(`pnpm install`, {
+  await exec(`pnpm prune`, {
     cwd: space.name,
   }).then(handleFullFilled, handleError);
 
