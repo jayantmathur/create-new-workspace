@@ -1,0 +1,22 @@
+$if(has-frontmatter)$
+\frontmatter
+$endif$
+$if(title)$
+$if(beamer)$
+\frame{\titlepage}
+$else$
+\maketitle
+$endif$
+$if(abstract)$
+\begin{abstract}
+    $abstract$
+\end{abstract}
+$endif$
+$endif$
+
+$if(authors)$
+$for(authors/first)$
+\fancyfoot[L]{$it.name.literal$$if(it.email)$~at~ $it.email$$endif$}
+$endfor$
+$endif$
+\thispagestyle{fancy}

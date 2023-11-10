@@ -1,0 +1,12 @@
+Package: myrutils
+Title: My basic R utilities
+Version: 0.1.0
+Authors@R: 
+    person("Jayant Mathur", email= "first.last@example.com", role = c("aut", "cre"))
+Description: This package contains some basic R utilities that I use in my work.
+License: MIT
+Encoding: UTF-8
+Imports:
+    utils,
+    dplyr
+RoxygenNote: 7.2.3

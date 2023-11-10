@@ -1,0 +1,31 @@
+title: Journal of Mechanical Design
+link: https://www.asme.org/publications-submissions/journals/information-for-authors
+version: 0.1.0
+contributes:
+    formats:
+        common:
+            date-format: long
+            fontsize: 10pt
+            papersize: letter
+            mainfont: Calibri
+
+            number-sections: true
+
+            csl: jmd.csl
+
+        pdf:
+            geometry:
+                - margin=1in
+
+            fig-pos: '!htb'
+
+            pdf-engine: lualatex
+
+            template: index.tex
+
+            template-partials:
+                - 'partials/_authors.tex'
+                - 'partials/before-body.tex'
+                - 'partials/title.tex'
+
+            include-in-header: 'partials/_header.tex'

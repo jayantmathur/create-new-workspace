@@ -1,0 +1,9 @@
+{
+  "name": "doc",
+  "version": "0.0.1",
+  "description": "A quarto document",
+  "scripts": {
+    "build": "quarto render",
+    "push": "pnpm version"
+  }
+}

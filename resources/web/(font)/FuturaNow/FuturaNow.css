@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Futura Now";
+  src: url("./FuturaNowText.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura Now";
+  src: url("./FuturaNowTextItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Futura Now";
+  src: url("./FuturaNowTextBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura Now";
+  src: url("./FuturaNowTextBoldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+}

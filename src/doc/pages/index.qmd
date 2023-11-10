@@ -1,0 +1,19 @@
+---
+# abstract: |
+#   This document is only a demo explaining how to use the template.
+---
+
+# Heading
+
+Content cited from @mathurEffects2023 and @cayleyCreation2023 is also with a footnote [^sample]
+
+This text continues
+
+[^sample]: this is a sample footnote
+
+![Sample figure](../public/icon.svg){#fig-sample width=25%}
+
+# Bibliography
+
+:::{#refs}
+:::

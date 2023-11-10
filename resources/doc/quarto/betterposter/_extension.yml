@@ -1,0 +1,41 @@
+title: Main Template
+version: 0.1.0
+contributes:
+    formats:
+        common:
+            date-format: long
+            fontsize: 42pt
+            papersize: letter
+            mainfont: Calibri
+            sansfont: Calibri
+
+            fig-width: 3.5
+
+            csl: https://www.zotero.org/styles/3d-printing-and-additive-manufacturing
+
+        pdf:
+            geometry:
+                - margin=1in
+                - paperwidth=48in
+                - paperheight=36in
+
+            fig-pos: "H"
+            # bgcolor: black
+            # textcolor: white
+
+            pdf-engine: lualatex
+
+            template: 'index.tex'
+
+            template-partials:
+                - 'partials/_affiliations.tex'
+                - 'partials/_authors.tex'
+                - 'partials/after-body.tex'
+                - 'partials/before-body.tex'
+                - 'partials/doc-class.tex'
+                - 'partials/title.tex'
+
+            include-in-header: 'partials/_header.tex'
+
+            format-resources:
+                - public/

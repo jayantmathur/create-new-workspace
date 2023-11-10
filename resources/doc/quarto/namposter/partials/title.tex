@@ -1,0 +1,28 @@
+$if(title)$
+\title{\huge \vspace*{-\baselineskip}$title$}
+$endif$
+$if(subtitle)$
+$if(beamer)$
+$else$
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+$endif$
+\subtitle{$subtitle$}
+$endif$
+\author{$for(by-author)$\textbf{$it.name.literal$$if(it.attributes.corresponding)$\textsuperscript{presenter}$endif$}$for(it.affiliations)$$if(it.department)$\\$it.department$$endif$$if(it.name)$\\$it.name$$endif$$endfor$\\$if(it.email)$$it.email$$endif$$sep$ \and $endfor$}
+\date{ }
+$if(beamer)$
+$if(institute)$
+\institute{$for(institute)$$institute$$sep$ \and $endfor$}
+$endif$
+$if(titlegraphic)$
+\titlegraphic{\includegraphics{$titlegraphic$}}
+$endif$
+$if(logo)$
+\logo{\includegraphics{$logo$}}
+$endif$
+$endif$

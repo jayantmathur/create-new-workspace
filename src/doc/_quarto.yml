@@ -1,0 +1,57 @@
+#
+#
+#
+# Project settings
+#
+#
+#
+
+project:
+    output-dir: output
+    render:
+        - pages
+    resources:
+        - public/icons
+    # pre-render:
+    #   - ./convert.bat pages/_stats.ipynb
+
+revealjs-plugins:
+    - attribution
+
+filters:
+    - lightbox
+    - latex-environment
+    - filters.lua
+
+lightbox: auto
+
+commands: [hl]
+
+execute:
+    # include: false
+    echo: false
+    output: false
+    enabled: true
+    cache: true
+    freeze: auto
+
+#
+#
+#
+# Shared document settings
+#
+#
+#
+
+bibliography:
+    - references.json
+    # - extra-references.json
+
+colorlinks: true
+number-sections: true
+
+format:
+    main-html:
+        output-file: digital
+    main-pdf:
+        output-file: print

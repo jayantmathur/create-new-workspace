@@ -1,0 +1,47 @@
+$if(bgcolor)$
+\pagecolor{$bgcolor$}
+$endif$
+$if(textcolor)$
+\color{$textcolor$}
+$endif$
+
+\AddToShipoutPicture*{%
+    \AtPageCenter{%
+        \put(-.225\textwidth,0){%
+            \vline\hfill
+            \begin{minipage}[c][\textheight][c]{.45\textwidth}
+                \begin{center}
+                    \begin{minipage}[c][\textheight][c]{.9\textwidth}
+                        \begin{center}
+                            \vfill
+                            \begin{flushleft}
+                                \Huge $if(takeaway.text)$$takeaway.text$$else$ Write key takeway to show here $endif$
+                            \end{flushleft}
+                            \vfill
+                            $if(takeaway.splash)$\includegraphics[width=\columnwidth]{$takeaway.splash$}$else$\includegraphics[width=\columnwidth]{public/logo.pdf}$endif$
+                            \vfill
+                            \includegraphics[height=2in]{public/media/mbdl.pdf}
+                            \includegraphics[height=2in]{public/media/sedi.pdf}
+                        \end{center}
+                    \end{minipage}
+                \end{center}
+            \end{minipage}
+            \hfill\vline
+        }%
+    }%
+}
+
+\mbox{}
+
+\begin{multicols*}{2}
+
+$if(has-frontmatter)$
+\frontmatter
+$endif$
+$if(title)$
+$if(beamer)$
+\frame{\titlepage}
+$else$
+\maketitle
+$endif$
+$endif$

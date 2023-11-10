@@ -1,0 +1,27 @@
+$if(has-frontmatter)$
+\frontmatter
+$endif$
+$if(title)$
+$if(beamer)$
+\frame{\titlepage}
+$else$
+\maketitle
+$endif$
+$if(abstract)$
+\begin{center}
+    \vspace*{-\baselineskip}
+    \fbox{
+        \begin{minipage}[c]{0.9\textwidth}
+            \begin{center}
+                \large\textbf{Introduction}\\\vspace*{.5\baselineskip}
+            \end{center}
+            $abstract$
+
+        \end{minipage}
+    }
+\end{center}
+\vspace*{\baselineskip}
+$endif$
+$endif$
+
+\thispagestyle{empty}

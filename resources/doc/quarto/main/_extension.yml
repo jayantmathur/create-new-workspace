@@ -1,0 +1,49 @@
+title: Blog Template
+version: 0.1.0
+contributes:
+    formats:
+        common:
+            date-format: long
+            mainfont: Calibri
+
+            fig-pos: '!htb'
+            table-of-contents: true
+            csl: https://www.zotero.org/styles/chicago-author-date
+
+        html:
+            embed-resources: true
+            fig-format: svg
+            format-links: false
+            template: 'index.html'
+            template-partials:
+                # - 'partials/html/metadata.html'
+                - 'partials/html/title-block.html'
+                # - 'partials/html/toc.html'
+            theme:
+                dark: darkly
+                light: flatly
+
+        pdf:
+            fontsize: 10pt
+            papersize: letter
+            geometry:
+                - margin=1in
+
+            pdf-engine: lualatex
+            template: 'index.tex'
+            template-partials:
+                - 'partials/pdf/_authors.tex'
+                - 'partials/pdf/after-body.tex'
+                - 'partials/pdf/before-bib.tex'
+                - 'partials/pdf/before-body.tex'
+                - 'partials/pdf/biblio.tex'
+                - 'partials/pdf/citations.tex'
+                - 'partials/pdf/doc-class.tex'
+                - 'partials/pdf/graphics.tex'
+                - 'partials/pdf/pandoc.tex'
+                - 'partials/pdf/tables.tex'
+                - 'partials/pdf/tightlist.tex'
+                - 'partials/pdf/title.tex'
+                - 'partials/pdf/toc.tex'
+
+            include-in-header: 'partials/pdf/_header.tex'

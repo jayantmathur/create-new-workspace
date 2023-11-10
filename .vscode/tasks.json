@@ -1,0 +1,24 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Check saved version in .backup and import changes if they exist",
+      "type": "shell",
+      "command": "node .\\common\\packages\\backup --sync",
+      "runOptions": { "runOn": "folderOpen" }
+    },
+    {
+      "label": "versionlens pnpm install",
+      "command": "pnpm",
+      "type": "shell",
+      "args": ["install"],
+      // customizable settings
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      }
+    }
+  ]
+}

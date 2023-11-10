@@ -1,0 +1,36 @@
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@maketitle}{\begin{center}}{\begin{flushright}}{}{}
+    % \patchcmd{\@maketitle}{\begin{tabular}[t]{c}}{\begin{tabular}[t]{@{}l}}{}{}
+    \patchcmd{\@maketitle}{\end{center}}{\end{flushright}}{}{}
+\makeatother
+
+$if(title)$
+\title{\vspace*{-2\baselineskip}\textbf{$title$}$if(thanks)$\thanks{$thanks$}$endif$}
+$endif$
+$if(subtitle)$
+$if(beamer)$
+$else$
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+$endif$
+\subtitle{$subtitle$\vspace*{-3\baselineskip}}
+$endif$
+
+\date{\small $date$}
+
+$if(beamer)$
+$if(institute)$
+\institute{$for(institute)$$institute$$sep$ \and $endfor$}
+$endif$
+$if(titlegraphic)$
+\titlegraphic{\includegraphics{$titlegraphic$}}
+$endif$
+$if(logo)$
+\logo{\includegraphics{$logo$}}
+$endif$
+$endif$

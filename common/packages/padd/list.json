@@ -1,0 +1,144 @@
+{
+  "tailwind": {
+    "dependencies": ["react-spring", "framer-motion", "next-themes"],
+    "devDependencies": ["@tailwindcss/typography"],
+    "resources": [
+      {
+        "src": "web/tailwind"
+      }
+    ]
+  },
+  "forms": {
+    "dependencies": ["react-dropzone", "react-icons", "react-hook-form"]
+  },
+  "cloudinary": {
+    "dependencies": ["next-cloudinary", "cloudinary"],
+    "resources": [
+      {
+        "src": "web/cloudinary"
+      }
+    ]
+  },
+  "auth": {
+    "dependencies": ["next-auth"],
+    "resources": [
+      {
+        "src": "web/auth"
+      }
+    ]
+  },
+  "database": {
+    "dependencies": ["@supabase/supabase-js", "@prisma/client"],
+    "devDependencies": ["supabase", "prisma", "encoding"],
+    "resources": [
+      {
+        "src": "web/supabase",
+        "dest": "supabase"
+      }
+    ],
+    "scripts": {
+      "update-supatypes": "supabase gen types typescript --schema public > supabase/types.ts"
+    }
+  },
+  "pwa": {
+    "dependencies": ["next-pwa", "@vercel/analytics"],
+    "devDependencies": ["vercel"],
+    "resources": [
+      {
+        "src": "web/pwa"
+      }
+    ],
+    "postinstalls": ["next telemetry disable"],
+    "scripts": {
+      "deploy": "vercel --prod"
+    }
+  },
+  "mobile": {
+    "dependencies": ["@capacitor/core", "@capacitor/android", "@capacitor/ios"],
+    "devDependencies": ["@capacitor/cli"],
+    "resources": [
+      {
+        "src": "web/capacitor"
+      }
+    ],
+    "postinstalls": [
+      "npx cap init Example com.example.app && npx cap add ios & npx cap add android & npx cap sync",
+      "npx @capacitor/assets generate --assetPath public --iconBackgroundColor \"#eeeeee\" --iconBackgroundColorDark \"#191919\" --splashBackgroundColor \"#eeeeee\" --splashBackgroundColorDark \"#191919\""
+    ],
+    "scripts": {
+      "android": "npx cap open android"
+    }
+  },
+  "tauri": {
+    "devDependencies": ["@tauri-apps/cli"],
+    "postinstalls": [
+      "npx tauri init && npx tauri icon .\\public\\icons\\icon.ico"
+    ],
+    "scripts": {
+      "taurize": "yarn tauri build"
+    }
+  },
+  "api": {
+    "dependencies": ["axios", "swr"]
+  },
+  "mdx": {
+    "dependencies": [
+      "@next/mdx",
+      "next-mdx-remote",
+      "@mdx-js/loader",
+      "@mdx-js/react",
+      "@types/mdx"
+    ],
+    "resources": [
+      {
+        "src": "web/mdx"
+      }
+    ]
+  },
+  "three": {
+    "dependencies": [
+      "@react-three/drei",
+      "@react-three/fiber",
+      "r3f-perf",
+      "@types/three",
+      "three",
+      "three-stdlib",
+      "tunnel-rat"
+    ],
+    "devDependencies": [],
+    "resources": [
+      {
+        "src": "web/r3f"
+      }
+    ],
+    "extras?": [
+      "@react-three/flex",
+      "@react-three/rapier",
+      "@react-three/offscreen",
+      "@react-three/csg",
+      "@react-three/postprocessing",
+      "three-bvh-csg"
+    ]
+  },
+  "webxr": {
+    "dependencies": [
+      "@coconut-xr/koestlich",
+      "@coconut-xr/apfel-kruemel",
+      "@coconut-xr/natuerlich",
+      "@react-three/xr"
+    ],
+    "devDependencies": []
+  },
+  "revealjs": {
+    "devDependencies": ["decktape"],
+    "resources": [
+      {
+        "src": "docs/quarto/rjs",
+        "dest": "_extensions/rjs"
+      }
+    ],
+    "scripts": {
+      "postbuild": "decktape --size 480x360 .\\output\\index.html .\\output\\print.pdf"
+    }
+  }
+}

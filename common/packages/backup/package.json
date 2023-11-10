@@ -1,0 +1,14 @@
+{
+  "name": "backup",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "yargs": "^17.7.2",
+    "fs-extra": "^11.1.1",
+    "trash": "8.1.1",
+    "chalk": "5.3.0"
+  }
+}

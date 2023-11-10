@@ -1,0 +1,45 @@
+---
+title: Title
+
+author:
+  - name: Jayant Mathur
+    affiliations:
+      - name: The Pennsylvania State University
+        department: Department of Mechanical Engineering
+    corresponding: true
+    email: jmm8886@psu.edu
+  - name: Nicholas A. Meisel
+    affiliations:
+      - name: The Pennsylvania State University
+        department: Engineering Design and Innovation
+
+abstract: |
+  This document is only a demo explaining how to use the template.
+
+keywords: [template, demo]
+
+format:
+  namposter-pdf: default
+---
+
+::: {.grid options="3"}
+
+# Heading
+
+Content cited from @mathurEffects2023 and @cayleyComprehensive2022 as shown in @fig-sample is also with a footnote [^sample]
+
+This text continues
+
+[^sample]: this is a sample footnote
+
+[public/logo.pdf]{.posterimage}
+
+# Bibliography
+
+::: {.content-visible when-format="pdf"}
+\vspace{.75\baselineskip}
+:::
+:::{#refs}
+:::
+
+:::

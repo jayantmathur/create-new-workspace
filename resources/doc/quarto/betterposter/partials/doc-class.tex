@@ -1,0 +1,10 @@
+\documentclass[
+  $for(classoption)$
+  $classoption$$sep$,
+  $endfor$
+]{$documentclass$}
+
+% Include in header
+$if(fontsize)$
+\usepackage[fontsize=$fontsize$]{fontsize}
+$endif$

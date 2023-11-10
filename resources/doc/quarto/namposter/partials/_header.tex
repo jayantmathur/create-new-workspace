@@ -1,0 +1,13 @@
+\usepackage[none]{hyphenat} % to prevent mid-word breaks
+\usepackage{float}
+\usepackage{soul}
+\usepackage{multicol}
+\setlength{\columnsep}{.05\textwidth}
+\setlength{\columnseprule}{3pt}
+
+\setlength{\fboxrule}{3pt}
+\setlength{\fboxsep}{.5in}
+
+\newenvironment{grid}[1][3]{\begin{multicols}{#1}}{\end{multicols}} % to make a grid of columns with options="option" assigning the number of columns in quarto
+
+\pagestyle{empty}

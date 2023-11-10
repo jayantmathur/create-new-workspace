@@ -1,0 +1,30 @@
+<style>
+    .hide {
+        display: none !important;
+    }
+</style>
+
+<!-- modify footer to custom styling -->
+<script>
+    Reveal.configure({
+        slideNumber: slide => {
+            // Ignore numbering of vertical slides
+            return [Reveal.getIndices(slide).h];
+        }
+    });
+
+
+    const toggleOnChange = (type = "add") => {
+        const footer = document.querySelectorAll('div.footer');
+        const slideLogo = document.querySelectorAll('img.slide-logo');
+        const slideNo = document.querySelectorAll('div.slide-number');
+
+        if (type === "add") [footer, slideLogo, slideNo].forEach(elements => elements.forEach(element => element.classList.add('hide')));
+        else if (type === "remove") [footer, slideLogo, slideNo].forEach(elements => elements.forEach(element => element.classList.remove('hide')));
+    };
+
+    toggleOnChange('add');
+
+    Reveal.on('slidechanged', event => Reveal.isFirstSlide() || Reveal.isLastSlide() ? toggleOnChange('add') : toggleOnChange('remove'));
+
+</script>

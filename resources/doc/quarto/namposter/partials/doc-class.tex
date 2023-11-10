@@ -1,0 +1,7 @@
+\documentclass[
+$for(classoption)$
+  $classoption$$sep$,
+$endfor$
+]{$documentclass$}
+
+$if(fontsize)$\usepackage[fontsize=$fontsize$]{fontsize}$else$\usepackage[fontsize=42pt]{fontsize}$endif$
