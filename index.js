@@ -214,7 +214,7 @@ const createApp = async () => {
     author: author,
     scripts: {
       dev: "next dev --turbo",
-      push: "pnpm version",
+      push: "pnpm version --force",
       padd: "padd",
     },
   });

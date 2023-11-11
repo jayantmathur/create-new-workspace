@@ -5,6 +5,6 @@
   "scripts": {
     "dev": "quarto preview --port 4000",
     "build": "quarto render",
-    "push": "pnpm version"
+    "push": "pnpm version --force"
   }
 }
