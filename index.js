@@ -98,12 +98,6 @@ const createWorkspace = async () => {
       })
     : await getRandomName();
 
-  space.name = name;
-
-  spinner.start({ text: "Creating workspace...\n" });
-
-  await sleep();
-
   if (existsSync(name)) {
     const overwrite = await confirm({
       name: "overwrite",
@@ -113,6 +107,12 @@ const createWorkspace = async () => {
 
     (overwrite && (await deleteFolder(name))) || handleError();
   }
+
+  space.name = name;
+
+  spinner.start({ text: "Creating workspace...\n" });
+
+  await sleep();
 
   await mkdir(name, (err) => err && handleError());
 
