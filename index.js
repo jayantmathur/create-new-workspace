@@ -261,6 +261,11 @@ const createDocument = async () => {
 
   await Promise.all(promises).then(handleFullFilled, handleError);
 
+  await copyFolder(
+    `${__dirname}\\resources\\doc\\quarto\\main`,
+    `${space.name}\\docs\\${name}\\_extensions\\main`,
+  );
+
   spinner.success({ text: chalk.greenBright("Document repository created!") });
 };
 
