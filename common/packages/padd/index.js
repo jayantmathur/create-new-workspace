@@ -59,7 +59,7 @@ const main = async () => {
 
   console.log(chalk.grey(`List of pack(s): ${packs}\n`));
 
-  packs.forEach(async (pack) => {
+  const promises = packs.map(async (pack) => {
     console.log(`Installing ${pack}\n`);
 
     const { dependencies, devDependencies, scripts, resources, postinstalls } =
@@ -164,8 +164,13 @@ const main = async () => {
 
     console.log(chalk.grey(`Finished install attempt for ${pack}\n`));
   });
+
+  await Promise.all(promises).then(
+    () => console.log(chalk.greenBright("Done!")),
+    () => console.log(chalk.redBright("Failed!")),
+  );
 };
 
 process.stdout.write("\x1Bc");
 
-await main().then(console.log("Done!"));
+await main();
