@@ -242,6 +242,8 @@ const createApp = async () => {
     `${space.name}\\packages\\padd\\resources\\web`,
   );
 
+  await copyFolder(`${__dirname}\\src\\app`, `${space.name}\\apps\\${name}`);
+
   spinner.success({ text: chalk.greenBright("App repository created!\n") });
 };
 
