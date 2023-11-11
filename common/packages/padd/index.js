@@ -60,23 +60,23 @@ const main = async () => {
   console.log(chalk.grey(`List of pack(s): ${packs}\n`));
 
   packs.forEach(async (pack) => {
-    console.log(`\nInstalling ${pack}\n`);
+    console.log(`Installing ${pack}\n`);
 
     const { dependencies, devDependencies, scripts, resources, postinstalls } =
       packages[pack];
 
     if (dependencies?.length < 0) return;
     else {
-      spinner.start(`\nInstalling dependencies...\n`);
+      spinner.start(`Installing dependencies...\n`);
 
       await exec(`pnpm add ${dependencies.join(" ")}`).then(
         () =>
           spinner.success({
-            text: chalk.greenBright(`\nAdded ${pack} dependencies\n`),
+            text: chalk.greenBright(`Added ${pack} dependencies\n`),
           }),
         () =>
           spinner.error({
-            text: chalk.redBright(`\nFailed to add ${pack} dependencies\n`),
+            text: chalk.redBright(`Failed to add ${pack} dependencies\n`),
           }),
       );
 
@@ -85,16 +85,16 @@ const main = async () => {
 
     if (devDependencies?.length < 0) return;
     else {
-      spinner.start(`\nInstalling devDependencies...\n`);
+      spinner.start(`Installing devDependencies...\n`);
 
       await exec(`pnpm add -D ${devDependencies.join(" ")}`).then(
         () =>
           spinner.success({
-            text: chalk.greenBright(`\nAdded ${pack} devDependencies\n`),
+            text: chalk.greenBright(`Added ${pack} devDependencies\n`),
           }),
         () =>
           spinner.error({
-            text: chalk.redBright(`\nFailed to add ${pack} devDependencies\n`),
+            text: chalk.redBright(`Failed to add ${pack} devDependencies\n`),
           }),
       );
 
@@ -103,16 +103,16 @@ const main = async () => {
 
     if (scripts?.length < 0) return;
     else {
-      spinner.start(`\nAdding scripts...\n`);
+      spinner.start(`Adding scripts...\n`);
 
       await appendJson("package.json", { scripts }).then(
         () =>
           spinner.success({
-            text: chalk.greenBright(`\nAdded ${pack} scripts\n`),
+            text: chalk.greenBright(`Added ${pack} scripts\n`),
           }),
         () =>
           spinner.error({
-            text: chalk.redBright(`\nFailed to add ${pack} scripts\n`),
+            text: chalk.redBright(`Failed to add ${pack} scripts\n`),
           }),
       );
 
@@ -121,7 +121,7 @@ const main = async () => {
 
     if (resources?.length < 0) return;
     else {
-      spinner.start(`\nAdding resources...\n`);
+      spinner.start(`Adding resources...\n`);
 
       resources.forEach(async (resource) => {
         await copyFolder(
@@ -130,11 +130,11 @@ const main = async () => {
         ).then(
           () =>
             spinner.success({
-              text: chalk.greenBright(`\nAdded ${pack} resources\n`),
+              text: chalk.greenBright(`Added ${pack} resources\n`),
             }),
           () =>
             spinner.error({
-              text: chalk.redBright(`\nFailed to add ${pack} resources\n`),
+              text: chalk.redBright(`Failed to add ${pack} resources\n`),
             }),
         );
       });
@@ -144,17 +144,17 @@ const main = async () => {
 
     if (postinstalls?.length < 0) return;
     else {
-      spinner.start(`\nRunning post installs...\n`);
+      spinner.start(`Running post installs...\n`);
 
       postinstalls.forEach(async (postinstall) => {
         await exec(postinstall).then(
           () =>
             spinner.success({
-              text: chalk.greenBright(`\nRan ${pack} post installs\n`),
+              text: chalk.greenBright(`Ran ${pack} post installs\n`),
             }),
           () =>
             spinner.error({
-              text: chalk.redBright(`\nFailed to run ${pack} post installs\n`),
+              text: chalk.redBright(`Failed to run ${pack} post installs\n`),
             }),
         );
       });
@@ -162,10 +162,10 @@ const main = async () => {
       await sleep();
     }
 
-    console.log(chalk.grey(`\nFinished install attempt for ${pack}\n`));
+    console.log(chalk.grey(`Finished install attempt for ${pack}\n`));
   });
 };
 
 process.stdout.write("\x1Bc");
 
-await main().then(console.log("\nDone!"));
+await main().then(console.log("Done!"));
