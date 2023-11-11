@@ -1,7 +1,10 @@
 {
   "name": "backup",
+  "description": "A simple backup script",
   "version": "1.0.0",
-  "main": "index.js",
+  "bin": {
+    "backup": "./index.js"
+  },
   "type": "module",
   "license": "MIT",
   "private": true,

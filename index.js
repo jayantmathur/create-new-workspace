@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import { clear } from "console";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { existsSync } from "fs";
@@ -39,7 +38,7 @@ const spinner = createSpinner();
 const handleFullFilled = () => {};
 
 const handleError = () => {
-  console.error(chalk.redBright("Action failed! Exiting.."));
+  console.error(chalk.redBright("\nAction failed! Exiting.."));
   process.exit(1);
 };
 
@@ -53,8 +52,7 @@ const space = {
   doc: "ndoc",
 };
 
-// process.stdout.write("\x1Bc");
-clear();
+process.stdout.write("\x1Bc");
 
 console.log(
   chalk.cyan.bold("create-new-workspace"),
@@ -111,7 +109,7 @@ const createWorkspace = async () => {
 
   space.name = name;
 
-  spinner.start({ text: "Creating workspace...\n" });
+  spinner.start({ text: "\nCreating workspace...\n" });
 
   await sleep();
 
@@ -125,18 +123,32 @@ const createWorkspace = async () => {
     (err) => err && handleError(),
   );
 
+  spinner.update({ text: "\nCopying common files...\n" });
+
+  await sleep();
+
+  await copyFolder(`${__dirname}\\common`, space.name);
+
+  spinner.update({ text: "\nInstalling workspace packages...\n" });
+
+  await sleep();
+
+  await exec(`pnpm add backup -Dw --workspace`, {
+    cwd: space.name,
+  }).then(handleFullFilled, handleError);
+
   await appendJson(`${name}\\package.json`, {
     description: "A new workspace",
     author: author,
     scripts: {
       do: "pnpm run --parallel --recursive --if-present",
-      save: "node .\\packages\\backup --noDev",
+      save: "backup --noDev",
       push: "pnpm do push",
       postpush: "pnpm save",
     },
   });
 
-  spinner.success({ text: chalk.greenBright("Workspace created!") });
+  spinner.success({ text: chalk.greenBright("\nWorkspace created!\n") });
 };
 
 const updateWorkspace = async () => {
@@ -150,7 +162,7 @@ const updateWorkspace = async () => {
 
   space.name = name;
 
-  spinner.start({ text: "Updating workspace...\n" });
+  spinner.start({ text: "\nUpdating workspace...\n" });
 
   await sleep();
 
@@ -159,9 +171,9 @@ const updateWorkspace = async () => {
 
     if (!dirs.includes(name)) handleError();
 
-    spinner.success({ text: chalk.greenBright("Workspace found!") });
+    spinner.success({ text: chalk.greenBright("\nWorkspace found!\n") });
   } else {
-    spinner.warn({ text: chalk.gray("Using current directory!") });
+    spinner.warn({ text: chalk.gray("\nUsing current directory!\n") });
   }
 };
 
@@ -176,7 +188,7 @@ const createApp = async () => {
 
   space.app = name;
 
-  spinner.start({ text: "Creating app...\n" });
+  spinner.start({ text: "\nCreating app...\n" });
 
   await sleep();
 
@@ -191,33 +203,11 @@ const createApp = async () => {
     `pnpm create next-app ${name} --typescript --eslint --tailwind --no-src-dir --app --import-alias "@/*"`,
     {
       cwd: `${space.name}\\apps`,
-      // stdio: "inherit",
     },
   ).then(handleFullFilled, handleError);
 
-  spinner.update({ text: "Installing workspace packages...\n" });
-
-  await exec(`pnpm add -Dw typesync prettier-plugin-tailwindcss`, {
-    cwd: `${space.name}`,
-    // stdio: "inherit",
-  }).then(handleFullFilled, handleError);
-
-  spinner.update({ text: "Installing app dependencies...\n" });
-
-  await exec(`pnpm add sharp`, {
-    cwd: `${space.name}\\apps\\${name}`,
-    // stdio: "inherit",
-  }).then(handleFullFilled, handleError);
-
-  spinner.update({ text: "Copying resources...\n" });
-
-  await copyFolder(
-    `${__dirname}\\resources\\web`,
-    `${space.name}\\resources\\web`,
-  );
-
   await appendJson(`${space.name}\\apps\\${name}\\package.json`, {
-    name: name,
+    name: `@apps/${name}`,
     description: "A new Next.js app",
     author: author,
     scripts: {
@@ -225,7 +215,30 @@ const createApp = async () => {
     },
   });
 
-  spinner.success({ text: chalk.greenBright("App repository created!") });
+  spinner.update({ text: "\nInstalling workspace packages...\n" });
+
+  await exec(`pnpm add -Dw typesync prettier-plugin-tailwindcss`, {
+    cwd: `${space.name}`,
+  }).then(handleFullFilled, handleError);
+
+  spinner.update({ text: "\nInstalling app dependencies...\n" });
+
+  await exec(`pnpm add sharp`, {
+    cwd: `${space.name}\\apps\\${name}`,
+  }).then(handleFullFilled, handleError);
+
+  await exec(`pnpm add padd --filter @apps/${name} --workspace`, {
+    cwd: `${space.name}`,
+  }).then(handleFullFilled, handleError);
+
+  spinner.update({ text: "\nCopying resources...\n" });
+
+  await copyFolder(
+    `${__dirname}\\resources\\web`,
+    `${space.name}\\resources\\web`,
+  );
+
+  spinner.success({ text: chalk.greenBright("\nApp repository created!\n") });
 };
 
 const createDocument = async () => {
@@ -239,7 +252,7 @@ const createDocument = async () => {
 
   space.doc = name;
 
-  spinner.start({ text: "Creating document...\n" });
+  spinner.start({ text: "\nCreating document...\n" });
 
   await sleep();
 
@@ -252,7 +265,7 @@ const createDocument = async () => {
 
   await copyFolder(`${__dirname}\\src\\doc`, `${space.name}\\docs\\${name}`);
 
-  spinner.update({ text: "Copying resources...\n" });
+  spinner.update({ text: "\nCopying resources...\n" });
 
   await sleep();
 
@@ -261,7 +274,7 @@ const createDocument = async () => {
     `${space.name}\\resources\\doc`,
   );
 
-  spinner.update({ text: "Installing extensions...\n" });
+  spinner.update({ text: "\nInstalling extensions...\n" });
 
   await sleep(3000);
 
@@ -303,12 +316,14 @@ const createDocument = async () => {
   );
 
   await appendJson(`${space.name}\\docs\\${name}\\package.json`, {
-    name: name,
+    name: `@docs/${name}`,
     description: "A new Quarto document",
     author: author,
   });
 
-  spinner.success({ text: chalk.greenBright("Document repository created!") });
+  spinner.success({
+    text: chalk.greenBright("\nDocument repository created!\n"),
+  });
 };
 
 const handleClose = async () => {
@@ -320,7 +335,7 @@ const handleClose = async () => {
     cwd: space.name,
   }).then(handleFullFilled, handleError);
 
-  console.log(chalk.blueBright("Opening workspace in VS Code..."));
+  console.log(chalk.blueBright("\nOpening workspace in VS Code...\n"));
 
   await sleep();
 
@@ -334,7 +349,7 @@ const main = async () => {
 
   switch (action) {
     case "exit":
-      console.log(chalk.redBright("Exiting..."));
+      console.log(chalk.redBright("\nExiting...\n"));
       process.exit(0);
     case "cnw":
       await createWorkspace();
@@ -348,14 +363,10 @@ const main = async () => {
 
   const tasks = await getTasks();
 
-  tasks.length > 0 && console.log("Running tasks...\n");
+  tasks.length > 0 && console.log("\nRunning tasks...\n");
 
   tasks.includes("app") && (await createApp());
   tasks.includes("doc") && (await createDocument());
-
-  console.log("Copying common files...\n");
-
-  await copyFolder(`${__dirname}\\common`, space.name);
 };
 
 await main().then(handleClose);
