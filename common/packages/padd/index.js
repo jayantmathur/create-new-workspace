@@ -54,128 +54,119 @@ const args = yargs(hideBin(process.argv))
 
 const { packs } = args;
 
-const main = async () => {
-  if (packs.length < 1) {
-    console.log(chalk.red("No pack(s) provided. Exiting..."));
-    process.exit(0);
-  }
-
-  console.log(chalk.grey(`List of pack(s): ${packs}\n`));
-
-  for (const pack of packs) {
-    console.log(`Installing ${pack}\n`);
-
-    const {
-      dependencies = [],
-      devDependencies = [],
-      scripts = [],
-      resources = [],
-      postinstalls = [],
-    } = packages[pack];
-
-    if (dependencies?.length < 1) return;
-    else {
-      spinner.start({ text: `Installing dependencies...\n` });
-
-      await exec(`pnpm add ${dependencies.join(" ")}`).then(
-        () =>
-          spinner.success({
-            text: chalk.greenBright(`Added ${pack} dependencies\n`),
-          }),
-        () =>
-          spinner.error({
-            text: chalk.redBright(`Failed to add ${pack} dependencies\n`),
-          }),
-      );
-
-      await sleep();
-    }
-
-    if (devDependencies?.length < 1) return;
-    else {
-      spinner.start({ text: `Installing devDependencies...\n` });
-
-      await exec(`pnpm add -D ${devDependencies.join(" ")}`).then(
-        () =>
-          spinner.success({
-            text: chalk.greenBright(`Added ${pack} devDependencies\n`),
-          }),
-        () =>
-          spinner.error({
-            text: chalk.redBright(`Failed to add ${pack} devDependencies\n`),
-          }),
-      );
-
-      await sleep();
-    }
-
-    if (scripts?.length < 1) return;
-    else {
-      spinner.start({ text: `Adding scripts...\n` });
-
-      await appendJson("package.json", { scripts: { ...scripts } }).then(
-        () =>
-          spinner.success({
-            text: chalk.greenBright(`Added ${pack} scripts\n`),
-          }),
-        () =>
-          spinner.error({
-            text: chalk.redBright(`Failed to add ${pack} scripts\n`),
-          }),
-      );
-
-      await sleep();
-    }
-
-    if (resources?.length < 1) return;
-    else {
-      spinner.start({ text: `Adding resources...\n` });
-
-      resources.forEach(async (resource) => {
-        await copyFolder(
-          `${__dirname}/resources/${resource.src}`,
-          `${resource.dest || "./"}`,
-        ).then(
-          () =>
-            spinner.success({
-              text: chalk.greenBright(`Added ${pack} resources\n`),
-            }),
-          () =>
-            spinner.error({
-              text: chalk.redBright(`Failed to add ${pack} resources\n`),
-            }),
-        );
-      });
-
-      await sleep();
-    }
-
-    if (postinstalls?.length < 1) return;
-    else {
-      spinner.start({ text: `Running post installs...\n` });
-
-      const promises = postinstalls.map(async (postinstall) => {
-        await exec(postinstall);
-      });
-
-      await Promise.all(promises).then(
-        () =>
-          spinner.success({
-            text: chalk.greenBright(`Ran ${pack} post installs\n`),
-          }),
-        () =>
-          spinner.error({
-            text: chalk.redBright(`Failed to run ${pack} post installs\n`),
-          }),
-      );
-
-      await sleep();
-    }
-
-    console.log(chalk.grey(`Finished install attempt for ${pack} pack\n`));
-  }
-};
-
 process.stdout.write("\x1Bc");
 
-await main().then(console.log("Done!"));
+if (packs.length < 1) {
+  console.log(chalk.red("No pack(s) provided. Exiting..."));
+  process.exit(0);
+}
+
+console.log(chalk.grey(`List of pack(s): ${packs}`));
+
+for (const pack of packs) {
+  console.log(`Installing ${pack}`);
+
+  const {
+    dependencies = [],
+    devDependencies = [],
+    scripts = {},
+    resources = [],
+    postinstalls = [],
+  } = packages[pack];
+
+  if (dependencies?.length > 0) {
+    spinner.start({ text: `Installing dependencies...` });
+
+    await exec(`pnpm add ${dependencies.join(" ")}`).then(
+      () =>
+        spinner.success({
+          text: chalk.greenBright(`Added ${pack} dependencies`),
+        }),
+      () =>
+        spinner.error({
+          text: chalk.redBright(`Failed to add ${pack} dependencies`),
+        }),
+    );
+
+    await sleep();
+  }
+
+  if (devDependencies?.length > 0) {
+    spinner.start({ text: `Installing devDependencies...` });
+
+    await exec(`pnpm add -D ${devDependencies.join(" ")}`).then(
+      () =>
+        spinner.success({
+          text: chalk.greenBright(`Added ${pack} devDependencies`),
+        }),
+      () =>
+        spinner.error({
+          text: chalk.redBright(`Failed to add ${pack} devDependencies`),
+        }),
+    );
+
+    await sleep();
+  }
+
+  if (Object.keys(scripts).length < 0) {
+    spinner.start({ text: `Adding scripts...` });
+
+    await appendJson("package.json", { scripts: scripts }).then(
+      () =>
+        spinner.success({
+          text: chalk.greenBright(`Added ${pack} scripts`),
+        }),
+      () =>
+        spinner.error({
+          text: chalk.redBright(`Failed to add ${pack} scripts`),
+        }),
+    );
+
+    await sleep();
+  }
+
+  if (resources?.length > 0) {
+    spinner.start({ text: `Adding resources...` });
+
+    resources.forEach(async (resource) => {
+      await copyFolder(
+        `${__dirname}/resources/${resource.src}`,
+        `${resource.dest || "./"}`,
+      ).then(
+        () =>
+          spinner.success({
+            text: chalk.greenBright(`Added ${pack} resources`),
+          }),
+        () =>
+          spinner.error({
+            text: chalk.redBright(`Failed to add ${pack} resources`),
+          }),
+      );
+    });
+
+    await sleep();
+  }
+
+  if (postinstalls?.length > 0) {
+    spinner.start({ text: `Running post installs...` });
+
+    const promises = postinstalls.map(async (postinstall) => {
+      await exec(postinstall);
+    });
+
+    await Promise.all(promises).then(
+      () =>
+        spinner.success({
+          text: chalk.greenBright(`Ran ${pack} post installs`),
+        }),
+      () =>
+        spinner.error({
+          text: chalk.redBright(`Failed to run ${pack} post installs`),
+        }),
+    );
+
+    await sleep();
+  }
+
+  console.log(chalk.grey(`Finished install attempt for ${pack} pack`));
+}
