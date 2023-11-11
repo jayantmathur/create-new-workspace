@@ -3,7 +3,8 @@
 import packages from "./list.json" assert { type: "json" };
 import { readFile, writeFile } from "fs/promises";
 import fse from "fs-extra";
-import { basename } from "path";
+import { basename, dirname } from "path";
+import { fileURLToPath } from "url";
 import { exec as syncExec } from "child_process";
 import { promisify } from "util";
 import yargs from "yargs";
@@ -12,6 +13,8 @@ import chalk from "chalk";
 import { createSpinner } from "nanospinner";
 import lodash from "lodash";
 const { merge } = lodash;
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const exec = promisify(syncExec);
 
@@ -59,15 +62,20 @@ const main = async () => {
 
   console.log(chalk.grey(`List of pack(s): ${packs}\n`));
 
-  const promises = packs.map(async (pack) => {
+  for (const pack of packs) {
     console.log(`Installing ${pack}\n`);
 
-    const { dependencies, devDependencies, scripts, resources, postinstalls } =
-      packages[pack];
+    const {
+      dependencies = [],
+      devDependencies = [],
+      scripts = [],
+      resources = [],
+      postinstalls = [],
+    } = packages[pack];
 
-    if (dependencies?.length < 0) return;
+    if (dependencies?.length < 1) return;
     else {
-      spinner.start(`Installing dependencies...\n`);
+      spinner.start({ text: `Installing dependencies...\n` });
 
       await exec(`pnpm add ${dependencies.join(" ")}`).then(
         () =>
@@ -83,9 +91,9 @@ const main = async () => {
       await sleep();
     }
 
-    if (devDependencies?.length < 0) return;
+    if (devDependencies?.length < 1) return;
     else {
-      spinner.start(`Installing devDependencies...\n`);
+      spinner.start({ text: `Installing devDependencies...\n` });
 
       await exec(`pnpm add -D ${devDependencies.join(" ")}`).then(
         () =>
@@ -101,9 +109,9 @@ const main = async () => {
       await sleep();
     }
 
-    if (scripts?.length < 0) return;
+    if (scripts?.length < 1) return;
     else {
-      spinner.start(`Adding scripts...\n`);
+      spinner.start({ text: `Adding scripts...\n` });
 
       await appendJson("package.json", { scripts }).then(
         () =>
@@ -119,13 +127,13 @@ const main = async () => {
       await sleep();
     }
 
-    if (resources?.length < 0) return;
+    if (resources?.length < 1) return;
     else {
-      spinner.start(`Adding resources...\n`);
+      spinner.start({ text: `Adding resources...\n` });
 
       resources.forEach(async (resource) => {
         await copyFolder(
-          `./resources/${resource.src}`,
+          `${__dirname}/resources/${resource.src}`,
           `${resource.dest || "./"}`,
         ).then(
           () =>
@@ -142,35 +150,32 @@ const main = async () => {
       await sleep();
     }
 
-    if (postinstalls?.length < 0) return;
+    if (postinstalls?.length < 1) return;
     else {
-      spinner.start(`Running post installs...\n`);
+      spinner.start({ text: `Running post installs...\n` });
 
-      postinstalls.forEach(async (postinstall) => {
-        await exec(postinstall).then(
-          () =>
-            spinner.success({
-              text: chalk.greenBright(`Ran ${pack} post installs\n`),
-            }),
-          () =>
-            spinner.error({
-              text: chalk.redBright(`Failed to run ${pack} post installs\n`),
-            }),
-        );
+      const promises = postinstalls.map(async (postinstall) => {
+        await exec(postinstall);
       });
+
+      await Promise.all(promises).then(
+        () =>
+          spinner.success({
+            text: chalk.greenBright(`Ran ${pack} post installs\n`),
+          }),
+        () =>
+          spinner.error({
+            text: chalk.redBright(`Failed to run ${pack} post installs\n`),
+          }),
+      );
 
       await sleep();
     }
 
-    console.log(chalk.grey(`Finished install attempt for ${pack}\n`));
-  });
-
-  await Promise.all(promises).then(
-    () => console.log(chalk.greenBright("Done!")),
-    () => console.log(chalk.redBright("Failed!")),
-  );
+    console.log(chalk.grey(`Finished install attempt for ${pack} pack\n`));
+  }
 };
 
 process.stdout.write("\x1Bc");
 
-await main();
+await main().then(console.log("Done!"));
