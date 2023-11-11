@@ -10,15 +10,26 @@ import { promisify } from "util";
 import chalk from "chalk";
 import { input, select, checkbox } from "@inquirer/prompts";
 import { createSpinner } from "nanospinner";
-
+import yargs from "yargs";
 import {
   sleep,
   getRandomName,
   copyFolder,
   appendJson,
 } from "./utils/functions.js";
-
 import json from "./package.json" assert { type: "json" };
+
+const args = yargs(hideBin(process.argv))
+  .option("defaults", {
+    alias: "d",
+    description: "Flag to use defaults everywhere",
+    type: "boolean",
+    default: false,
+  })
+  .help()
+  .alias("help", "h").argv;
+
+const { defaults, new: isNew, update, name } = args;
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -89,11 +100,13 @@ const getTasks = async () =>
   });
 
 const createWorkspace = async () => {
-  const name = await input({
-    name: "name",
-    message: "What is the name of the workspace?",
-    default: await getRandomName(),
-  });
+  const name = !defaults
+    ? await input({
+        name: "name",
+        message: "What is the name of the workspace?",
+        default: await getRandomName(),
+      })
+    : await getRandomName();
 
   space.name = name;
 
@@ -124,11 +137,13 @@ const createWorkspace = async () => {
 };
 
 const updateWorkspace = async () => {
-  const name = await input({
-    name: "name",
-    message: "What is the name of the workspace?",
-    default: ".\\",
-  });
+  const name = !defaults
+    ? await input({
+        name: "name",
+        message: "What is the name of the workspace?",
+        default: ".\\",
+      })
+    : ".\\";
 
   space.name = name;
 
@@ -148,11 +163,13 @@ const updateWorkspace = async () => {
 };
 
 const createApp = async () => {
-  const name = await input({
-    name: "name",
-    message: "What is the name of the app?",
-    default: await getRandomName(4),
-  });
+  const name = !defaults
+    ? await input({
+        name: "name",
+        message: "What is the name of the app?",
+        default: await getRandomName(4),
+      })
+    : await getRandomName(4);
 
   space.app = name;
 
@@ -209,11 +226,13 @@ const createApp = async () => {
 };
 
 const createDocument = async () => {
-  const name = await input({
-    name: "name",
-    message: "What is the name of the document?",
-    default: await getRandomName(4),
-  });
+  const name = !defaults
+    ? await input({
+        name: "name",
+        message: "What is the name of the document?",
+        default: await getRandomName(4),
+      })
+    : await getRandomName(4);
 
   space.doc = name;
 

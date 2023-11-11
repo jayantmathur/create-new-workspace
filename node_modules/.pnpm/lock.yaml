@@ -26,6 +26,9 @@ importers:
       trash:
         specifier: ^8.1.1
         version: 8.1.1
+      yargs:
+        specifier: ^17.7.2
+        version: 17.7.2
     devDependencies:
       prettier:
         specifier: ^3.0.3
