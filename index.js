@@ -102,7 +102,7 @@ const createWorkspace = async () => {
     const overwrite = await confirm({
       name: "overwrite",
       message: "Workspace already exists! Overwrite?",
-      initial: false,
+      default: false,
     });
 
     !overwrite && handleError();
