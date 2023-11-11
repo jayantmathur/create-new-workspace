@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import path from "path";
-import { existsSync } from "fs";
+import { existsSync, readdirSync } from "fs";
 import fse from "fs-extra";
 import { readFile, stat } from "fs/promises";
 import yargs from "yargs";
@@ -9,11 +9,34 @@ import { hideBin } from "yargs/helpers";
 import trash from "trash";
 import chalk from "chalk";
 
-const args = yargs(hideBin(process.argv)).argv;
+const args = yargs(hideBin(process.argv))
+  .option("src", {
+    alias: "i",
+    description: "Source folder",
+    type: "string",
+    default: ".\\",
+  })
+  .option("dest", {
+    alias: "o",
+    description: "Destination folder",
+    type: "string",
+    default: undefined,
+  })
+  .option("sync", {
+    alias: "s",
+    description: "Sync local copy with backup",
+    type: "boolean",
+    default: false,
+  })
+  .option("noDev", {
+    description: "Exclude dev repositories",
+    type: "boolean",
+    default: false,
+  })
+  .help()
+  .alias("help", "h").argv;
 
-const excludeFolders = ["node_modules", ".git", "venv", ".backup"]; // add the folders you want to exclude
-
-const { src = ".\\", dest = undefined, sync = false } = args;
+const { src, dest, sync, noDev } = args;
 
 const localDest = `${process.cwd()}\\.backup`;
 
@@ -23,7 +46,11 @@ let destination = existsSync(localDest)
   ? await readFile(localDest, "utf-8")
   : dest;
 
-const deleteFolder = async (path = "") => {
+const excludeFolders = noDev
+  ? readdirSync(src).filter((folder) => !["apps", "docs"].includes(folder))
+  : ["node_modules", ".git", "venv", ".backup"];
+
+const deleteFolder = async (path) => {
   const folder = path.split("\\").pop();
 
   try {
@@ -34,16 +61,16 @@ const deleteFolder = async (path = "") => {
   }
 };
 
-const copyFolder = async (src = "..\\", dest = "", sync = false) => {
+const copyFolder = async (src, dest, sync = false, dev = false) => {
   try {
-    fse.copy(src, dest, {
+    await fse.copy(src, dest, {
       overwrite: true,
       filter: async (srcPath, destPath) => {
         if (excludeFolders.includes(path.basename(srcPath))) {
           return false;
         }
 
-        if (sync)
+        if (sync) {
           try {
             const srcStat = await stat(srcPath);
             const destStat = await stat(destPath);
@@ -51,6 +78,7 @@ const copyFolder = async (src = "..\\", dest = "", sync = false) => {
           } catch (err) {
             return true; // if destination file doesn't exist, copy source file
           }
+        }
 
         return true;
       },
@@ -69,14 +97,19 @@ const main = async () => {
   }
 
   if (sync) {
-    existsSync(destination) && (await copyFolder(destination, src, true));
-    console.log(`Syncing local copy with backup`);
+    if (!existsSync(destination)) {
+      console.error(chalk.red("Destination path does not exist"));
+      process.exit(1);
+    }
+    await copyFolder(destination, src, sync, noDev);
   } else {
-    existsSync(destination) && (await deleteFolder(destination));
-    await copyFolder(src, destination);
-
-    console.log(`Updating backup with source`);
+    await deleteFolder(destination);
+    await copyFolder(src, destination, sync, noDev);
   }
+
+  console.log(
+    !sync ? `Updating backup with source` : `Syncing local copy with backup`,
+  );
 };
 
 await main();

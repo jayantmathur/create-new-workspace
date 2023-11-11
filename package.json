@@ -18,9 +18,9 @@
   "scripts": {
     "prepush": "pnpm format & pnpm handle:git",
     "push": "pnpm version",
-    "postpush": "pnpm backup & npm install -g & git push & echo Pushed new version",
+    "postpush": "pnpm save & npm install -g & git push & echo Pushed new version",
     "format": "prettier --write \"./**/*.{js,json}\" --log-level silent",
-    "backup": "node ./common/packages/backup",
+    "save": "node ./common/packages/backup",
     "handle:git": "git add . & git commit -m \"save work\""
   },
   "keywords": [],
