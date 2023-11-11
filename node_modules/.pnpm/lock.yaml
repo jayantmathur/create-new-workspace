@@ -51,12 +51,15 @@ importers:
 
   common/packages/padd:
     dependencies:
-      deepmerge:
-        specifier: ^4.3.1
-        version: 4.3.1
+      chalk:
+        specifier: ^4.1.1
+        version: 4.1.2
       fs-extra:
         specifier: ^11.1.1
         version: 11.1.1
+      lodash:
+        specifier: 4.17.21
+        version: 4.17.21
       yargs:
         specifier: ^17.7.2
         version: 17.7.2
@@ -335,11 +338,6 @@ packages:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
-    dev: false
-
-  /deepmerge@4.3.1:
-    resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==}
-    engines: {node: '>=0.10.0'}
     dev: false
 
   /dir-glob@2.2.2:

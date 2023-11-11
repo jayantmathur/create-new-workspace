@@ -52,16 +52,6 @@ const space = {
   doc: "ndoc",
 };
 
-process.stdout.write("\x1Bc");
-
-console.log(
-  chalk.cyan.bold("create-new-workspace"),
-  chalk.bgYellow(` v${version} `),
-  chalk.gray(`by ${author}`),
-  "\n",
-  chalk.grey(description),
-);
-
 const getAction = async () =>
   await select({
     name: "action",
@@ -235,7 +225,7 @@ const createApp = async () => {
 
   await copyFolder(
     `${__dirname}\\resources\\web`,
-    `${space.name}\\resources\\web`,
+    `${space.name}\\packages\\padd\\resources\\web`,
   );
 
   spinner.success({ text: chalk.greenBright("\nApp repository created!\n") });
@@ -271,7 +261,7 @@ const createDocument = async () => {
 
   await copyFolder(
     `${__dirname}\\resources\\doc`,
-    `${space.name}\\resources\\doc`,
+    `${space.name}\\packages\\padd\\resources\\doc`,
   );
 
   spinner.update({ text: "\nInstalling extensions...\n" });
@@ -368,5 +358,15 @@ const main = async () => {
   tasks.includes("app") && (await createApp());
   tasks.includes("doc") && (await createDocument());
 };
+
+process.stdout.write("\x1Bc");
+
+console.log(
+  chalk.cyan.bold("create-new-workspace"),
+  chalk.bgYellow(` v${version} `),
+  chalk.gray(`by ${author}`),
+  "\n",
+  chalk.grey(description),
+);
 
 await main().then(handleClose);

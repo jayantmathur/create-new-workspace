@@ -1,12 +1,18 @@
 {
   "name": "padd",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "A simple tool to add packages to the projects",
+  "bin": {
+    "padd": "./index.js"
+  },
+  "type": "module",
   "license": "MIT",
   "private": true,
   "dependencies": {
     "yargs": "^17.7.2",
-    "deepmerge": "^4.3.1",
-    "fs-extra": "^11.1.1"
+    "fs-extra": "^11.1.1",
+    "lodash": "4.17.21",
+    "chalk": "^4.1.1",
+    "nanospinner": "1.1.0"
   }
 }
