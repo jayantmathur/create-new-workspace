@@ -1,4 +1,5 @@
 import { getAllBlogs, getBlog } from "./lib/functions";
+import Card from "@/components/Card";
 
 const Page = async () => {
   const blogs = await getAllBlogs();
@@ -14,16 +15,7 @@ const Page = async () => {
 
   return (
     <>
-      {metadata?.map(
-        (meta, index) =>
-          meta && (
-            <div key={index}>
-              <div>{meta.title}</div>
-              <div>{meta.publishedAt}</div>
-              <div>{meta.description}</div>
-            </div>
-          ),
-      )}
+      {metadata?.map((meta, index) => meta && <Card key={index} meta={meta} />)}
     </>
   );
 };
