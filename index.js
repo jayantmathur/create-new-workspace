@@ -105,7 +105,8 @@ const createWorkspace = async () => {
       initial: false,
     });
 
-    (overwrite && (await deleteFolder(name))) || handleError();
+    !overwrite && handleError();
+    await deleteFolder(name);
   }
 
   space.name = name;
