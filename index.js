@@ -213,6 +213,7 @@ const createApp = async () => {
     description: "A new Next.js app",
     author: author,
     scripts: {
+      dev: "next dev --turbo",
       push: "pnpm version",
       padd: "padd",
     },
