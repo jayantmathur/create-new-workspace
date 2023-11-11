@@ -11,4 +11,10 @@ type MDXImport = typeof import("*.mdx") & {
   metadata?: Metadata;
 };
 
-export type { MDXImport, Metadata };
+type Blog = {
+  content: typeof import("*.mdx").default;
+  metadata: Metadata;
+  slug: string;
+};
+
+export type { MDXImport, Metadata, Blog };
