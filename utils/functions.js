@@ -2,6 +2,7 @@ import { readFile, writeFile } from "fs/promises";
 import fse from "fs-extra";
 import { basename } from "path";
 import crypto from "crypto";
+import trash from "trash";
 import lodash from "lodash";
 const { merge } = lodash;
 
@@ -32,10 +33,21 @@ const copyFolder = async (src = "", dest = "") => {
   }
 };
 
+const deleteFolder = async (path) => {
+  const folder = path.split("\\").pop();
+
+  try {
+    await trash(path);
+    console.log(`Folder ${folder} has been moved to the recycle bin`);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 const appendJson = async (path = "", data = {}) => {
   const content = await readFile(path, "utf8");
   const merged = merge({}, JSON.parse(content), data);
   await writeFile(path, JSON.stringify(merged, null, 2), "utf8");
 };
 
-export { sleep, getRandomName, copyFolder, appendJson };
+export { sleep, getRandomName, copyFolder, deleteFolder, appendJson };

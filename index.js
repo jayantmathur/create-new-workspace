@@ -7,7 +7,7 @@ import { readdir, mkdir, writeFile } from "fs/promises";
 import { exec as syncExec } from "child_process";
 import { promisify } from "util";
 import chalk from "chalk";
-import { input, select, checkbox } from "@inquirer/prompts";
+import { input, select, checkbox, confirm } from "@inquirer/prompts";
 import { createSpinner } from "nanospinner";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
@@ -15,6 +15,7 @@ import {
   sleep,
   getRandomName,
   copyFolder,
+  deleteFolder,
   appendJson,
 } from "./utils/functions.js";
 import json from "./package.json" assert { type: "json" };
@@ -102,6 +103,16 @@ const createWorkspace = async () => {
   spinner.start({ text: "Creating workspace...\n" });
 
   await sleep();
+
+  if (existsSync(name)) {
+    const overwrite = await confirm({
+      name: "overwrite",
+      message: "Workspace already exists! Overwrite?",
+      initial: false,
+    });
+
+    (overwrite && (await deleteFolder(name))) || handleError();
+  }
 
   await mkdir(name, (err) => err && handleError());
 
