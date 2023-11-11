@@ -111,7 +111,7 @@ const createWorkspace = async () => {
     (err) => err && handleError(),
   );
 
-  await appendJson(`${name}/package.json`, {
+  await appendJson(`${name}\\package.json`, {
     description: "A new workspace",
     author: author,
     scripts: {
@@ -196,6 +196,15 @@ const createApp = async () => {
     `${space.name}\\resources\\web`,
   );
 
+  await appendJson(`${space.name}\\apps\\${name}\\package.json`, {
+    name: name,
+    description: "A new Next.js app",
+    author: author,
+    scripts: {
+      push: "pnpm version",
+    },
+  });
+
   spinner.success({ text: chalk.greenBright("App repository created!") });
 };
 
@@ -270,6 +279,12 @@ const createDocument = async () => {
     `${__dirname}\\resources\\doc\\quarto\\main`,
     `${space.name}\\docs\\${name}\\_extensions\\main`,
   );
+
+  await appendJson(`${space.name}\\docs\\${name}\\package.json`, {
+    name: name,
+    description: "A new Quarto document",
+    author: author,
+  });
 
   spinner.success({ text: chalk.greenBright("Document repository created!") });
 };

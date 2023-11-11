@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "A quarto document",
   "scripts": {
+    "dev": "quarto preview --port 4000",
     "build": "quarto render",
     "push": "pnpm version"
   }
