@@ -113,7 +113,7 @@ const main = async () => {
     else {
       spinner.start({ text: `Adding scripts...\n` });
 
-      await appendJson("package.json", { scripts }).then(
+      await appendJson("package.json", { scripts: { ...scripts } }).then(
         () =>
           spinner.success({
             text: chalk.greenBright(`Added ${pack} scripts\n`),
