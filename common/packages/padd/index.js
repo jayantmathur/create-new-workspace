@@ -52,9 +52,9 @@ const args = yargs(hideBin(process.argv))
 const { packs } = args;
 
 const main = async () => {
-  if (packs.length < 0) {
-    console.error(chalk.red("No pack(s) provided. Exiting..."));
-    process.exit(1);
+  if (packs.length < 1) {
+    console.log(chalk.red("No pack(s) provided. Exiting..."));
+    process.exit(0);
   }
 
   console.log(chalk.grey(`List of pack(s): ${packs}\n`));
