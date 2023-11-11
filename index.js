@@ -29,7 +29,7 @@ const args = yargs(hideBin(process.argv))
   .help()
   .alias("help", "h").argv;
 
-const { defaults, new: isNew, update, name } = args;
+const { defaults } = args;
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
