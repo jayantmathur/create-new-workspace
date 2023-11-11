@@ -127,6 +127,7 @@ const updateWorkspace = async () => {
   const name = await input({
     name: "name",
     message: "What is the name of the workspace?",
+    default: ".\\",
   });
 
   space.name = name;
@@ -135,11 +136,15 @@ const updateWorkspace = async () => {
 
   await sleep();
 
-  const dirs = await readdir(process.cwd());
+  if (!name.includes(".\\")) {
+    const dirs = await readdir(process.cwd());
 
-  if (!dirs.includes(name)) handleError();
+    if (!dirs.includes(name)) handleError();
 
-  spinner.success({ text: chalk.greenBright("Workspace found!") });
+    spinner.success({ text: chalk.greenBright("Workspace found!") });
+  } else {
+    spinner.warn({ text: chalk.gray("Using current directory!") });
+  }
 };
 
 const createApp = async () => {
