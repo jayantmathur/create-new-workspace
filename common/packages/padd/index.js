@@ -151,19 +151,19 @@ for (const pack of packs) {
     spinner.start({ text: `Running post installs...` });
 
     const promises = postinstalls.map(async (postinstall) => {
-      await exec(postinstall);
+      await exec(postinstall).then(
+        () =>
+          spinner.success({
+            text: chalk.greenBright(`Ran ${pack} post installs`),
+          }),
+        () =>
+          spinner.error({
+            text: chalk.redBright(`Failed to run ${pack} post installs`),
+          }),
+      );
     });
 
-    await Promise.all(promises).then(
-      () =>
-        spinner.success({
-          text: chalk.greenBright(`Ran ${pack} post installs`),
-        }),
-      () =>
-        spinner.error({
-          text: chalk.redBright(`Failed to run ${pack} post installs`),
-        }),
-    );
+    await Promise.all(promises);
 
     await sleep();
   }
