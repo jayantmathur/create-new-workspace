@@ -23,9 +23,6 @@ importers:
       nanospinner:
         specifier: ^1.1.0
         version: 1.1.0
-      trash:
-        specifier: ^8.1.1
-        version: 8.1.1
       yargs:
         specifier: ^17.7.2
         version: 17.7.2
@@ -60,6 +57,9 @@ importers:
       lodash:
         specifier: 4.17.21
         version: 4.17.21
+      nanospinner:
+        specifier: 1.1.0
+        version: 1.1.0
       yargs:
         specifier: ^17.7.2
         version: 17.7.2

@@ -4,7 +4,7 @@ import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { existsSync } from "fs";
 import { readdir, mkdir, writeFile, rm } from "fs/promises";
-import { exec as syncExec } from "child_process";
+import { exec as syncExec, execFile } from "child_process";
 import { promisify } from "util";
 import chalk from "chalk";
 import { input, select, checkbox, confirm } from "@inquirer/prompts";
@@ -351,6 +351,10 @@ const handleClose = async () => {
   await sleep();
 
   await exec(`code ${space.name}`).then(handleFullFilled, handleError);
+  // await execFile(`${__dirname}\\utils\\code.bat`, [space.name]).then(
+  //   handleFullFilled,
+  //   handleError,
+  // );
 
   process.exit(0);
 };
