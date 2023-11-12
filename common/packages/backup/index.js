@@ -48,7 +48,7 @@ let destination = existsSync(localDest)
 
 const excludeFolders = noDev
   ? readdirSync(src).filter((folder) => !["apps", "docs"].includes(folder))
-  : ["node_modules", ".git", "venv", ".backup"];
+  : ["node_modules", ".git", ".next", "venv", ".backup"];
 
 const deleteFolder = async (path) => {
   const folder = path.split("\\").pop();
