@@ -244,11 +244,6 @@ const createApp = async () => {
 
   await copyFolder(`${__dirname}\\src\\app`, `${space.name}\\apps\\${name}`);
 
-  spinner.update({ text: "Cleaning remnants...\n" });
-
-  await rm(`${space.name}\\apps\\${name}\\.git`);
-  await rm(`${space.name}\\apps\\${name}\\.gitignore`);
-
   spinner.success({ text: chalk.greenBright("App repository created!\n") });
 };
 
@@ -345,6 +340,11 @@ const handleClose = async () => {
   await exec(`pnpm prune`, {
     cwd: space.name,
   }).then(handleFullFilled, handleError);
+
+  console.log("Cleaning remnants...\n");
+
+  await rm(`${space.name}\\.git`, { recursive: true });
+  await rm(`${space.name}\\.gitignore`, { recursive: true });
 
   console.log(chalk.blueBright("Opening workspace in VS Code...\n"));
 
