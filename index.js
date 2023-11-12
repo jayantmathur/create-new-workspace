@@ -343,8 +343,8 @@ const handleClose = async () => {
 
   console.log("Cleaning remnants...\n");
 
-  await rm(`${space.name}\\.git`, { force: true, recursive: true });
-  await rm(`${space.name}\\.gitignore`, { force: true, recursive: true });
+  // await rm(`${space.name}\\.git`, { force: true, recursive: true });
+  // await rm(`${space.name}\\.gitignore`, { force: true, recursive: true });
 
   console.log(chalk.blueBright("Opening workspace in VS Code...\n"));
 
