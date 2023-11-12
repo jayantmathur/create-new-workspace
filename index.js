@@ -3,7 +3,7 @@
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { existsSync } from "fs";
-import { readdir, mkdir, writeFile } from "fs/promises";
+import { readdir, mkdir, writeFile, rm } from "fs/promises";
 import { exec as syncExec } from "child_process";
 import { promisify } from "util";
 import chalk from "chalk";
@@ -243,6 +243,11 @@ const createApp = async () => {
   );
 
   await copyFolder(`${__dirname}\\src\\app`, `${space.name}\\apps\\${name}`);
+
+  spinner.update({ text: "Cleaning remnants...\n" });
+
+  await rm(`${space.name}\\apps\\${name}\\.git`);
+  await rm(`${space.name}\\apps\\${name}\\.gitignore`);
 
   spinner.success({ text: chalk.greenBright("App repository created!\n") });
 };
