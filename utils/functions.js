@@ -2,7 +2,7 @@ import { readFile, writeFile } from "fs/promises";
 import fse from "fs-extra";
 import { basename } from "path";
 import crypto from "crypto";
-import trash from "trash";
+// import trash from "trash"; // `trash` should be installed globally as trash-cli
 import lodash from "lodash";
 const { merge } = lodash;
 
@@ -36,14 +36,11 @@ const copyFolder = async (src = "", dest = "") => {
 const deleteFolder = async (path) => {
   const folder = path.split("\\").pop();
 
-  try {
-    await trash(path);
-    console.log(`Folder ${folder} has been moved to the recycle bin`);
-  } catch (err) {
-    console.error(err);
-  }
+  await exec(`trash ${path}`).then(
+    () => console.log(`Folder: ${folder} has been moved to the recycle bin`),
+    () => console.log(`Error deleting: ${folder}`),
+  );
 };
-
 const appendJson = async (path = "", data = {}) => {
   const content = await readFile(path, "utf8");
   const merged = merge({}, JSON.parse(content), data);

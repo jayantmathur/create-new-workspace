@@ -4,10 +4,14 @@ import path from "path";
 import { existsSync, readdirSync } from "fs";
 import fse from "fs-extra";
 import { readFile, stat } from "fs/promises";
+import { exec as syncExec } from "child_process";
+import { promisify } from "util";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
-import trash from "trash";
+// import trash from "trash"; // `trash` should be installed globally as trash-cli
 import chalk from "chalk";
+
+const exec = promisify(syncExec);
 
 const args = yargs(hideBin(process.argv))
   .option("src", {
@@ -53,12 +57,10 @@ const excludeFolders = noDev
 const deleteFolder = async (path) => {
   const folder = path.split("\\").pop();
 
-  try {
-    await trash(path);
-    console.log(`Folder ${folder} has been moved to the recycle bin`);
-  } catch (err) {
-    console.error(err);
-  }
+  await exec(`trash ${path}`).then(
+    () => console.log(`Folder: ${folder} has been moved to the recycle bin`),
+    () => console.log(`Error deleting: ${folder}`),
+  );
 };
 
 const copyFolder = async (src, dest, sync = false, dev = false) => {
