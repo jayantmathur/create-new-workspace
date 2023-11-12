@@ -170,3 +170,7 @@ for (const pack of packs) {
 
   console.log(chalk.grey(`Finished install attempt for ${pack} pack`));
 }
+
+console.log("\nDone\n");
+
+process.exit(0);
