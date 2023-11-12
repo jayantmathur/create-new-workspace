@@ -7,6 +7,9 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./mdx-components.tsx",
   ],
+  daisyui: {
+    themes: ["business", "corporate"],
+  },
   plugins: [require("daisyui"), require("@tailwindcss/typography")],
 };
 export default config;
