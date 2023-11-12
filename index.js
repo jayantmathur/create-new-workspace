@@ -202,7 +202,7 @@ const createApp = async () => {
     ));
 
   await exec(
-    `pnpm create next-app ${name} --typescript --eslint --tailwind --no-src-dir --app --import-alias "@/*"`,
+    `pnpm create next-app ${name} --typescript --eslint --tailwind --no-src-dir --app --import-alias "@/*" --no-git`,
     {
       cwd: `${space.name}\\apps`,
     },
