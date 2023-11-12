@@ -1,7 +1,12 @@
 {
   "tailwind": {
-    "dependencies": ["react-spring", "framer-motion", "next-themes"],
-    "devDependencies": ["@tailwindcss/typography"],
+    "dependencies": [
+      "react-spring",
+      "@heroicons/react",
+      "framer-motion",
+      "next-themes"
+    ],
+    "devDependencies": ["daisyui", "@tailwindcss/typography"],
     "resources": [
       {
         "src": "web/tailwind"
@@ -9,7 +14,7 @@
     ]
   },
   "forms": {
-    "dependencies": ["react-dropzone", "react-icons", "react-hook-form"]
+    "dependencies": ["react-dropzone", "react-hook-form"]
   },
   "cloudinary": {
     "dependencies": ["next-cloudinary", "cloudinary"],
