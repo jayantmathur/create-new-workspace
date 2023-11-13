@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { ThemeProvider, useTheme } from "next-themes";
-import { ThemeProviderProps } from "next-themes/dist/types";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 
 type Themes = {
@@ -9,13 +8,20 @@ type Themes = {
   dark: string;
 };
 
+// const defaultThemes: Themes = {
+//   light: "corporate",
+//   dark: "business",
+// };
+
 const defaultThemes: Themes = {
-  light: "corporate",
-  dark: "business",
+  light: "light",
+  dark: "dark",
 };
 
 const Providers = ({ children }: { children: React.ReactNode }) => (
   <ThemeProvider
+    // enableSystem
+    enableColorScheme
     enableSystem={false}
     defaultTheme={defaultThemes.dark}
     themes={[defaultThemes.light, defaultThemes.dark]}
@@ -34,7 +40,7 @@ const ThemeToggle = () => {
   const styles = `btn-sm btn-circle border-none absolute top-4 right-4 bg-gray-800 hover:bg-gray-700 grid place-items-center p-2`;
 
   useEffect(() => {
-    setTheme(dark);
+    // setTheme(dark);
     setMounted(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

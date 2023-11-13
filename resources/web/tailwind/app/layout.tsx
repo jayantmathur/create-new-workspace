@@ -22,9 +22,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html data-theme="business">
+    <html data-theme="dark" style={{ colorScheme: "dark" }}>
       <body
-        className={`${rhd.className} grid place-items-center min-h-screen p-4 prose max-w-none`}
+        className={`${rhd.className} grid place-items-center min-h-screen p-4`}
         data-gr-ext-installed=""
         data-new-gr-c-s-check-loaded="14.1045.0"
       >
