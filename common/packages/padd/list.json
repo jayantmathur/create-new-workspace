@@ -4,7 +4,8 @@
       "react-spring",
       "@heroicons/react",
       "framer-motion",
-      "next-themes"
+      "next-themes",
+      "tailwind-merge"
     ],
     "devDependencies": ["daisyui", "@tailwindcss/typography"],
     "resources": [

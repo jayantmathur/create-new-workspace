@@ -2,7 +2,7 @@ import "./globals.css";
 // import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from "next";
 import Providers, { ThemeToggle } from "./providers";
-import { rhd } from "./fonts";
+import { rhd } from "@/styles/fonts";
 
 export const metadata: Metadata = {
   title: "My Next.js App",
