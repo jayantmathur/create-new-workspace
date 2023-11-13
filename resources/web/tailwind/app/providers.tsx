@@ -53,4 +53,4 @@ const ThemeToggle = () => {
 };
 
 export default Providers;
-export { defaultThemes, ThemeToggle };
+export { ThemeToggle };

@@ -10,6 +10,11 @@ const config: Config = {
   daisyui: {
     themes: ["business", "corporate"],
   },
+  theme: {
+    extend: {
+      fontFamily: "var(--rdh), sans-serif",
+    },
+  },
   plugins: [require("daisyui"), require("@tailwindcss/typography")],
 };
 export default config;

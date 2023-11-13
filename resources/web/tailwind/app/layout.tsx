@@ -1,7 +1,8 @@
 import "./globals.css";
 // import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from "next";
-import Providers, { defaultThemes, ThemeToggle } from "./providers";
+import Providers, { ThemeToggle } from "./providers";
+import { rhd } from "./fonts";
 
 export const metadata: Metadata = {
   title: "My Next.js App",
@@ -23,7 +24,7 @@ export default function RootLayout({
   return (
     <html data-theme="business">
       <body
-        className="grid place-items-center min-h-screen p-4"
+        className={`${rhd.className} grid place-items-center min-h-screen p-4 prose max-w-none`}
         data-gr-ext-installed=""
         data-new-gr-c-s-check-loaded="14.1045.0"
       >
