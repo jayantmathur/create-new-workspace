@@ -59,7 +59,7 @@
             <group delimiter=". ">
               <text value="[Online]"/>
               <text variable="URL" prefix="Available: "/>
-              <group prefix="[" suffix="]">
+              <group prefix=" [" suffix="]">
                 <date variable="accessed" prefix="Accessed: ">
                   <date-part name="day" form="numeric-leading-zeros" suffix="-"/>
                   <date-part name="month" form="short" suffix="-" strip-periods="true"/>
@@ -82,13 +82,13 @@
     <sort>
       <key variable="citation-number"/>
     </sort>
-    <layout prefix="[" suffix="]" delimiter=",">
+    <layout prefix=" [" suffix="]" delimiter=",">
       <text variable="citation-number"/>
     </layout>
   </citation>
   <bibliography entry-spacing="0" second-field-align="flush">
     <layout suffix=".">
-      <text variable="citation-number" prefix="[" suffix="]"/>
+      <text variable="citation-number" prefix=" [" suffix="]"/>
       <text macro="author" suffix=", "/>
       <date variable="issued" suffix=", ">
         <date-part name="year"/>
