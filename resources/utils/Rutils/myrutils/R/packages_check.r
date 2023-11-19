@@ -6,10 +6,10 @@
 #' @return NULL
 #' @importFrom utils install.packages
 #' @examples
-#' packages.check(c("dplyr", "ggplot2"))
+#' packages_check(c("dplyr", "ggplot2"))
 #'
 #' @export
-packages.check <- function(packages) {
+packages_check <- function(packages) {
     lapply(
         packages,
         FUN = function(x) {

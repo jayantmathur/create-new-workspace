@@ -11,22 +11,24 @@
 #' @param variable The variable to create the writeup for. If NA, the writeup
 #' will be created for all variables.
 #'
+#' @importFrom methods is
+#'
 #' @param type The type of writeup to create. Can be "statement" or "table".
 #'
 #' @return A string data frame with the writeup(s).
 #'
 #' @export
 
-get.lm.writeup <- function(model, variable = NA, type = "statement") {
+get_lm_writeup <- function(model, variable = NA, type = "statement") {
     if (!(type %in% c("statement", "table"))) {
         stop("Invalid type argument. Must be 'statement' or 'table'.")
     }
 
-    if (class(model) != "lm" && class(model) != "lmerModLmerTest") {
+    if (!is(model, "lmerModLmerTest") && !is(model, "lm")) {
         stop("Invalid model argument. Must be a linear regression model.")
     }
 
-    if (class(model) == "lmerModLmerTest") {
+    if (is(model, "lmerModLmerTest")) {
         summary <- as.data.frame(
             summary(
                 model,
