@@ -30,8 +30,8 @@ contributes:
 
             include-in-header: 'partials/_header.tex'
 
-            fig-width: 5.25
-            fig-height: 5.25
+            fig-width: 5.5
+            fig-height: 5.5
 
             knitr:
                 opts_chunk:
