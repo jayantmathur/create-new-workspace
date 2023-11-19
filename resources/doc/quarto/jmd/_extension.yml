@@ -29,3 +29,7 @@ contributes:
                 - 'partials/title.tex'
 
             include-in-header: 'partials/_header.tex'
+
+            knitr:
+                opts_chunk:
+                    out.width: "3.5in"

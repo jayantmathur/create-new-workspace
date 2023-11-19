@@ -9,6 +9,5 @@ Encoding: UTF-8
 Imports:
     utils,
     dplyr,
-    methods,
-    ggplot2
+    methods
 RoxygenNote: 7.2.3
