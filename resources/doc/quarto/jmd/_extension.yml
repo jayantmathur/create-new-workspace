@@ -11,12 +11,17 @@ contributes:
 
             number-sections: true
 
+            crossref:
+                fig-prefix: "Fig."
+                fig-title: "Fig."
+
             csl: jmd.csl
 
             fig-width: 5.5
             fig-height: 5.5
         
-        html: default
+        html: 
+            table-of-contents: true
 
         pdf:
             geometry:
