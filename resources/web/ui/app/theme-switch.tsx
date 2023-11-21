@@ -26,29 +26,27 @@ const Component = () => {
   if (!mounted) return null;
 
   return (
-    <div className="absolute grid place-items-center sm:place-items-end bottom-4 w-full px-4">
-      <Tabs
-        radius="full"
-        variant="solid"
-        aria-label="Tabs radius"
-        selectedKey={theme}
-        onSelectionChange={toggleTheme}
-      >
-        {themes.map((item) => (
-          <Tab
-            key={item.name}
-            title={
-              <div className="flex items-center space-x-2">
-                {item.icon}
-                <span className="capitalize hidden sm:inline">
-                  {item.name} Mode
-                </span>
-              </div>
-            }
-          />
-        ))}
-      </Tabs>
-    </div>
+    <Tabs
+      radius="full"
+      variant="solid"
+      aria-label="Tabs radius"
+      selectedKey={theme}
+      onSelectionChange={toggleTheme}
+    >
+      {themes.map((item) => (
+        <Tab
+          key={item.name}
+          title={
+            <div className="flex items-center space-x-2">
+              {item.icon}
+              <span className="capitalize hidden sm:inline">
+                {item.name} Mode
+              </span>
+            </div>
+          }
+        />
+      ))}
+    </Tabs>
   );
 };
 

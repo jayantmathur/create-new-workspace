@@ -2,8 +2,9 @@ import "./globals.css";
 // import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from "next";
 import clsx from "clsx";
-import Providers from "./providers";
 import { rhd } from "@/config/fonts";
+import Providers from "./providers";
+import ThemeSwitch from "./theme-switch";
 
 export const metadata: Metadata = {
   title: "My Next.js App",
@@ -28,14 +29,16 @@ export default function RootLayout({
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div
             className={clsx(
-              "prose dark:prose-invert max-w-none min-h-screen p-4 antialiased"
+              "prose dark:prose-invert max-w-none flex min-h-screen flex-col justify-between p-4 antialiased"
             )}
           >
             {children}
+            <footer className="grid place-items-center sm:place-items-end">
+              <ThemeSwitch />
+            </footer>
           </div>
         </Providers>
         {/* <Analytics /> */}
-        {/* <footer className="w-full flex items-center justify-center py-3"></footer> */}
       </body>
     </html>
   );
