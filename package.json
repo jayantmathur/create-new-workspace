@@ -1,6 +1,6 @@
 {
   "name": "create-new-workspace",
-  "version": "2.4.6",
+  "version": "2.4.7",
   "description": "CLI tool to create a new workspace",
   "type": "module",
   "bin": {
@@ -18,7 +18,7 @@
   "scripts": {
     "push": "pnpm format & pnpm version --force",
     "postpush": "pnpm save & npm install -g & pnpm handle:git & echo Pushed new version",
-    "format": "prettier --write \"./**/*.{js,json}\" --log-level silent",
+    "format": "prettier --write \"./**/*.{js,ts,jsx,tsx,json}\" --log-level silent",
     "save": "node ./common/packages/backup",
     "handle:git": "git add . & git commit -m \"save work\" & git push"
   },
