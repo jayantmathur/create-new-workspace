@@ -125,11 +125,11 @@ const createWorkspace = async () => {
     (err) => err && handleError(),
   );
 
-  spinner.update({ text: "Copying common files...\n" });
+  // spinner.update({ text: "Copying common files...\n" });
 
-  await sleep();
+  // await sleep();
 
-  await copyFolder(`${__dirname}\\common`, space.name);
+  // await copyFolder(`${__dirname}\\common`, space.name);
 
   spinner.update({ text: "Installing workspace packages...\n" });
 
@@ -378,10 +378,18 @@ const main = async () => {
 
   const tasks = await getTasks();
 
-  tasks.length > 0 && console.log("Running tasks...\n");
+  if (tasks.length < 1) return;
+
+  console.log("Running tasks...\n");
 
   tasks.includes("app") && (await createApp());
   tasks.includes("doc") && (await createDocument());
+
+  console.log("Copying common files...\n");
+
+  await sleep();
+
+  await copyFolder(`${__dirname}\\common`, space.name);
 };
 
 process.stdout.write("\x1Bc");
