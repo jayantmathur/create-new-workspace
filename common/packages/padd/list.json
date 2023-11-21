@@ -3,6 +3,7 @@
     "dependencies": [
       "@heroicons/react",
       "@nextui-org/button",
+      "@nextui-org/tabs",
       "@nextui-org/system",
       "@nextui-org/theme",
       "framer-motion",
