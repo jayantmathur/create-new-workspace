@@ -1,8 +1,9 @@
 import "./globals.css";
 // import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from "next";
+import clsx from "clsx";
 import Providers, { ThemeToggle } from "./providers";
-import { rhd } from "@/styles/fonts";
+import { rhd } from "@/config/fonts";
 
 export const metadata: Metadata = {
   title: "My Next.js App",
@@ -22,17 +23,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html data-theme="dark" style={{ colorScheme: "dark" }}>
+    <html lang="en" className='dark'>
       <body
-        className={`${rhd.className} grid place-items-center min-h-screen p-4`}
-        data-gr-ext-installed=""
-        data-new-gr-c-s-check-loaded="14.1045.0"
+        className={clsx("grid place-items-center min-h-screen p-4 bg-background font-sans antialiased", rhd.className)}
       >
-        <Providers>
-          <ThemeToggle />
-          {children}
+        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+        <div className="relative flex flex-col h-screen">
+          <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
+              {children}
+            </main>
+          </div>
         </Providers>
         {/* <Analytics /> */}
+        {/* <footer className="w-full flex items-center justify-center py-3">
+                
+            </footer> */} 
       </body>
     </html>
   );
