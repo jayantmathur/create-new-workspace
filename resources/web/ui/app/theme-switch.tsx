@@ -1,9 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
-// import { Button } from "@nextui-org/button";
-import { Tabs, Tab } from "@nextui-org/tabs";
 import { useTheme } from "next-themes";
 import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
+
+import {cn} from "@/lib/utils";
 
 const themes = [
   {
@@ -26,27 +26,25 @@ const Component = () => {
   if (!mounted) return null;
 
   return (
-    <Tabs
-      radius="full"
-      variant="solid"
-      aria-label="Tabs radius"
-      selectedKey={theme}
-      onSelectionChange={toggleTheme}
-    >
+    <div role="tablist" className="tabs tabs-boxed">
       {themes.map((item) => (
-        <Tab
+        <a
           key={item.name}
-          title={
-            <div className="flex items-center space-x-2">
+          role="tab" 
+          className={cn("tab", {
+            "tab-active": theme === item.name,
+          })}
+          onClick={toggleTheme}
+        >
+          <div className="flex items-center space-x-2">
               {item.icon}
               <span className="capitalize hidden sm:inline">
                 {item.name} Mode
               </span>
             </div>
-          }
-        />
+        </a>
       ))}
-    </Tabs>
+    </div>
   );
 };
 

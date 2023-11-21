@@ -1,7 +1,8 @@
 import "./globals.css";
 // import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from "next";
-import clsx from "clsx";
+
+import {cn} from "@/lib/utils";
 import { rhd } from "@/config/fonts";
 import Providers from "./providers";
 import ThemeSwitch from "./theme-switch";
@@ -24,11 +25,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" data-theme="dark" style={{ colorScheme: "dark" }}>
       <body className={rhd.className}>
-        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+        <Providers themeProps={{ defaultTheme: "dark" }}>
           <div
-            className={clsx(
+            className={cn(
               "prose dark:prose-invert max-w-none flex min-h-screen flex-col justify-between p-4 antialiased"
             )}
           >
