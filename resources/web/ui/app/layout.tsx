@@ -24,9 +24,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className={clsx("min-h-screen p-4 antialiased", rhd.variable)}>
+      <body className={rhd.className}>
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          {children}
+          <div
+            className={clsx(
+              "prose dark:prose-invert max-w-none min-h-screen p-4 antialiased"
+            )}
+          >
+            {children}
+          </div>
         </Providers>
         {/* <Analytics /> */}
         {/* <footer className="w-full flex items-center justify-center py-3"></footer> */}

@@ -17,17 +17,16 @@ const config: Config = {
   darkMode: "class",
   plugins: [
     nextui({
-    themes: {
-      dark: {
-        colors: {
-          primary: {
-            DEFAULT: "#BEF264",
-            foreground: "#000000",
-          },
-          focus: "#BEF264",
-        },
-      },
-    },
-  }),],
+      // themes: {
+      //   dark: {
+      //     colors: {
+      //       primary: {},
+      //       focus: "#BEF264",
+      //     },
+      //   },
+      // },
+    }),
+    require("@tailwindcss/typography"),
+  ],
 };
 export default config;
