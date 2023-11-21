@@ -2,7 +2,7 @@ import "./globals.css";
 // import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from "next";
 import clsx from "clsx";
-import Providers, { ThemeToggle } from "./providers";
+import Providers from "./providers";
 import { rhd } from "@/config/fonts";
 
 export const metadata: Metadata = {
@@ -23,21 +23,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className='dark'>
-      <body
-        className={clsx("grid place-items-center min-h-screen p-4 bg-background font-sans antialiased", rhd.className)}
-      >
+    <html lang="en" className="dark">
+      <body className={clsx("min-h-screen p-4 antialiased", rhd.variable)}>
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-        <div className="relative flex flex-col h-screen">
-          <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
-              {children}
-            </main>
-          </div>
+          {children}
         </Providers>
         {/* <Analytics /> */}
-        {/* <footer className="w-full flex items-center justify-center py-3">
-                
-            </footer> */} 
+        {/* <footer className="w-full flex items-center justify-center py-3"></footer> */}
       </body>
     </html>
   );
