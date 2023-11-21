@@ -25,9 +25,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-theme="dark" style={{ colorScheme: "dark" }}>
+    <html lang="en" className="dark">
       <body className={rhd.className}>
-        <Providers themeProps={{ defaultTheme: "dark" }}>
+        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div
             className={cn(
               "prose dark:prose-invert max-w-none flex min-h-screen flex-col justify-between p-4 antialiased"

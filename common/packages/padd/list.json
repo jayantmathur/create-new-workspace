@@ -2,12 +2,16 @@
   "ui": {
     "dependencies": [
       "@heroicons/react",
+      "@nextui-org/button",
+      "@nextui-org/tabs",
+      "@nextui-org/system",
+      "@nextui-org/theme",
       "framer-motion",
       "next-themes",
       "clsx",
       "tailwind-merge"
     ],
-    "devDependencies": ["daisyui", "@tailwindcss/typography"],
+    "devDependencies": ["@tailwindcss/typography"],
     "resources": [
       {
         "src": "web/ui"
