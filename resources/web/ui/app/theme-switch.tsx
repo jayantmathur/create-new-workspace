@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
 
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 const themes = [
   {
     name: "light",
@@ -25,20 +27,20 @@ const Component = () => {
   if (!mounted) return null;
 
   return (
-    <div role="tablist" className="tabs tabs-boxed">
-      {themes.map((item) => (
-        <input
-          key={item.name}
-          type="radio"
-          name={item.name}
-          role="tab"
-          className="tab capitalize"
-          aria-label={`${item.name} Mode`}
-          checked={theme === item.name}
-          onChange={toggleTheme}
-        />
-      ))}
-    </div>
+    <Tabs defaultValue="account" className="w-[400px]">
+      <TabsList>
+        {themes.map(({ name, icon }) => (
+          <TabsTrigger
+            key={name}
+            value={name}
+            className="flex items-center justify-center w-10 h-10 rounded-full"
+          >
+            {icon}
+            <div className="capitalize hidden sm:inline">{name}</div>
+          </TabsTrigger>
+        ))}
+      </TabsList>
+    </Tabs>
   );
 };
 

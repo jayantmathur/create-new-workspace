@@ -4,14 +4,24 @@
       "@heroicons/react",
       "framer-motion",
       "next-themes",
+      "tailwindcss-animate",
+      "class-variance-authority",
       "clsx",
-      "tailwind-merge"
+      "tailwind-merge",
+      "lucide-react"
     ],
-    "devDependencies": ["daisyui", "@tailwindcss/typography"],
+    "devDependencies": ["@tailwindcss/typography"],
     "resources": [
       {
         "src": "web/ui"
       }
+    ],
+    "scripts": {
+      "shad": "pnpm dlx shadcn-ui@latest"
+    },
+    "postinstalls": [
+      "pnpm dlx shadcn-ui@latest init --yes",
+      "pnpm dlx shadcn-ui@latest add tabs"
     ]
   },
   "forms": {
