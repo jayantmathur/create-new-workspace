@@ -21,11 +21,7 @@ const Component = () => {
   const { theme, setTheme } = useTheme();
   const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
 
-  useEffect(() => {
-    setTheme("dark");
-    setMounted(true);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  useEffect(() => setMounted(true), []);
 
   if (!mounted) return null;
 

@@ -12,18 +12,12 @@ const getAllBlogs = async () =>
   );
 
 const getBlog = async (slug: string) => {
-  const file = await getAllBlogs().then((files) =>
-    files.find((file) => file === slug),
-  );
-
-  if (!file) return;
-
-  const blog = (await import(`../posts/${file}.mdx`)) as MDXImport;
+  const blog = (await import(`../posts/${slug}.mdx`)) as MDXImport;
 
   return {
     content: blog.default,
     metadata: blog.metadata,
-    slug: file,
+    slug: slug,
   } as Blog;
 };
 

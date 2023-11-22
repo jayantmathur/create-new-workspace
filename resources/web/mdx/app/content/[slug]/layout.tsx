@@ -1,4 +1,12 @@
+import BackButton from "../components/backbutton";
+
 export default function MdxLayout({ children }: { children: React.ReactNode }) {
-  // Create any shared layout or styles here
-  return <div className="prose py-10">{children}</div>;
+  return (
+    <div className="grid place-items-center py-10">
+      <div className="prose dark:prose-invert">
+        <BackButton />
+        {children}
+      </div>
+    </div>
+  );
 }

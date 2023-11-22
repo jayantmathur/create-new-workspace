@@ -1,8 +1,10 @@
-import { getAllBlogs, getBlog } from "./lib/functions";
-import Card from "@/components/Card";
+import { getAllBlogs, getBlog } from "./lib/utils";
+import Card from "./components/card";
 
 const Page = async () => {
   const blogs = await getAllBlogs();
+
+  if (!blogs) return null;
 
   const promises = blogs.map(async (blog) => {
     const post = await getBlog(blog);
@@ -11,11 +13,11 @@ const Page = async () => {
 
   const posts = await Promise.all(promises);
 
-  const metadata = posts?.map((post) => post?.metadata);
-
   return (
     <>
-      {metadata?.map((meta, index) => meta && <Card key={index} meta={meta} />)}
+      {posts.map(({ metadata, slug }, index) => (
+        <Card key={index} meta={metadata} slug={slug} />
+      ))}
     </>
   );
 };

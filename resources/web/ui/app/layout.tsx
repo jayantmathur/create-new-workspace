@@ -26,18 +26,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
-      <body className={rhd.className}>
+      <body
+        className={cn(
+          "prose dark:prose-invert max-w-none p-4 flex flex-col justify-between antialiased",
+          rhd.className,
+        )}
+      >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div
-            className={cn(
-              "prose dark:prose-invert max-w-none flex min-h-screen flex-col justify-between p-4 antialiased",
-            )}
-          >
-            {children}
-            <footer className="grid place-items-center sm:place-items-end">
-              <ThemeSwitch />
-            </footer>
-          </div>
+          {children}
+          <footer className="fixed z-10 bottom-0 left-0 right-0 p-4 flex flex-row justify-center sm:justify-end">
+            <ThemeSwitch />
+          </footer>
         </Providers>
         {/* <Analytics /> */}
       </body>

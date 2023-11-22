@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { redirect } from "next/navigation";
-import { getBlog } from "../lib/functions";
+import { getBlog } from "../lib/utils";
 
 const Page = async ({ params }: { params: { slug: string } }) => {
   const slug = params.slug;
@@ -8,7 +8,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
 
   if (!blog) redirect("/content");
 
-  const Content = blog?.content;
+  const Content = blog.content;
 
   return <Content />;
 };
