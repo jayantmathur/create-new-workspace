@@ -19,7 +19,7 @@
     "scripts": {
       "shad": "pnpm dlx shadcn-ui@latest"
     },
-    "postinstalls": ["pnpm dlx shadcn-ui@latest add tabs"]
+    "postinstalls": ["pnpm --filter webx shad add tabs --yes --overwrite"]
   },
   "forms": {
     "dependencies": ["react-dropzone", "react-hook-form"]

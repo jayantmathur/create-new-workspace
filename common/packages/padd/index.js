@@ -108,7 +108,7 @@ for (const pack of packs) {
     await sleep();
   }
 
-  if (Object.keys(scripts).length < 0) {
+  if (Object.keys(scripts).length > 0) {
     spinner.start({ text: `Adding scripts...` });
 
     await appendJson("package.json", { scripts: scripts }).then(
