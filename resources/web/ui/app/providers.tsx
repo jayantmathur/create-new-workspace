@@ -15,7 +15,13 @@ const Providers = ({ children, themeProps }: ProvidersProps) => {
 
   return (
     <NextUIProvider navigate={router.push}>
-      <NextThemesProvider {...themeProps}>{children}</NextThemesProvider>
+      <NextThemesProvider
+        enableColorScheme
+        enableSystem={false}
+        {...themeProps}
+      >
+        {children}
+      </NextThemesProvider>
     </NextUIProvider>
   );
 };
