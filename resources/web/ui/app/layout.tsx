@@ -32,7 +32,7 @@ export default function RootLayout({
           rhd.className,
         )}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+        <Providers themeProps={{ defaultTheme: "dark" }}>
           {children}
           <footer className="fixed z-10 bottom-0 left-0 right-0 p-4 flex flex-row justify-center sm:justify-end">
             <ThemeSwitch />

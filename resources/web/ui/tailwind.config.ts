@@ -37,10 +37,7 @@ const config: Config = {
       fontFamily: "var(--rhd), var(--rhm), sans-serif",
     },
   },
-  darkMode: "class",
-  plugins: [
-    require("daisyui"), 
-    require("@tailwindcss/typography")
-  ],
+  // darkMode: "class",
+  plugins: [require("daisyui"), require("@tailwindcss/typography")],
 };
 export default config;

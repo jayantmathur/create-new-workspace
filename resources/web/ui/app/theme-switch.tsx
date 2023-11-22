@@ -24,28 +24,21 @@ const Component = () => {
 
   if (!mounted) return null;
 
-  // return (
-  //   <Tabs
-  //     radius="full"
-  //     variant="solid"
-  //     aria-label="Tabs radius"
-  //     selectedKey={theme}
-  //     onSelectionChange={toggleTheme}
-  //   >
-  //     {themes.map((item) => (
-  //       <Tab
-  //         key={item.name}
-  //         title={
-  //           <div className="flex items-center space-x-2">
-  //             {item.icon}
-  //             <span className="capitalize hidden sm:inline">
-  //               {item.name} Mode
-  //             </span>
-  //           </div>
-  //         }
-  //       />
-  //     ))}
-  //   </Tabs>
+  return (
+    <div role="tablist" className="tabs tabs-boxed">
+      {themes.map((item) => (
+        <input
+          key={item.name}
+          type="radio"
+          name={item.name}
+          role="tab"
+          className="tab capitalize"
+          aria-label={`${item.name} Mode`}
+          checked={theme === item.name}
+          onChange={toggleTheme}
+        />
+      ))}
+    </div>
   );
 };
 
