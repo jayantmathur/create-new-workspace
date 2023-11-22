@@ -27,16 +27,12 @@ const Component = () => {
   if (!mounted) return null;
 
   return (
-    <Tabs defaultValue="account" className="w-[400px]">
+    <Tabs defaultValue="dark" onValueChange={toggleTheme}>
       <TabsList>
         {themes.map(({ name, icon }) => (
-          <TabsTrigger
-            key={name}
-            value={name}
-            className="flex items-center justify-center w-10 h-10 rounded-full"
-          >
+          <TabsTrigger key={name} value={name} className="flex gap-2">
             {icon}
-            <div className="capitalize hidden sm:inline">{name}</div>
+            <div className="capitalize hidden sm:inline">{name} Mode</div>
           </TabsTrigger>
         ))}
       </TabsList>
