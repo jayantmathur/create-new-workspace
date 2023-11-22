@@ -11,8 +11,8 @@ export interface ProvidersProps {
 const Providers = ({ children, themeProps }: ProvidersProps) => (
   <ThemeProvider
     attribute="class"
-    defaultTheme="system"
-    enableSystem
+    enableSystem={false}
+    enableColorScheme
     disableTransitionOnChange
     {...themeProps}
   >
