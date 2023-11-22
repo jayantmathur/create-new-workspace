@@ -1,10 +1,11 @@
+import { ImageProps } from "next/image";
+
 type Metadata = {
   title: string;
   description: string;
   keywords: string[];
-  image: string;
-  url: string;
-  publishedAt: string;
+  image: ImageProps;
+  date: string;
 };
 
 type MDXImport = typeof import("*.mdx") & {

@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
+    <html lang="en" data-theme="dark" style={{ colorScheme: "dark" }}>
       <body
         className={cn(
           "prose dark:prose-invert max-w-none p-4 flex flex-col justify-between antialiased",
