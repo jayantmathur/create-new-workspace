@@ -178,13 +178,11 @@ const updateWorkspace = async () => {
     spinner.warn({ text: chalk.gray("Using current directory!\n") });
   }
 
-  spinner.start({ text: "Updating common files...\n" });
+  console.log("Updating common files...\n");
 
   await sleep();
 
   await copyFolder(`${__dirname}\\common`, space.name);
-
-  spinner.stop({ text: "Done\n" });
 };
 
 const createApp = async () => {
