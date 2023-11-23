@@ -1,13 +1,18 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { ArrowRightOnRectangleIcon } from "@heroicons/react/24/solid";
+import { cn } from "@/lib/utils";
 
 const BackButton = () => (
-  <Link href="/content">
-    <Button variant="ghost" className="fixed bottom-4 left-4 z-50">
-      <ArrowRightOnRectangleIcon className="h-full rotate-180 p-1" />
-      <span className="capitalize hidden sm:inline">Back</span>
-    </Button>
+  <Link
+    href="/content"
+    className={cn(
+      buttonVariants({ variant: "destructive" }),
+      "no-underline fixed bottom-4 left-4 z-50 flex gap-2",
+    )}
+  >
+    <ArrowRightOnRectangleIcon className="w-4 rotate-180" />
+    <div className="capitalize hidden sm:inline">Back</div>
   </Link>
 );
 
