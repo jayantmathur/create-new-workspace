@@ -27,10 +27,15 @@ const Component = () => {
   if (!mounted) return null;
 
   return (
-    <Tabs defaultValue="dark" onValueChange={toggleTheme}>
+    <Tabs defaultValue="dark">
       <TabsList>
         {themes.map(({ name, icon }) => (
-          <TabsTrigger key={name} value={name} className="flex gap-2">
+          <TabsTrigger
+            key={name}
+            value={name}
+            className={`flex gap-2 ${theme === name && "pointer-events-none"}`}
+            onClick={toggleTheme}
+          >
             {icon}
             <div className="capitalize hidden sm:inline">{name} Mode</div>
           </TabsTrigger>
