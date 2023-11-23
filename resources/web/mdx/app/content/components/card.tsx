@@ -11,22 +11,33 @@ type Props = HTMLAttributes<HTMLDivElement> & { meta: Metadata; slug: string };
 const Card = ({ meta, slug, className, ...props }: Props) => {
   const { title, description, date, keywords, image } = meta;
 
-  const { src, alt, width, height, ...imageProps } = image;
+  const {
+    src,
+    alt,
+    width,
+    height,
+    className: imgClasses,
+    ...imageProps
+  } = image;
 
   return (
-    <div className={cn("flex [&>*]:flex-grow flex-wrap gap-8", className)}>
+    <div
+      className={cn("flex flex-wrap gap-8 justify-center", className)}
+      {...props}
+    >
       {src && alt && (
-        <div className="relative">
+        <div className="relative w-full max-w-md py-10">
           <Image
             src={src}
             alt={alt}
             fill
-            className="m-0 dark:invert"
+            sizes="(max-width: 640px) 100vw, 640px"
+            className={cn(imgClasses, "m-0 rounded-lg")}
             {...imageProps}
           />
         </div>
       )}
-      <div className={cn("[&>*]:m-0 basis-96", className)} {...props}>
+      <div className={cn("[&>*]:m-0 basis-96", className)}>
         <h2>{title}</h2>
         <p className={cn("opacity-50 text-xs", rhm.className)}>{date}</p>
         <p className="py-2">{description}</p>
