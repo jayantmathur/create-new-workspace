@@ -20,13 +20,19 @@ const Card = ({ meta, slug, className, ...props }: Props) => {
     ...imageProps
   } = image;
 
+  const anim = `hover:shadow-[0_6px_0_1.75px] hover:outline ease-in-out transition-all`;
+
   return (
     <div
-      className={cn("flex flex-wrap gap-8 justify-center", className)}
+      className={cn(
+        "flex flex-wrap place-self-center gap-8 rounded-lg max-w-4xl p-4",
+        anim,
+        className,
+      )}
       {...props}
     >
       {src && alt && (
-        <div className="relative w-full max-w-md py-10">
+        <div className="relative w-full max-w-sm py-10">
           <Image
             src={src}
             alt={alt}
@@ -37,7 +43,7 @@ const Card = ({ meta, slug, className, ...props }: Props) => {
           />
         </div>
       )}
-      <div className={cn("[&>*]:m-0 basis-96", className)}>
+      <div className={cn("[&>*]:m-0 basis-[27rem]", className)}>
         <h2>{title}</h2>
         <p className={cn("opacity-50 text-xs", rhm.className)}>{date}</p>
         <p className="py-2">{description}</p>
