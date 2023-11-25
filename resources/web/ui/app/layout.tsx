@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { rhd } from "@/config/fonts";
 import Providers from "./providers";
 import ThemeSwitch from "./theme-switch";
+import Navbar from "./navbar";
 
 export const metadata: Metadata = {
   title: "My Next.js App",
@@ -28,13 +29,14 @@ export default function RootLayout({
     <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
       <body
         className={cn(
-          "prose dark:prose-invert max-w-none p-4 flex flex-col justify-between antialiased",
+          "prose dark:prose-invert max-w-none min-h-screen p-4 flex flex-col justify-between antialiased",
           rhd.className,
         )}
       >
         <Providers themeProps={{ defaultTheme: "dark" }}>
           {children}
-          <footer className="fixed z-10 bottom-0 left-0 right-0 p-4 flex flex-row justify-center sm:justify-end">
+          <footer className="flex flex-nowrap justify-between fixed bottom-4 w-full">
+            <Navbar />
             <ThemeSwitch />
           </footer>
         </Providers>

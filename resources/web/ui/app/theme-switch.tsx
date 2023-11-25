@@ -38,7 +38,7 @@ const Component = ({ className, ...props }: TabsProps) => {
             className={`flex gap-2 ${theme === name && "pointer-events-none"}`}
             onClick={toggleTheme}
           >
-            {cloneElement(icon, { className: "p-1" })}
+            {cloneElement(icon, { className: "-m-1 p-1" })}
             <div className="capitalize hidden sm:inline">{name} Mode</div>
           </TabsTrigger>
         ))}

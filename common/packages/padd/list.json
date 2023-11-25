@@ -18,7 +18,9 @@
     "scripts": {
       "shad": "pnpm dlx shadcn-ui@latest"
     },
-    "postinstalls": ["pnpm --filter webx shad add tabs --yes --overwrite"]
+    "postinstalls": [
+      "pnpm --filter webx shad add tabs aspect-ratio --yes --overwrite"
+    ]
   },
   "forms": {
     "dependencies": ["react-dropzone", "react-hook-form"]
