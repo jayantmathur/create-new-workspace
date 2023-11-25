@@ -1,23 +1,25 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, cloneElement } from "react";
 import { useTheme } from "next-themes";
-import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
+import { Sun, Moon } from "lucide-react";
+import { TabsProps } from "@radix-ui/react-tabs";
 
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { cn } from "@/lib/utils";
 
 const themes = [
   {
     name: "light",
-    icon: <SunIcon className="w-4" />,
+    icon: <Sun />,
   },
   {
     name: "dark",
-    icon: <MoonIcon className="w-4" />,
+    icon: <Moon />,
   },
 ];
 
-const Component = () => {
+const Component = ({ className, ...props }: TabsProps) => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
   const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
@@ -27,7 +29,7 @@ const Component = () => {
   if (!mounted) return null;
 
   return (
-    <Tabs defaultValue="dark">
+    <Tabs defaultValue="dark" className={cn(className)} {...props}>
       <TabsList>
         {themes.map(({ name, icon }) => (
           <TabsTrigger
@@ -36,7 +38,7 @@ const Component = () => {
             className={`flex gap-2 ${theme === name && "pointer-events-none"}`}
             onClick={toggleTheme}
           >
-            {icon}
+            {cloneElement(icon, { className: "p-1" })}
             <div className="capitalize hidden sm:inline">{name} Mode</div>
           </TabsTrigger>
         ))}

@@ -3,17 +3,26 @@ import { buttonVariants } from "@/components/ui/button";
 import { ArrowRightOnRectangleIcon } from "@heroicons/react/24/solid";
 import { cn } from "@/lib/utils";
 
-const BackButton = () => (
-  <Link
-    href="/content"
+const BackButton = ({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+  <div
     className={cn(
       buttonVariants({ variant: "destructive" }),
-      "no-underline fixed bottom-4 left-4 z-50 flex gap-2",
+      "fixed bottom-4 left-4 z-50",
+      className,
     )}
+    {...props}
   >
-    <ArrowRightOnRectangleIcon className="w-4 rotate-180" />
-    <div className="capitalize hidden sm:inline">Back</div>
-  </Link>
+    <Link
+      href="/content"
+      className="flex flex-row gap-2 items-center justify-center no-underline"
+    >
+      <ArrowRightOnRectangleIcon className="w-4 rotate-180" />
+      <div className="capitalize hidden sm:inline">Back</div>
+    </Link>
+  </div>
 );
 
 export default BackButton;

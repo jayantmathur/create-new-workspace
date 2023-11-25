@@ -1,7 +1,6 @@
 {
   "ui": {
     "dependencies": [
-      "@heroicons/react",
       "framer-motion",
       "next-themes",
       "tailwindcss-animate",
