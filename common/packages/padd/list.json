@@ -1,6 +1,7 @@
 {
   "ui": {
     "dependencies": [
+      "@heroicons/react",
       "framer-motion",
       "next-themes",
       "tailwindcss-animate",
@@ -18,9 +19,7 @@
     "scripts": {
       "shad": "pnpm dlx shadcn-ui@latest"
     },
-    "postinstalls": [
-      "pnpm dlx shadcn-ui@latest add button tabs aspect-ratio --yes --overwrite"
-    ]
+    "postinstalls": ["pnpm --filter webx shad add tabs --yes --overwrite"]
   },
   "forms": {
     "dependencies": ["react-dropzone", "react-hook-form"]
@@ -64,7 +63,8 @@
     ],
     "postinstalls": ["next telemetry disable"],
     "scripts": {
-      "deploy": "vercel --prod"
+      "deploy:git": "echo \"Check if git repo exists first, then do git remote add origin https://github.com/<username>/<project>.git & git push -u origin main\"",
+      "deploy:vercel": "vercel --prod"
     }
   },
   "mobile": {
