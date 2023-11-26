@@ -237,7 +237,7 @@ const createApp = async () => {
     cwd: `${space.name}\\apps\\${name}`,
   }).then(handleFullFilled, handleError);
 
-  await exec(`pnpm add padd --filter @apps/${name} --workspace`, {
+  await exec(`pnpm add -D padd --filter @apps/${name} --workspace`, {
     cwd: `${space.name}`,
   }).then(handleFullFilled, handleError);
 
