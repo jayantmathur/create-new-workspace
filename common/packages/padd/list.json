@@ -56,11 +56,6 @@
   "pwa": {
     "dependencies": ["@vercel/analytics"],
     "devDependencies": ["vercel"],
-    "resources": [
-      {
-        "src": "web/pwa"
-      }
-    ],
     "postinstalls": ["next telemetry disable"],
     "scripts": {
       "deploy:git": "git add . & git commit -m \"save work\" & git push",
