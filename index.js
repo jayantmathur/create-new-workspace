@@ -241,7 +241,9 @@ const createApp = async () => {
   }).then(handleFullFilled, handleError);
 
   await appendJson(`${space.name}\\package.json`, {
-    padd: "padd",
+    scripts: {
+      padd: "padd",
+    },
   });
 
   spinner.update({ text: "Copying resources...\n" });
