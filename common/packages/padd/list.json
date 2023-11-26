@@ -54,7 +54,7 @@
     }
   },
   "pwa": {
-    "dependencies": ["next-pwa", "@vercel/analytics"],
+    "dependencies": ["@vercel/analytics"],
     "devDependencies": ["vercel"],
     "resources": [
       {
@@ -63,7 +63,7 @@
     ],
     "postinstalls": ["next telemetry disable"],
     "scripts": {
-      "deploy:git": "echo \"Check if git repo exists first, then do git remote add origin https://github.com/<username>/<project>.git & git push -u origin main\"",
+      "deploy:git": "git add . & git commit -m \"save work\" & git push",
       "deploy:vercel": "vercel --prod"
     }
   },
