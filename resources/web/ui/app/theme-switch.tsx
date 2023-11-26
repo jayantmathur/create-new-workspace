@@ -39,7 +39,7 @@ const Component = ({ className, ...props }: TabsProps) => {
             onClick={toggleTheme}
           >
             {cloneElement(icon, { className: "-m-1 p-1" })}
-            <div className="capitalize hidden sm:inline">{name} Mode</div>
+            <div className="capitalize hidden sm:inline">{name}</div>
           </TabsTrigger>
         ))}
       </TabsList>

@@ -24,14 +24,14 @@ const Card = ({ meta, slug, className, ...props }: Props) => {
   return (
     <div
       className={cn(
-        "flex flex-wrap gap-8 rounded-lg max-w-4xl p-4",
-        "hover:shadow-[0_6px_0_1.75px] hover:outline hover:-translate-y-1 transition-all [&>*]:flex-grow",
+        "flex flex-wrap gap-8 rounded-lg max-w-prose p-4",
+        "hover:shadow-[0_6px_0_1.75px] hover:outline hover:-translate-y-1 transition-all [&>*]:flex-1",
         className,
       )}
       {...props}
     >
       {src && alt && (
-        <div className="grid place-items-center">
+        <div className="grid place-items-center basis-96">
           <AspectRatio ratio={1 / 1}>
             <Image
               src={src}

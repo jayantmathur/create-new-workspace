@@ -7,6 +7,7 @@ import { rhd } from "@/config/fonts";
 import Providers from "./providers";
 import ThemeSwitch from "./theme-switch";
 import Navbar from "@/components/navbar";
+import ContactButton from "@/components/contactme";
 
 export const metadata: Metadata = {
   title: "My Next.js App",
@@ -34,10 +35,15 @@ export default function RootLayout({
         )}
       >
         <Providers themeProps={{ defaultTheme: "dark" }}>
-          <main className="flex flex-col justify-between p-4">{children}</main>
-          <footer className="fixed bottom-0 w-full flex flex-row justify-center gap-8 p-4">
-            {/* <Navbar /> */}
-            <ThemeSwitch />
+          <main className="flex flex-col justify-between p-4 mb-[10svh]">
+            {children}
+          </main>
+          <footer className="fixed bottom-0 right-0 left-0 p-4 z-0">
+            <div className="relative">
+              <Navbar className="absolute bottom-0 left-1/2 -translate-x-1/2" />
+              <ContactButton className="absolute bottom-0 right-0" />
+              <ThemeSwitch className="fixed top-4 right-4" />
+            </div>
           </footer>
         </Providers>
         {/* <Analytics /> */}
