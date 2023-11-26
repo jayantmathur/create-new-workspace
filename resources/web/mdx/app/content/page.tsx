@@ -14,11 +14,11 @@ const Page = async () => {
   const posts = await Promise.all(promises);
 
   return (
-    <>
+    <div className="grid place-items-center">
       {posts.map(({ metadata, slug }, index) => (
         <Card key={index} meta={metadata} slug={slug} />
       ))}
-    </>
+    </div>
   );
 };
 
