@@ -2,6 +2,7 @@
 
 import packages from "./list.json" assert { type: "json" };
 import { readFile, writeFile } from "fs/promises";
+import { existsSync } from "fs";
 import fse from "fs-extra";
 import { basename, dirname } from "path";
 import { fileURLToPath } from "url";
@@ -43,6 +44,12 @@ const copyFolder = async (src = "", dest = "") => {
 };
 
 const args = yargs(hideBin(process.argv))
+  .option("path", {
+    alias: "i",
+    description: "Path to the project",
+    type: "string",
+    default: ".",
+  })
   .option("packs", {
     alias: "p",
     description: "Pack(s) to install",
@@ -52,16 +59,24 @@ const args = yargs(hideBin(process.argv))
   .help()
   .alias("help", "h").argv;
 
-const { packs } = args;
+const { path, packs } = args;
 
 process.stdout.write("\x1Bc");
+
+if (!existsSync(path)) {
+  console.log(chalk.red("Path does not exist. Exiting..."));
+  process.exit(0);
+}
 
 if (packs.length < 1) {
   console.log(chalk.red("No pack(s) provided. Exiting..."));
   process.exit(0);
 }
 
-console.log(chalk.grey(`List of pack(s): ${packs}`));
+process.chdir(path);
+
+console.log(chalk.grey(`Path: ${path}\n`));
+console.log(chalk.grey(`List of pack(s): ${packs}\n`));
 
 for (const pack of packs) {
   console.log(`Installing ${pack}`);

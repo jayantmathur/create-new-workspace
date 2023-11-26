@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A simple tool to add packages to the projects",
   "bin": {
-    "padd": "./index.js & echo Done"
+    "padd": "index.js"
   },
   "type": "module",
   "license": "MIT",
