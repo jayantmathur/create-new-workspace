@@ -29,7 +29,12 @@ const Component = ({ className, ...props }: TabsProps) => {
   if (!mounted) return null;
 
   return (
-    <Tabs defaultValue="dark" className={cn(className)} {...props}>
+    <Tabs
+      defaultValue="dark"
+      value={theme}
+      className={cn(className)}
+      {...props}
+    >
       <TabsList>
         {themes.map(({ name, icon }) => (
           <TabsTrigger
