@@ -50,15 +50,15 @@ bibliography:
 colorlinks: true
 number-sections: true
 
-crossref:
-  thm-prefix: "RQ"
-  thm-title: "Research Question"
+# crossref:
+#   thm-prefix: "RQ"
+#   thm-title: "Research Question"
 
 format:
   main-html:
     output-file: digital
   main-pdf:
     output-file: print
-    include-before-body:
-      text: |
-        \renewcommand{\thetheorem}{\arabic{theorem}}
+    # include-before-body:
+    #   text: |
+    #     \renewcommand{\thetheorem}{\arabic{theorem}}
