@@ -33,7 +33,7 @@ export default function RootLayout({
     <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
       <body
         className={cn(
-          "prose dark:prose-invert max-w-none w-full min-h-screen antialiased",
+          "prose dark:prose-invert max-w-none min-h-screen antialiased",
           rhd.className,
         )}
       >
