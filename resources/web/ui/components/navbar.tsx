@@ -1,10 +1,11 @@
 import { HTMLAttributes, cloneElement } from "react";
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
 import { Home, User, Library } from "lucide-react";
 
-import Logo from "@/public/icons/icon.svg";
+// import Logo from "@/public/icons/icon.svg";
 import { buttonVariants } from "./ui/button";
+// import ContactButton from "./contact";
 import { cn } from "@/lib/utils";
 
 const pages = [
@@ -12,16 +13,16 @@ const pages = [
     name: "home",
     href: "/",
     icon: <Home />,
+    // icon: (
+    //   <div>
+    //     <Image src={Logo} alt="My logo" className="m-0 w-4 h-4" />
+    //   </div>
+    // ),
   },
   {
     name: "about",
     href: "/about",
-    // icon: <User />,
-    icon: (
-      <div>
-        <Image src={Logo} alt="My logo" className="m-0 w-4 h-4" />
-      </div>
-    ),
+    icon: <User />,
   },
   {
     name: "projects",
@@ -34,7 +35,7 @@ const Component = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn(
       className,
-      "flex flex-nowrap rounded-lg bg-background/90 border sm:border-none",
+      "grid grid-flow-col rounded-lg bg-background border",
     )}
     {...props}
   >
@@ -50,6 +51,7 @@ const Component = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => (
         </div>
       </Link>
     ))}
+    {/* <ContactButton /> */}
   </div>
 );
 

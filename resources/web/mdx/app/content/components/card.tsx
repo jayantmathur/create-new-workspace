@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { buttonVariants } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Metadata } from "@/app/content/types";
+import { Metadata } from "../types";
 import { rhm } from "@/config/fonts";
 import { cn } from "@/lib/utils";
 

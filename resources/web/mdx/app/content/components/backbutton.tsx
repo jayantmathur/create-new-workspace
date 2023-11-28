@@ -8,11 +8,7 @@ const BackButton = ({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
-    className={cn(
-      buttonVariants({ variant: "destructive" }),
-      "fixed bottom-4 left-4 z-50",
-      className,
-    )}
+    className={cn(buttonVariants({ variant: "destructive" }), className)}
     {...props}
   >
     <Link
