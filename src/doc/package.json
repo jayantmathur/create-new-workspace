@@ -5,6 +5,6 @@
   "scripts": {
     "dev": "quarto preview pages/index.qmd --port 4000",
     "build": "quarto render",
-    "push": "pnpm version --force"
+    "save": "pnpm version --force"
   }
 }

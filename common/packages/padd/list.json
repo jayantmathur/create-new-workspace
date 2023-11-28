@@ -58,10 +58,10 @@
   "pwa": {
     "dependencies": ["@vercel/analytics"],
     "devDependencies": ["vercel"],
-    "postinstalls": ["next telemetry disable"],
+    "postinstalls": ["pnpm exec next telemetry disable"],
     "scripts": {
-      "deploy:git": "git add . & git commit -m \"save work\" & git push",
-      "deploy:vercel": "vercel --prod"
+      "push": "git add . & git commit -m \"save work\" & git",
+      "postsave": "pnpm push"
     }
   },
   "mobile": {
@@ -86,7 +86,7 @@
       "npx tauri init && npx tauri icon .\\public\\icons\\icon.ico"
     ],
     "scripts": {
-      "taurize": "yarn tauri build"
+      "taurize": "pnpm exec tauri build"
     }
   },
   "api": {

@@ -144,9 +144,8 @@ const createWorkspace = async () => {
     author: author,
     scripts: {
       do: "pnpm run --parallel --recursive --if-present",
-      save: "backup --noDev",
-      push: "pnpm do push",
-      postpush: "pnpm save",
+      save: "pnpm do save",
+      postsave: "backup --noDev",
     },
   });
 
@@ -220,7 +219,7 @@ const createApp = async () => {
     author: author,
     scripts: {
       dev: "next dev --turbo",
-      push: "pnpm version --force",
+      save: "pnpm version --force",
     },
   });
 
@@ -297,7 +296,6 @@ const createDocument = async () => {
 
   const promises = [
     ...[
-      // "jmgirard/lordicon",
       "quarto-ext/lightbox",
       "quarto-ext/fontawesome",
       "quarto-ext/attribution",
@@ -306,7 +304,6 @@ const createDocument = async () => {
       async (extension) =>
         await exec(`quarto add ${extension} --no-prompt --quiet`, {
           cwd: `${space.name}\\docs\\${name}`,
-          // stdio: 'inherit'
         }),
     ),
     ...[
@@ -319,7 +316,6 @@ const createDocument = async () => {
           `quarto install extension ${extension} --no-prompt --quiet`,
           {
             cwd: `${space.name}\\docs\\${name}`,
-            // stdio: 'inherit'
           },
         ),
     ),
@@ -354,18 +350,11 @@ const handleClose = async () => {
 
   console.log("Cleaning remnants...\n");
 
-  // await rm(`${space.name}\\.git`, { force: true, recursive: true });
-  // await rm(`${space.name}\\.gitignore`, { force: true, recursive: true });
-
   console.log(chalk.blueBright("Opening workspace in VS Code...\n"));
 
   await sleep();
 
   await exec(`code ${space.name}`).then(handleFullFilled, handleError);
-  // await execFile(`${__dirname}\\utils\\code.bat`, [space.name]).then(
-  //   handleFullFilled,
-  //   handleError,
-  // );
 
   process.exit(0);
 };
