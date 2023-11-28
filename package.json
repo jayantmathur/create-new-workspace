@@ -1,6 +1,6 @@
 {
   "name": "create-new-workspace",
-  "version": "2.5.19",
+  "version": "2.5.20",
   "description": "CLI tool to create a new workspace",
   "type": "module",
   "bin": {
@@ -16,11 +16,10 @@
     "public"
   ],
   "scripts": {
-    "push": "pnpm format & pnpm version --force",
-    "postpush": "pnpm save & npm install -g & pnpm handle:git & echo Pushed new version",
+    "save": "pnpm format & pnpm version --force",
     "format": "prettier --write \"./**/*.{js,ts,jsx,tsx,json}\" --log-level silent",
-    "save": "node ./common/packages/backup",
-    "handle:git": "git add . & git commit -m \"save work\" & git push"
+    "postsave": "node ./common/packages/backup & npm install -g & pnpm push & echo Saved new version",
+    "push": "git add . & git commit -m \"save work\" & git push"
   },
   "keywords": [],
   "author": "Jayant",
