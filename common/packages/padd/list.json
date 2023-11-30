@@ -60,8 +60,8 @@
     "devDependencies": ["vercel"],
     "postinstalls": ["pnpm exec next telemetry disable"],
     "scripts": {
-      "push": "git add . & git commit -m \"save work\" & git",
-      "postsave": "pnpm push"
+      "push": "pnpm version --force",
+      "postpush": "git add . & git commit -m \"save work\" & git"
     }
   },
   "mobile": {
