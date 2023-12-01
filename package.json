@@ -1,6 +1,6 @@
 {
   "name": "create-new-workspace",
-  "version": "2.5.24",
+  "version": "2.5.25",
   "description": "CLI tool to create a new workspace",
   "type": "module",
   "bin": {
