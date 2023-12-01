@@ -4,13 +4,12 @@ import Image from "next/image";
 import { buttonVariants } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Metadata } from "../types";
-import { rhm } from "@/config/fonts";
 import { cn } from "@/lib/utils";
 
 type Props = HTMLAttributes<HTMLDivElement> & { meta: Metadata; slug: string };
 
 const Card = ({ meta, slug, className, ...props }: Props) => {
-  const { title, description, date, keywords, image } = meta;
+  const { name, description, date, keywords, image } = meta;
 
   const {
     src,
@@ -25,7 +24,7 @@ const Card = ({ meta, slug, className, ...props }: Props) => {
     <div
       className={cn(
         "flex flex-wrap gap-8 rounded-lg p-4",
-        "hover:shadow-[0_6px_0_1.75px] hover:outline hover:-translate-y-1 transition-all max-w-3xl",
+        "hover:shadow-[0_8px_0_1.75px] outline-2 hover:outline hover:-translate-y-1 transition-all max-w-3xl",
         className,
       )}
       {...props}
@@ -45,8 +44,8 @@ const Card = ({ meta, slug, className, ...props }: Props) => {
         </div>
       )}
       <div className={cn("[&>*]:m-0 basis-96", className)}>
-        <h2>{title}</h2>
-        <p className={cn("opacity-50 text-xs", rhm.className)}>{date}</p>
+        <h2>{name}</h2>
+        <p className={cn("opacity-50 text-xs")}>Written {date}</p>
         <p className="py-2">{description}</p>
         {keywords && (
           <div className="flex flex-row gap-2 py-2 flex-wrap">

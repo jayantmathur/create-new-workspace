@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { getAllBlogs, getBlog } from "./lib/utils";
 import Card from "./components/card";
 

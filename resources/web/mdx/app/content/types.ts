@@ -1,7 +1,7 @@
 import { ImageProps } from "next/image";
 
 type Metadata = {
-  title: string;
+  name: string;
   description: string;
   keywords: string[];
   image: ImageProps;
