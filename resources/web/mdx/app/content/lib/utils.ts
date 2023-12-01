@@ -21,4 +21,11 @@ const getBlog = async (slug: string) => {
   } as Blog;
 };
 
-export { getBlog, getAllBlogs };
+const getKeywordAcronym = (keyword: string) => {
+  const words = keyword.split(" ");
+
+  if (words.length > 1) return words.map((word) => word[0]).join("");
+  else return keyword;
+};
+
+export { getBlog, getAllBlogs, getKeywordAcronym };

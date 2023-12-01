@@ -4,6 +4,7 @@ import Image from "next/image";
 import { buttonVariants } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Metadata } from "../types";
+import { getKeywordAcronym } from "../lib/utils";
 import { cn } from "@/lib/utils";
 
 type Props = HTMLAttributes<HTMLDivElement> & { meta: Metadata; slug: string };
@@ -54,6 +55,7 @@ const Card = ({ meta, slug, className, ...props }: Props) => {
                 key={tag}
                 className="uppercase pointer-events-none border-2 px-4 py-2 opacity-75 rounded-sm text-xs"
               >
+                {/* {getKeywordAcronym(tag)} */}
                 {tag}
               </div>
             ))}
