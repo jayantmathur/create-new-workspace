@@ -1,20 +1,14 @@
 "use client";
 
 import { ThemeProvider as NextThemeProvider } from "next-themes";
-import { ThemeProviderProps } from "next-themes/dist/types";
 
-export interface ProviderProps {
-  children: React.ReactNode;
-  themeProps?: ThemeProviderProps;
-}
-
-const Provider = ({ children, themeProps }: ProviderProps) => (
+const Provider = ({ children }: { children: React.ReactNode }) => (
   <NextThemeProvider
     attribute="class"
     enableSystem={false}
+    defaultTheme="dark"
     enableColorScheme
     disableTransitionOnChange
-    {...themeProps}
   >
     {children}
   </NextThemeProvider>

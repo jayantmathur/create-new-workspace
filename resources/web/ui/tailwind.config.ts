@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./pages/**/*.{ts,tsx}",
@@ -18,8 +19,9 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--rhd)", "Calibri", "sans-serif"],
-        mono: ["var(--rhm)", "monospace"],
+        rhd: ["var(--rhd)", "sans-serif"],
+        rhm: ["var(--rhm)", "monospace"],
+        urb: ["var(--urb)", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -77,5 +79,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"),require("@tailwindcss/typography")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 };
