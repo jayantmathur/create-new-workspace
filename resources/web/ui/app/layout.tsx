@@ -37,8 +37,7 @@ export default function RootLayout({
           rhd.variable,
           urb.variable,
           rhm.variable,
-          "font-rhd",
-          "prose-headings:font-urb prose-headings:font-semibold",
+          "font-sans prose-headings:font-urb prose-headings:font-semibold",
         )}
       >
         <Providers>
