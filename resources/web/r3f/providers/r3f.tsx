@@ -1,17 +1,10 @@
 "use client";
 
-import {
-  HTMLAttributes,
-  ReactNode,
-  forwardRef,
-  useImperativeHandle,
-  useRef,
-} from "react";
+import { HTMLAttributes, ReactNode, useRef } from "react";
 import { Canvas, PerspectiveCameraProps } from "@react-three/fiber";
 import {
   Preload,
-  OrbitControls,
-  OrbitControlsProps,
+  CameraControls,
   View as ViewImpl,
   Stage,
   PerspectiveCamera,
@@ -21,58 +14,57 @@ import tunnel from "tunnel-rat";
 import { cn } from "@/lib/utils";
 
 type ViewProps = HTMLAttributes<HTMLDivElement> & {
-  orbitControls?: OrbitControlsProps;
+  orbit: boolean;
   camera?: PerspectiveCameraProps;
 };
 
 const r3f = tunnel();
 
-const View = forwardRef<HTMLDivElement, ViewProps>(
-  ({ children, className, orbitControls, camera, ...props }, forwardedRef) => {
-    const ref = useRef<any>(null);
-    const { enabled, ...orbitProps } = orbitControls || { enabled: false };
+const View = ({
+  children,
+  className,
+  orbit = false,
+  camera = undefined,
+  ...props
+}: ViewProps) => {
+  const ref = useRef<any>(null);
+  const controlsRef = useRef<CameraControls>(null);
 
-    useImperativeHandle(forwardedRef, () => ref.current);
-
-    return (
-      <div
-        ref={ref}
-        className={cn(
-          "w-full h-full rounded-lg bg-cyan-300 aspect-square sm:aspect-auto",
-          className,
-        )}
-        {...props}
-      >
-        <r3f.In>
-          <ViewImpl track={ref}>
-            <Stage>
-              {camera && (
-                <PerspectiveCamera
-                  makeDefault
-                  // position={[2, 2, 2]}
-                  {...camera}
-                />
-              )}
-              {children}
-              {enabled && (
-                <OrbitControls
-                  makeDefault
-                  enablePan={false}
-                  enableZoom={false}
-                  enableDamping
-                  // dampingFactor={0.1}
-                  {...orbitProps}
-                />
-              )}
-            </Stage>
-          </ViewImpl>
-        </r3f.In>
-      </div>
-    );
-  },
-);
-
-View.displayName = "View";
+  return (
+    <div
+      ref={ref}
+      className={cn("relative w-full h-full", className)}
+      {...props}
+    >
+      <r3f.In>
+        <ViewImpl track={ref}>
+          <Stage>
+            <PerspectiveCamera
+              makeDefault
+              position={[2, 2, 2]}
+              zoom={1}
+              {...camera}
+            />
+            {children}
+            <CameraControls
+              ref={controlsRef}
+              enabled={orbit}
+              minDistance={2}
+              maxDistance={5}
+              // minPolarAngle={Math.PI / 4}
+              maxPolarAngle={Math.PI / 2.125}
+              // minAzimuthAngle={-Math.PI / 4}
+              // maxAzimuthAngle={Math.PI / 4}
+              onEnd={() =>
+                setTimeout(() => controlsRef?.current?.reset(true), 2500)
+              }
+            />
+          </Stage>
+        </ViewImpl>
+      </r3f.In>
+    </div>
+  );
+};
 
 const Provider = ({ children }: { children: ReactNode }) => {
   const ref = useRef<any>();
