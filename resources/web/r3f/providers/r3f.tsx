@@ -35,14 +35,21 @@ const View = forwardRef<HTMLDivElement, ViewProps>(
     useImperativeHandle(forwardedRef, () => ref.current);
 
     return (
-      <div ref={ref} className={cn("w-full h-full", className)} {...props}>
+      <div
+        ref={ref}
+        className={cn(
+          "w-full h-full rounded-lg bg-cyan-300 aspect-square sm:aspect-auto",
+          className,
+        )}
+        {...props}
+      >
         <r3f.In>
           <ViewImpl track={ref}>
             <Stage>
               {camera && (
                 <PerspectiveCamera
                   makeDefault
-                  position={[2, 2, 2]}
+                  // position={[2, 2, 2]}
                   {...camera}
                 />
               )}
