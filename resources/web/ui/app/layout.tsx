@@ -34,9 +34,7 @@ export default function RootLayout({
       <body
         className={cn(
           "prose dark:prose-invert max-w-none min-h-screen antialiased grid",
-          rhd.variable,
-          urb.variable,
-          rhm.variable,
+          `${rhd.variable} ${rhm.variable} ${urb.variable}`,
           "font-sans prose-headings:font-urb prose-headings:font-semibold",
         )}
       >
