@@ -35,15 +35,7 @@ const View = forwardRef<HTMLDivElement, ViewProps>(
     useImperativeHandle(forwardedRef, () => ref.current);
 
     return (
-      <div
-        ref={ref}
-        className={cn(
-          // "dark:border-2 relative w-full h-full pointer-events-auto touch-auto overflow-auto",
-
-          className,
-        )}
-        {...props}
-      >
+      <div ref={ref} className={cn("w-full h-full", className)} {...props}>
         <r3f.In>
           <ViewImpl track={ref}>
             <Stage>
