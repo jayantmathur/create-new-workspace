@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
+import defaultTheme from "tailwindcss/defaultTheme";
+
 module.exports = {
   content: [
     "./pages/**/*.{ts,tsx}",
@@ -19,9 +21,9 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        rhd: ["var(--rhd)", "sans-serif"],
-        rhm: ["var(--rhm)", "monospace"],
-        urb: ["var(--urb)", "sans-serif"],
+        sans: ["var(--rhd)", ...defaultTheme.fontFamily.sans],
+        mono: ["var(--rhm)", ...defaultTheme.fontFamily.mono],
+        urb: ["var(--urb)", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         border: "hsl(var(--border))",

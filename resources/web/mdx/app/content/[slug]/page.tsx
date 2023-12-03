@@ -1,4 +1,3 @@
-import { Metadata } from "next";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import { getBlog } from "../lib/utils";
@@ -11,8 +10,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
 
   if (!blog) redirect("/content");
 
-  const Content = blog.content;
-  const metadata = blog.metadata;
+  const { content: Content, metadata } = blog;
   const { src, alt, width, height, className, ...imageProps } = metadata.image;
 
   return (
@@ -56,19 +54,3 @@ const Page = async ({ params }: { params: { slug: string } }) => {
 };
 
 export default Page;
-
-// export const generateMetadata = async ({
-//   params,
-// }: {
-//   params: { slug: string };
-// }): Promise<Metadata> => {
-//   // read route params
-//   const { slug } = params;
-//   const blog = await getBlog(slug);
-
-//   if (!blog) return {};
-
-//   const { metadata } = blog;
-
-//   return { ...metadata };
-// };

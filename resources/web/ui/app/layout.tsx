@@ -3,15 +3,15 @@ import "./globals.css";
 import { Metadata } from "next";
 
 import { cn } from "@/lib/utils";
-import { rhd } from "@/config/fonts";
+import { rhd, rhm, urb } from "@/config/fonts";
 import Providers from "./providers";
-import ThemeSwitch from "@/components/theme-switch";
+import ThemeSwitch from "./theme-switch";
 import Navbar from "@/components/navbar";
 // import Title from "@/components/title";
 
 export const metadata: Metadata = {
-  title: "My Next.js Website",
-  description: "A next.js website created with Tailwind CSS and TypeScript.",
+  title: "Jayant Mathur",
+  description: "Jayant Mathur's personal website",
   icons: {
     icon: "/icons/favicon.ico",
     shortcut: "/icons/favicon-1024.png",
@@ -27,24 +27,32 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const hfclass =
-    "fixed z-40 w-full grid grid-flow-col place-items-start bg-background p-2";
+    "fixed z-10 w-full grid grid-flow-col place-items-center bg-background p-4 [&>*]:scale-125 [&>*]:sm:scale-100";
 
   return (
     <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
       <body
         className={cn(
-          "prose dark:prose-invert max-w-none min-h-screen antialiased",
-          rhd.className,
+          "prose dark:prose-invert max-w-none min-h-screen antialiased grid",
+          rhd.variable,
+          urb.variable,
+          rhm.variable,
+          "font-rhd",
+          "prose-headings:font-urb prose-headings:font-semibold",
         )}
       >
-        <Providers themeProps={{ defaultTheme: "dark" }}>
-          <header className={cn(hfclass, "top-0 place-content-between")}>
-            {/* <Title /> */}
-            <ThemeSwitch />
+        <Providers>
+          <header
+            className={cn(hfclass, "top-0 place-content-between pb-4 sm:pb-2")}
+          >
+            {/* <Title className="origin-top-left" /> */}
+            <ThemeSwitch className="origin-top-right" />
           </header>
-          <main className="px-4 py-20">{children}</main>
-          <footer className={cn(hfclass, "bottom-0")}>
-            <Navbar className="place-self-center" />
+          <main className="max-w-3xl place-self-center px-4 py-20">
+            {children}
+          </main>
+          <footer className={cn(hfclass, "bottom-0 pt-4 sm:pt-2")}>
+            <Navbar className="place-self-center origin-bottom" />
           </footer>
         </Providers>
         {/* <Analytics /> */}
