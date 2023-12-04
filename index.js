@@ -145,7 +145,7 @@ const createWorkspace = async () => {
     scripts: {
       do: "pnpm run --parallel --recursive --if-present",
       save: "pnpm do save",
-      postsave: "backup --noDev",
+      postsave: "backup",
     },
   });
 

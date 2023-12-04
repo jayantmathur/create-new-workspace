@@ -32,7 +32,7 @@ const args = yargs(hideBin(process.argv))
     type: "boolean",
     default: false,
   })
-  .option("noDev", {
+  .option("dev", {
     description: "Exclude dev repositories",
     type: "boolean",
     default: false,
@@ -40,7 +40,7 @@ const args = yargs(hideBin(process.argv))
   .help()
   .alias("help", "h").argv;
 
-const { src, dest, sync, noDev } = args;
+const { src, dest, sync, dev } = args;
 
 const localDest = `${process.cwd()}\\.backup`;
 
@@ -50,9 +50,18 @@ let destination = existsSync(localDest)
   ? await readFile(localDest, "utf-8")
   : dest;
 
-const excludeFolders = noDev
-  ? readdirSync(src).filter((folder) => !["apps", "docs"].includes(folder))
-  : ["node_modules", ".git", ".next", "venv", ".backup"];
+const excludes = ["node_modules", ".git", ".next", "venv", ".backup"],
+  includes = ["apps", "docs"],
+  folderFilter = !dev
+    ? [
+        ...new Set([
+          ...readdirSync(src).filter((folder) => !includes.includes(folder)),
+          ...excludes,
+        ]),
+      ]
+    : excludes;
+
+// console.log(folderFilter);
 
 const deleteFolder = async (path) => {
   const folder = path.split("\\").pop();
@@ -63,12 +72,13 @@ const deleteFolder = async (path) => {
   );
 };
 
-const copyFolder = async (src, dest, sync = false, dev = false) => {
+const copyFolder = async (src, dest, sync = false) => {
   try {
     await fse.copy(src, dest, {
       overwrite: true,
       filter: async (srcPath, destPath) => {
-        if (excludeFolders.includes(path.basename(srcPath))) {
+        if (folderFilter.includes(path.basename(srcPath))) {
+          // console.log(`Excluding: ${srcPath}`);
           return false;
         }
 
@@ -103,10 +113,10 @@ const main = async () => {
       console.error(chalk.red("Destination path does not exist"));
       process.exit(1);
     }
-    await copyFolder(destination, src, sync, noDev);
+    await copyFolder(destination, src, sync, dev);
   } else {
     await deleteFolder(destination);
-    await copyFolder(src, destination, sync, noDev);
+    await copyFolder(src, destination, sync, dev);
   }
 
   console.log(
