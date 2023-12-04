@@ -56,7 +56,7 @@ const View = ({
               // minAzimuthAngle={-Math.PI / 4}
               // maxAzimuthAngle={Math.PI / 4}
               onEnd={() =>
-                setTimeout(() => controlsRef?.current?.reset(true), 2500)
+                setTimeout(() => controlsRef?.current?.reset(true), 4000)
               }
             />
           </Stage>
