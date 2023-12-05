@@ -30,7 +30,9 @@ contributes:
                 - margin=1in
 
             pdf-engine: lualatex
-            template: 'index.tex'
+            # template: 'index.tex'
+            block-headings: false
+
             template-partials:
                 - 'partials/pdf/_authors.tex'
                 - 'partials/pdf/after-body.tex'
