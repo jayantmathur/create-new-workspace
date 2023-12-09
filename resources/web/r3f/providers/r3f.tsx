@@ -56,7 +56,7 @@ const View = ({
               // minAzimuthAngle={-Math.PI / 4}
               // maxAzimuthAngle={Math.PI / 4}
               onEnd={() =>
-                setTimeout(() => controlsRef?.current?.reset(true), 4000)
+                setTimeout(() => controlsRef?.current?.reset(true), 3000)
               }
             />
           </Stage>
@@ -71,7 +71,10 @@ const Provider = ({ children }: { children: ReactNode }) => {
   return (
     <>
       {children}
-      <div ref={ref} className="relative">
+      <div
+        ref={ref}
+        className="relative w-full h-full pointer-events-auto touch-auto"
+      >
         <Canvas
           style={{
             position: "fixed",
