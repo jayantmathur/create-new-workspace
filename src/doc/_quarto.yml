@@ -54,6 +54,9 @@ crossref:
   thm-prefix: "RQ"
   thm-title: "Research Question"
 
+mermaid:
+  theme: neutral
+
 format:
   main-html:
     output-file: digital
