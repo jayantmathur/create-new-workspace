@@ -32,6 +32,8 @@ const Component = ({ children, className, orbit, camera, ...props }: Props) => {
       )}
       onPointerOver={handleStart}
       onPointerOut={handleEnd}
+      onTouchStart={handleStart}
+      onTouchEnd={handleEnd}
       {...props}
     >
       <Canvas

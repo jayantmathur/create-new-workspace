@@ -30,10 +30,26 @@ const View = ({
   const ref = useRef<any>(null);
   const controlsRef = useRef<CameraControls>(null);
 
+  let timeout: NodeJS.Timeout | null = null;
+
+  const handleStart = () => {
+    if (!timeout) return;
+    clearTimeout(timeout);
+    timeout = null;
+  };
+
+  const handleEnd = () => {
+    timeout = setTimeout(() => ref?.current?.reset(true), 3000);
+  };
+
   return (
     <div
       ref={ref}
       className={cn("relative w-full h-full", className)}
+      onPointerOver={handleStart}
+      onPointerOut={handleEnd}
+      onTouchStart={handleStart}
+      onTouchEnd={handleEnd}
       {...props}
     >
       <r3f.In>
@@ -55,9 +71,8 @@ const View = ({
               maxPolarAngle={Math.PI / 2.125}
               // minAzimuthAngle={-Math.PI / 4}
               // maxAzimuthAngle={Math.PI / 4}
-              onEnd={() =>
-                setTimeout(() => controlsRef?.current?.reset(true), 3000)
-              }
+              onStart={handleStart}
+              onEnd={handleEnd}
             />
           </Stage>
         </ViewImpl>
