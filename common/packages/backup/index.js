@@ -68,7 +68,13 @@ const deleteFolder = async (path) => {
 
   await exec(`trash ${path}`).then(
     () => console.log(`Folder: ${folder} has been moved to the recycle bin`),
-    () => console.log(`Error deleting: ${folder}`),
+    async () => {
+      console.log(`Error recycling: ${folder}. Deleting...`);
+      await fse.remove(path).then(
+        () => console.log(`Folder: ${folder} has been deleted`),
+        () => console.log(`Error deleting: ${folder}. Folder intact`),
+      );
+    },
   );
 };
 
