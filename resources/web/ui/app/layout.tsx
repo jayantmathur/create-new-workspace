@@ -1,5 +1,6 @@
 import "./globals.css";
 // import { Analytics } from "@vercel/analytics/react";
+// import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Metadata } from "next";
 
 import { cn } from "@/lib/utils";
@@ -40,7 +41,7 @@ export default function RootLayout({
       >
         <Providers>
           <header
-            className={cn(hfclass, "top-0 place-content-between pb-4 sm:pb-2")}
+            className={cn(hfclass, "top-0 place-content-between pb-4 sm:pb-2 z-40")}
           >
             {/* <Title className="origin-top-left" /> */}
             <ThemeSwitch className="origin-top-right" />
@@ -48,11 +49,12 @@ export default function RootLayout({
           <main className="max-w-3xl place-self-center px-4 py-20">
             {children}
           </main>
-          <footer className={cn(hfclass, "bottom-0 pt-4 sm:pt-2")}>
+          <footer className={cn(hfclass, "bottom-0 pt-4 sm:pt-2 z-40")}>
             <Navbar className="place-self-center origin-bottom" />
           </footer>
         </Providers>
         {/* <Analytics /> */}
+        {/* <SpeedInsights /> */}
       </body>
     </html>
   );
