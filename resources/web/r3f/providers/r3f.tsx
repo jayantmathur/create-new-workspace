@@ -4,8 +4,9 @@ import {
   HTMLAttributes,
   ReactNode,
   useRef,
-  useLayoutEffect,
+  useMemo,
   MutableRefObject,
+  useState,
 } from "react";
 import { useRouter } from "next/navigation";
 import { Canvas, PerspectiveCameraProps } from "@react-three/fiber";
@@ -27,6 +28,8 @@ type ViewProps = HTMLAttributes<HTMLDivElement> & {
 
 const r3f = tunnel();
 
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
 const View = ({
   children,
   className,
@@ -36,21 +39,33 @@ const View = ({
 }: ViewProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const controlsRef = useRef<CameraControls>(null);
+
+  const [isMounted, setMounted] = useState(false);
+
   const router = useRouter();
 
-  let timeout: NodeJS.Timeout | null = null;
+  let timeout: NodeJS.Timeout | undefined = undefined;
 
-  const handleStart = () => {
+  const handleActive = () => {
     if (!timeout) return;
+    // console.log("active");
     clearTimeout(timeout);
-    timeout = null;
+    timeout = undefined;
   };
 
-  const handleEnd = () => {
+  const handleInActive = () => {
+    if (timeout) return;
     timeout = setTimeout(() => controlsRef?.current?.reset(true), 3000);
+    // console.log("inactive");
   };
 
-  useLayoutEffect(() => router.refresh(), [router]);
+  useMemo(async () => {
+    router.refresh();
+    await sleep(500);
+    setMounted(true);
+  }, [router]);
+
+  if (!isMounted) return null;
 
   return (
     <div
@@ -59,10 +74,12 @@ const View = ({
         "relative w-full h-full pointer-events-auto touch-auto",
         className,
       )}
-      onPointerOver={handleStart}
-      onPointerOut={handleEnd}
-      onTouchStart={handleStart}
-      onTouchEnd={handleEnd}
+      onPointerDown={handleActive}
+      onPointerUp={handleInActive}
+      onPointerLeave={handleInActive}
+      onTouchStart={handleActive}
+      // onTouchMove={handleActive}
+      onTouchEnd={handleInActive}
       {...props}
     >
       <r3f.In>
@@ -84,8 +101,8 @@ const View = ({
               maxPolarAngle={Math.PI / 2.125}
               // minAzimuthAngle={-Math.PI / 4}
               // maxAzimuthAngle={Math.PI / 4}
-              onStart={handleStart}
-              onEnd={handleEnd}
+              onStart={handleActive}
+              onEnd={handleInActive}
             />
           </Stage>
         </ViewImpl>
@@ -99,7 +116,7 @@ const Provider = ({ children }: { children: ReactNode }) => {
   return (
     <>
       {children}
-      <div ref={ref} className="relative">
+      <div ref={ref}>
         <Canvas
           style={{
             position: "fixed",
