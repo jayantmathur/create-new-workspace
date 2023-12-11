@@ -1,6 +1,13 @@
 "use client";
 
-import { HTMLAttributes, ReactNode, useRef } from "react";
+import {
+  HTMLAttributes,
+  ReactNode,
+  useRef,
+  useLayoutEffect,
+  MutableRefObject,
+} from "react";
+import { useRouter } from "next/navigation";
 import { Canvas, PerspectiveCameraProps } from "@react-three/fiber";
 import {
   Preload,
@@ -14,7 +21,7 @@ import tunnel from "tunnel-rat";
 import { cn } from "@/lib/utils";
 
 type ViewProps = HTMLAttributes<HTMLDivElement> & {
-  orbit: boolean;
+  orbit?: boolean;
   camera?: PerspectiveCameraProps;
 };
 
@@ -27,8 +34,9 @@ const View = ({
   camera = undefined,
   ...props
 }: ViewProps) => {
-  const ref = useRef<any>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const controlsRef = useRef<CameraControls>(null);
+  const router = useRouter();
 
   let timeout: NodeJS.Timeout | null = null;
 
@@ -39,13 +47,18 @@ const View = ({
   };
 
   const handleEnd = () => {
-    timeout = setTimeout(() => ref?.current?.reset(true), 3000);
+    timeout = setTimeout(() => controlsRef?.current?.reset(true), 3000);
   };
+
+  useLayoutEffect(() => router.refresh(), [router]);
 
   return (
     <div
       ref={ref}
-      className={cn("relative w-full h-full", className)}
+      className={cn(
+        "relative w-full h-full pointer-events-auto touch-auto",
+        className,
+      )}
       onPointerOver={handleStart}
       onPointerOut={handleEnd}
       onTouchStart={handleStart}
@@ -53,7 +66,7 @@ const View = ({
       {...props}
     >
       <r3f.In>
-        <ViewImpl track={ref}>
+        <ViewImpl track={ref as MutableRefObject<HTMLElement>}>
           <Stage>
             <PerspectiveCamera
               makeDefault
@@ -86,10 +99,7 @@ const Provider = ({ children }: { children: ReactNode }) => {
   return (
     <>
       {children}
-      <div
-        ref={ref}
-        className="relative w-full h-full pointer-events-auto touch-auto"
-      >
+      <div ref={ref} className="relative">
         <Canvas
           style={{
             position: "fixed",
