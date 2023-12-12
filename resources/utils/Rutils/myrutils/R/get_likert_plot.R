@@ -21,7 +21,7 @@
 #'
 #' @export
 
-get_likert <- function(data, x, y, likert = c(1:5)) {
+get_likert_plot <- function(data, x, y, likert = c(1:5)) {
     subset <- dplyr::mutate(
         dplyr::summarize(
             dplyr::group_by(data, get(x), get(y)),
