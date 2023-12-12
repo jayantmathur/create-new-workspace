@@ -21,7 +21,7 @@
 #'
 #' @export
 
-get_likert_plot <- function(data, x, y, likert = c(1:5)) {
+get_likert <- function(data, x, y, likert = c(1:5)) {
     subset <- dplyr::mutate(
         dplyr::summarize(
             dplyr::group_by(data, get(x), get(y)),
@@ -31,15 +31,16 @@ get_likert_plot <- function(data, x, y, likert = c(1:5)) {
         Marker = (cumsum(Ratio) - (Ratio / 2)) # nolint
     )
 
-    colnames(subset)[2] <- "Response"
+    colnames(subset)[1] <- "VariableX"
+    colnames(subset)[2] <- "VariableY"
 
-    subset$Response <- myrutils::recoder(
-        subset$Response, 1:5,
+    subset$VariableY <- myrutils::recoder(
+        subset$VariableY, 1:5,
         factor(likert, levels = likert)
     )
 
     subset$Colors <- myrutils::recoder(
-        subset$Response, 1:5,
+        subset$VariableY, 1:5,
         c("black", "black", "black", "white", "white")
     )
 
@@ -47,16 +48,16 @@ get_likert_plot <- function(data, x, y, likert = c(1:5)) {
         data = subset,
         y = "Ratio",
         ylab = "Number of Responses",
-        x = "Condition",
+        x = "VariableX",
         xlab = "Modality",
-        fill = "Response",
+        fill = "VariableY",
         palette = grDevices::hcl.colors(palette = "plasma", n = 5, rev = TRUE),
         # ggtheme = plot_theme,
         orientation = "horiz",
         position = ggplot2::position_stack(reverse = TRUE)
     ) +
         ggplot2::geom_text(
-            ggplot2::aes(y = Marker, label = Frequency, group = Response), # nolint
+            ggplot2::aes(y = Marker, label = Frequency, group = VariableY), # nolint
             color = subset$Colors
         ) +
         ggplot2::theme(
