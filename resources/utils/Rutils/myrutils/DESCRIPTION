@@ -9,5 +9,8 @@ Encoding: UTF-8
 Imports:
     utils,
     dplyr,
-    methods
+    methods,
+    ggplot2,
+    ggpubr,
+    grDevices
 RoxygenNote: 7.2.3
