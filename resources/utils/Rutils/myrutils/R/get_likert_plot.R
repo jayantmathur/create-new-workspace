@@ -56,6 +56,7 @@ get_likert_plot <- function(data, x, y, likert = c(1:5)) {
         orientation = "horiz",
         position = ggplot2::position_stack(reverse = TRUE)
     ) +
+        labs(fill = "Response") +
         ggplot2::geom_text(
             ggplot2::aes(y = Marker, label = Frequency, group = VariableY), # nolint
             color = subset$Colors

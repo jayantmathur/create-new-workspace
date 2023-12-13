@@ -11,7 +11,8 @@ contributes:
 
             number-sections: true
 
-            fig-width: 3.5
+            fig-width: 5.5
+            fig-height: 5.5
 
             csl: idetc.csl
 
@@ -26,10 +27,9 @@ contributes:
                 - columnsep=0.38in
 
             fig-pos: '!htb'
+            block-headings: false
 
             pdf-engine: lualatex
-
-            template: index.tex
 
             template-partials:
                 - 'partials/_authors.tex'
@@ -37,4 +37,8 @@ contributes:
                 - 'partials/before-body.tex'
                 - 'partials/title.tex'
 
-            include-in-header: 'partials/_header.tex'
+            include-in-header: 'partials/_header.tex' 
+            
+            knitr:
+                opts_chunk:
+                    out.width: "3.5in"
