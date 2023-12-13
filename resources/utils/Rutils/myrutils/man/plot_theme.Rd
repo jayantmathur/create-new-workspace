@@ -5,7 +5,7 @@
 \alias{plot_theme}
 \title{Custom theme for ggplot2 plots}
 \format{
-An object of class \code{theme} (inherits from \code{gg}) of length 98.
+An object of class \code{theme} (inherits from \code{gg}) of length 97.
 }
 \usage{
 plot_theme

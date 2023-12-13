@@ -17,7 +17,6 @@
 #' @export
 
 plot_theme <- ggpubr::theme_pubr() + ggplot2::theme(
-    background = ggplot2::element_rect(fill = "transparent"),
     legend.position = "bottom",
     legend.background = ggplot2::element_rect(fill = "transparent"),
     strip.background = ggplot2::element_blank(),
