@@ -9,7 +9,7 @@
 #' Default is c(1:5).
 #'
 #' @importFrom grDevices hcl.colors
-#' @importFrom ggplot2 aes geom_text theme margin
+#' @importFrom ggplot2 aes geom_text theme margin labs
 #' @importFrom ggpubr ggbarplot
 #'
 #' @return A data frame with the grouped data
@@ -56,7 +56,8 @@ get_likert_plot <- function(data, x, y, likert = c(1:5)) {
         orientation = "horiz",
         position = ggplot2::position_stack(reverse = TRUE)
     ) +
-        labs(fill = "Response") +
+        plot_theme +
+        ggplot2::labs(fill = "Response") +
         ggplot2::geom_text(
             ggplot2::aes(y = Marker, label = Frequency, group = VariableY), # nolint
             color = subset$Colors
@@ -64,9 +65,6 @@ get_likert_plot <- function(data, x, y, likert = c(1:5)) {
         ggplot2::theme(
             axis.text.x = ggplot2::element_blank(),
             axis.ticks.x = ggplot2::element_blank(),
-            legend.title = ggplot2::element_text(
-                margin = ggplot2::margin(l = -.9, unit = "in")
-            )
         )
 
     return(plot)
