@@ -17,7 +17,7 @@ contributes:
             csl: idetc.csl
 
         pdf:
-            classoption: [twoside, twocolumn]
+            classoption: [twocolumn]
             geometry:
                 - left=0.5in
                 - right=0.5in
@@ -37,8 +37,28 @@ contributes:
                 - 'partials/before-body.tex'
                 - 'partials/title.tex'
 
-            include-in-header: 'partials/_header.tex' 
-            
+            include-in-header: 
+                - 'partials/_header.tex'
+
             knitr:
                 opts_chunk:
                     out.width: "3.5in"
+
+
+# Note!
+#
+# Using tables for the twocolumn option is not supported by longtable
+#
+# So use the following format for code outputs (and maybe even markdown?)
+#
+# ```{r}
+# #| label: tbl-cognitive-load
+# #| tbl-cap: "Presenting the results of the cognitive load analysis"
+# #| output: asis
+# knitr::kable(
+#   cog_output,
+#   format="latex",
+#   longtable = FALSE,
+#   booktabs = TRUE
+# )
+# ```
