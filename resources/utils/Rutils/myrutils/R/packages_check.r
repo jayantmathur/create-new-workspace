@@ -14,7 +14,12 @@ packages_check <- function(packages) {
         packages,
         FUN = function(x) {
             if (!require(x, character.only = TRUE)) {
-                install.packages(x, dependencies = TRUE, repos = "https://cloud.r-project.org")
+                install.packages(
+                    x,
+                    dependencies = TRUE,
+                    repos = "https://cran.r-project.org/",
+                    # type = "source"
+                )
                 library(x, character.only = TRUE)
             }
         }
