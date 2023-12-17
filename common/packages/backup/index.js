@@ -83,11 +83,6 @@ const copyFolder = async (src, dest, sync = false) => {
     await fse.copy(src, dest, {
       overwrite: true,
       filter: async (srcPath, destPath) => {
-        if (folderFilter.includes(path.basename(srcPath))) {
-          // console.log(`Excluding: ${srcPath}`);
-          return false;
-        }
-
         if (sync) {
           try {
             const srcStat = await stat(srcPath);
@@ -96,6 +91,11 @@ const copyFolder = async (src, dest, sync = false) => {
           } catch (err) {
             return true; // if destination file doesn't exist, copy source file
           }
+        }
+
+        if (folderFilter.includes(path.basename(srcPath))) {
+          // console.log(`Excluding: ${srcPath}`);
+          return false;
         }
 
         return true;
