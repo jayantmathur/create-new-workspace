@@ -35,6 +35,7 @@ contributes:
                 - 'partials/_authors.tex'
                 - 'partials/_affiliations.tex'
                 - 'partials/before-body.tex'
+                - 'partials/tables.tex'
                 - 'partials/title.tex'
 
             include-in-header: 
@@ -49,7 +50,7 @@ contributes:
 #
 # Using tables for the twocolumn option is not supported by longtable
 #
-# So use the following format for code outputs (and maybe even markdown?)
+# So use the following format for code outputs (and even markdown)
 #
 # ```{r}
 # #| label: tbl-cognitive-load
@@ -57,8 +58,7 @@ contributes:
 # #| output: asis
 # knitr::kable(
 #   cog_output,
-#   format="latex",
-#   longtable = FALSE,
+#   format="latex", # format = "latex" is not required for subtables but "asis" is
 #   booktabs = TRUE
 # )
 # ```

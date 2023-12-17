@@ -24,8 +24,7 @@ contributes:
             # textcolor: white
 
             pdf-engine: lualatex
-
-            template: 'index.tex'
+            block-headings: false
 
             template-partials:
                 - 'partials/_affiliations.tex'
@@ -33,6 +32,7 @@ contributes:
                 - 'partials/after-body.tex'
                 - 'partials/before-body.tex'
                 - 'partials/doc-class.tex'
+                - 'partials/tables.tex'
                 - 'partials/title.tex'
 
             include-in-header: 'partials/_header.tex'

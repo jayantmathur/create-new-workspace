@@ -23,6 +23,7 @@ contributes:
 
             template-partials:
                 - 'partials/before-body.tex'
+                - 'partials/tables.tex'
                 - 'partials/title.tex'
 
             include-in-header: 'partials/_header.tex'

@@ -40,6 +40,7 @@ contributes:
             template-partials:
                 - 'partials/_authors.tex'
                 - 'partials/before-body.tex'
+                - 'partials/tables.tex'
                 - 'partials/title.tex'
                 - 'partials/toc.tex'
 
