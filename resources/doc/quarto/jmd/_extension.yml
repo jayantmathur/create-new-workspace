@@ -31,7 +31,7 @@ contributes:
 
             pdf-engine: lualatex
 
-            template: index.tex
+            block-headings: false
 
             template-partials:
                 - 'partials/_authors.tex'
