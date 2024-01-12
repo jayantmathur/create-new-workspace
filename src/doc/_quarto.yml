@@ -12,8 +12,6 @@ project:
     - pages
   resources:
     - public/icons
-  # pre-render:
-  #   - ./convert.bat pages/_stats.ipynb
 
 revealjs-plugins:
   - attribution
