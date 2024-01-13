@@ -20,7 +20,7 @@ contributes:
 
             fontsize: 11pt
 
-            fig-pos: '!htb'
+            fig-pos: 'H'
 
             table-of-contents: true
             toc-depth: 4
