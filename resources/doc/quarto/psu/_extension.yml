@@ -20,9 +20,6 @@ contributes:
 
             fontsize: 11pt
 
-            format-resources: 
-                - psuclass.cls
-
             fig-pos: '!htb'
 
             table-of-contents: true
