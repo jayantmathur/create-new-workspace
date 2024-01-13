@@ -6,11 +6,11 @@ library(myrutils)
 
 packages <- c(
     "tidyverse",
-    # "ggpubr",
+    "ggpubr",
     # "ggeffects",
-    # "lmerTest",
+    "lmerTest",
     # "easystats",
-    # "pwr"
+    "pwr"
     # "irr",
     # "irrCAC"
 )
