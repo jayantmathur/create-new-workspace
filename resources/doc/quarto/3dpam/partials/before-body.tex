@@ -13,8 +13,11 @@ $if(abstract)$
 \section*{Abstract}
 $abstract$
 $endif$
+$if(keywords)$
+\\\\\textbf{Keywords:} $for(keywords)$\lowercase{$it$}$sep$, $endfor$
+$endif$
 $endif$
 \thispagestyle{plain}
 
 \fancyhead[LO]{\MakeUppercase{\textbf{$shorttitle$}}}
-\fancyhead[RE]{\MakeUppercase{\textbf{$for(authors/first)$$it.name.family$$endfor$ et al.}}}
+\fancyhead[RE]{\MakeUppercase{\textbf{$for(authors/first)$$it.name.family$$endfor$~\textit{et al.}}}}
