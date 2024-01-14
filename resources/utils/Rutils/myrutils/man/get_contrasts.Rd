@@ -20,12 +20,20 @@ This function is used to get contrasts from a given model and vector.
 \examples{
 \dontrun{
 score_model <- lmer(
-    Score ~ ConditionC + StageC + ConditionC:StageC + (1 | PID),
+    Score ~ Condition + Stage + Condition:Stage + (1 | PID),
     data = data,
     control = control
 )
 
-get_contrasts(score_model, ~ StageC | ConditionC)
+get_contrasts(score_model, ~ Stage | Condition)
+
+kg_model <- lmer(
+    Score ~ Condition + Process + Quiz + Condition:Quiz + Process:Quiz + Condition:Process + Condition:Process:Quiz + (1 | ParticipantID),
+    data = data,
+    control = control
+)
+
+get_contrasts(kg_model, ~ Quiz | Condition:Process)
 }
 
 }
