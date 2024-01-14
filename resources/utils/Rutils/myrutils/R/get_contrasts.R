@@ -46,11 +46,12 @@ get_contrasts <- function(model, vector) {
 
     output <- dplyr::mutate(
         output,
-        estimate = estimate * 2, # nolint
+        # estimate = estimate * 2, # nolint
         dplyr::across(
-            .cols = -1:3,
+            .cols = estimate:p.value,
             .fns = ~ round(.x, 3)
-        )
+        ),
+        df = round(df)
     )
 
     return(output)
