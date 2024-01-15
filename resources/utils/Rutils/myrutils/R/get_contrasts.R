@@ -39,19 +39,15 @@ get_contrasts <- function(model, vector) {
         )
     )
 
-    # output <- dplyr::slice(
-    #     output,
-    #     2, 4
-    # )[, -c(1, 4, 5)]
-
     output <- dplyr::mutate(
         output,
-        # estimate = estimate * 2, # nolint
         dplyr::across(
-            .cols = estimate:p.value,
+            .cols = estimate:p.value, # nolint
             .fns = ~ round(.x, 3)
         ),
-        df = round(df)
+        df = round(df),
+        estimate = -estimate, # nolint
+        t.ratio = -t.ratio # nolint
     )
 
     return(output)
