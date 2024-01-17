@@ -17,37 +17,38 @@ $endif$
     \begin{center}
         $if(institute)$
         $if(institute.name)$$institute.name$$endif$\\
-            $if(institute.department)$$institute.department$$endif$
+        $if(institute.department)$$institute.department$$endif$
         $endif$
 
-                \vfill
+        \vfill
 
-            $if(title)$
-                {
-                        \linespread{2}\bfseries\uppercase\expandafter{$title$}
-                    }
-            $endif$
 
-                \vfill
+        $if(title)$
+        \begin{doublespace}
+            \bfseries\uppercase\expandafter{$title$}
+        \end{doublespace}
+        $endif$
 
-                A $if(institute.degree.type)$$institute.degree.type$$endif$ in\\
-            $if(institute.degree.field)$$institute.degree.field$$endif$\\
-                by\\
-            $if(author/first)$$author/first$$endif$
+        \vfill
 
-                \vfill
+        A $if(institute.degree.type)$$institute.degree.type$$endif$ in\\
+        $if(institute.degree.field)$$institute.degree.field$$endif$\\
+        by\\
+        $if(author/first)$$author/first$$endif$
 
-                \copyright\ \the\year~$if(author/first)$$author/first$$endif$
+        \vfill
 
-                \vfill
+        \copyright\ \the\year~$if(author/first)$$author/first$$endif$
 
-                Submitted in Partial Fulfillment\\
-                of the Requirements\\
-                for the Degree of
+        \vfill
 
-                \vfill
+        Submitted in Partial Fulfillment\\
+        of the Requirements\\
+        for the Degree of
 
-            $if(institute.degree.name)$$institute.degree.name$$endif$
+        \vfill
+
+        $if(institute.degree.name)$$institute.degree.name$$endif$
 
         \vfill
 
