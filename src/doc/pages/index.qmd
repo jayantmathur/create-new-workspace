@@ -11,7 +11,7 @@ This text continues
 
 [^sample]: this is a sample footnote
 
-![Sample figure](../public/icon.svg){#fig-sample width=25%}
+![Sample figure](../public/placeholder.svg){#fig-sample width=25%}
 
 # Bibliography
 

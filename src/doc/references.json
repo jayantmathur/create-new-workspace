@@ -46,6 +46,16 @@
     "type": "article-journal"
   },
   {
+    "id": "Additive",
+    "abstract": "Scope 1.1 This document establishes and defines terms used in additive manufacturing (AM) technology, which applies the additive shaping principle and thereby builds physical three-dimensional (3D) geometries by successive addition of material. 1.2 The t",
+    "accessed": { "date-parts": [["2024", 1, 18]] },
+    "citation-key": "Additive",
+    "language": "en",
+    "title": "Additive manufacturing — General principles — Fundamentals and vocabulary",
+    "type": "report",
+    "URL": "https://www.astm.org/f3177-21.html"
+  },
+  {
     "id": "alfaifyDesign2020",
     "abstract": "The last few decades have seen rapid growth in additive manufacturing (AM) technologies. AM has implemented a novel method of production in design, manufacture, and delivery to end-users. Accordingly, AM technologies have given great flexibility in design for building complex components, highly customized products, effective waste minimization, high material variety, and sustainable products. This review paper addresses the evolution of engineering design to take advantage of the opportunities provided by AM and its applications. It discusses issues related to the design of cellular and support structures, build orientation, part consolidation and assembly, materials, part complexity, and product sustainability.",
     "accessed": { "date-parts": [["2023", 3, 22]] },
