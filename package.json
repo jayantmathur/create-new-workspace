@@ -18,7 +18,7 @@
   "scripts": {
     "save": "pnpm format & pnpm version --force",
     "format": "prettier --write \"./**/*.{js,ts,jsx,tsx,json}\" --log-level silent",
-    "postsave": "node ./common/packages/backup --dev & pnpm install -g & pnpm push & echo Saved new version",
+    "postsave": "node ./common/packages/backup --dev & npm install -g & pnpm push & echo Saved new version",
     "push": "git add . & git commit -m \"save work\" & git push"
   },
   "keywords": [],
