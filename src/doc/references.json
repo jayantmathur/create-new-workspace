@@ -1,5 +1,28 @@
 [
   {
+    "id": "abdulkadirVirtual2011",
+    "abstract": "Virtual manufacturing systems provide a useful means for products to be manufactured ‘right the first time’ without the need of physical testing on the shop floor. Earlier research was mostly on developing a virtual manufacturing environment. Over the years, simple graphical prediction and simulation gave way to complex multi-science predictions. Virtual systems such as Virtual Machine Tool, Virtual Machining, Virtual Assembly, Virtual Tooling and Virtual Prototype have been developed to support virtual manufacturing. Different systems and approaches have different targeted applications. This paper aims to provide a comprehensive review of existing virtual systems. Their focuses and approaches (i.e. virtual reality, Web-based techniques, mathematical modelling, hardware interactions and STEP-NC-based methodologies) are discussed in detail. To better understand the systems, we have categorized them into different groups according to their application domains. Discussions and concluding remarks are given based on the review.",
+    "accessed": { "date-parts": [["2024", 1, 21]] },
+    "author": [
+      { "family": "Abdul Kadir", "given": "Aini" },
+      { "family": "Xu", "given": "Xun" },
+      { "family": "Hämmerle", "given": "Enrico" }
+    ],
+    "citation-key": "abdulkadirVirtual2011",
+    "container-title": "Robotics and Computer-Integrated Manufacturing",
+    "container-title-short": "Robotics and Computer-Integrated Manufacturing",
+    "DOI": "10.1016/j.rcim.2010.10.003",
+    "ISSN": "0736-5845",
+    "issue": "3",
+    "issued": { "date-parts": [["2011", 6, 1]] },
+    "page": "494-508",
+    "source": "ScienceDirect",
+    "title": "Virtual machine tools and virtual machining—A technological review",
+    "type": "article-journal",
+    "URL": "https://www.sciencedirect.com/science/article/pii/S0736584510001481",
+    "volume": "27"
+  },
+  {
     "id": "abidiAssessment2019",
     "abstract": "Digital manufacturing concept is gaining a lot of attention and popularity due to its enormous benefits. It is considered as one of the pillars or component of Industry 4.0. With the advancements in technology, digital manufacturing is becoming a reality rather than a concept only. It is applied to various stages of the manufacturing process such as design, prototyping, and assembly training. Virtual reality (VR) is a cog in a wheel of digital manufacturing. It can be used in various phases of manufacturing. Planning and conducting assembly operations account for the majority of the cost of a product. It is difficult to design and train assembly operations during the early stages of product design. Assembly is a vital step in manufacturing, so firms provide training to their employees and it costs them time and money. Therefore, this research work extends VR applications in manufacturing by integrating concepts and studies from training simulations to the evaluation of assembly training effectiveness and transfer of training. VR provides a platform for “learning by doing” instead of learning by seeing, listening, or observing. A series of user-based evaluation studies are conducted to ensure that the virtual manufacturing assembly simulation provides an effective and efficient means for evaluating assembly operations and for training assembly personnel. Different feedback cues of VR are implemented to evaluate the system. Moreover, several case studies are used to assess the effectiveness of VR-based training. The results of the study reveal that participants trained by VR committed fewer errors and took lesser time in actual product assembly when compared against the participant from traditional or baseline training group.",
     "accessed": { "date-parts": [["2022", 10, 18]] },
@@ -44,16 +67,6 @@
     "source": "Zotero",
     "title": "Development and validation of a behavioral video coding scheme for detecting mental workload in manual assembly.",
     "type": "article-journal"
-  },
-  {
-    "id": "Additive",
-    "abstract": "Scope 1.1 This document establishes and defines terms used in additive manufacturing (AM) technology, which applies the additive shaping principle and thereby builds physical three-dimensional (3D) geometries by successive addition of material. 1.2 The t",
-    "accessed": { "date-parts": [["2024", 1, 18]] },
-    "citation-key": "Additive",
-    "language": "en",
-    "title": "Additive manufacturing — General principles — Fundamentals and vocabulary",
-    "type": "report",
-    "URL": "https://www.astm.org/f3177-21.html"
   },
   {
     "id": "alfaifyDesign2020",
@@ -748,6 +761,53 @@
     "volume": "34"
   },
   {
+    "id": "changInfluence2022",
+    "abstract": "This study explored the influence of Virtual Reality (VR) on Engineering Design (ED) creativity. This study adopted a quasi-experimental design with a pre-test and post-test. A teaching experiment was conducted in a high school in Taipei City, Taiwan. The main findings were: 1) the use of VR in ED instruction moderately and positively affected ED competence among students in identifying constraints, 2) VR positively affected the cognitive and affective domains in the ED process, but the VR effects on the psychomotor domain were nonsignificant, and 3) the use of VR-based instruction positively affected the students’ ED results with a medium effect regarding functionality and uniqueness.",
+    "accessed": { "date-parts": [["2024", 1, 21]] },
+    "author": [{ "family": "Chang", "given": "Yu-Shan" }],
+    "citation-key": "changInfluence2022",
+    "container-title": "Educational Studies",
+    "DOI": "10.1080/03055698.2020.1754767",
+    "ISSN": "0305-5698",
+    "issue": "3",
+    "issued": { "date-parts": [["2022", 5, 4]] },
+    "page": "341-357",
+    "publisher": "Routledge",
+    "source": "Taylor and Francis+NEJM",
+    "title": "Influence of virtual reality on engineering design creativity",
+    "type": "article-journal",
+    "URL": "https://doi.org/10.1080/03055698.2020.1754767",
+    "volume": "48"
+  },
+  {
+    "id": "chenDeveloping2020",
+    "abstract": "This study combined virtual reality (VR) technology, the 6E (Engage, Explore, Explain, Engineer, Enrich, and Evaluate) model, and STEM (Science, Technology, Engineering, and Mathematics) education to develop a hands-on activity aimed at helping students to achieve “learning by doing.” The participants were 162 tenth-grade students, divided into the Experimental Group (hands-on activity using VR technology) and the Control Group (hands-on activity via lectures). Using sequential analysis, this study investigated how the hands-on activity influenced the students' behavioral patterns in learning. The results showed that all of the students' learning performances and hands-on abilities were enhanced. Moreover, the students who used VR technology achieved both significantly better learning performances and hands-on abilities, indicating that VR might be able to help the students understand abstract scientific concepts and build mental models, which they used to internalize and organize knowledge structures. Furthermore, this study discovered that the students who learned using VR technology formed a cyclical learning pattern, starting with a group discussion (G), moving on to solving problems (S) and developing a product (D), and then going back to another group discussion. However, the students who learned via lectures produced a linear learning pattern in the order of G→S→D.",
+    "accessed": { "date-parts": [["2024", 1, 21]] },
+    "author": [
+      { "family": "Chen", "given": "Jyun-Chen" },
+      { "family": "Huang", "given": "Yun" },
+      { "family": "Lin", "given": "Kuen-Yi" },
+      { "family": "Chang", "given": "Yu-Shan" },
+      { "family": "Lin", "given": "Hung-Chang" },
+      { "family": "Lin", "given": "Chien-Yu" },
+      { "family": "Hsiao", "given": "Hsien-Sheng" }
+    ],
+    "citation-key": "chenDeveloping2020",
+    "container-title": "Journal of Computer Assisted Learning",
+    "DOI": "10.1111/jcal.12389",
+    "ISSN": "1365-2729",
+    "issue": "1",
+    "issued": { "date-parts": [["2020"]] },
+    "language": "en",
+    "license": "© 2019 John Wiley & Sons Ltd",
+    "page": "46-60",
+    "source": "Wiley Online Library",
+    "title": "Developing a hands-on activity using virtual reality to help students learn by doing",
+    "type": "article-journal",
+    "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1111/jcal.12389",
+    "volume": "36"
+  },
+  {
     "id": "chernikovaSimulationBased2020",
     "abstract": "Simulation-based learning offers a wide range of opportunities to practice complex skills in higher education and to implement different types of scaffolding to facilitate effective learning. This meta-analysis includes 145 empirical studies and investigates the effectiveness of different scaffolding types and technology in simulation-based learning environments to facilitate complex skills. The simulations had a large positive overall effect: g = 0.85, SE = 0.08; CIs [0.69, 1.02]. Technology use and scaffolding had positive effects on learning. Learners with high prior knowledge benefited more from reflection phases; learners with low prior knowledge learned better when supported by examples. Findings were robust across different higher education domains (e.g., medical and teacher education, management). We conclude that (1) simulations are among the most effective means to facilitate learning of complex skills across domains and (2) different scaffolding types can facilitate simulation-based learning during different phases of the development of knowledge and skills.",
     "accessed": { "date-parts": [["2023", 1, 1]] },
@@ -839,6 +899,34 @@
     "type": "article-journal",
     "URL": "https://onlinelibrary.wiley.com/doi/10.1002/j.2168-9830.2012.tb01121.x",
     "volume": "101"
+  },
+  {
+    "id": "dayarathnaAssessment2020",
+    "abstract": "The concepts and topics of manufacturing systems design and analysis are usually taught using traditional lecturing, in-class problem solving, and project-based approaches. These concepts are not easy to grasp and can be tedious when taught by traditional methods. This study presents an innovative virtual reality (VR) based approach to teach manufacturing systems concepts. To illustrate the efficacy and effectiveness of VR technology in enhancing students learning concepts, a VR queuing theory teaching module is developed. The efficacy and effectiveness of the VR module are then analyzed for male and female participants to investigate the impact of the VR environment on female engineers in science, technology, engineering, and mathematics (STEM). Simulation sickness, system usability, and user experience tools were used to assess the efficacy of the VR module, and the queuing theory quiz, NASA TLX assessment, and post-motivation measures were applied to evaluate the effectiveness of the developed VR module. Both males and females indicated higher user satisfaction in terms of system usability. Female participants perceived higher user experience than their male counterparts. Both male and female participants experienced similar simulation sickness symptoms throughout the study. The quiz score indicated that students performed well in the conceptual section for both genders. The NASA TLX results suggested that participants required low perceived work effort in regard to performing the tasks in the module. The post motivation results confirmed that the VR module created positive motivation in learning the queueing theory for both male and female students. Overall, the efficacy and effectiveness measures affirm that both male and female participants perceived a similar experience in the developed VR teaching module.",
+    "accessed": { "date-parts": [["2024", 1, 21]] },
+    "author": [
+      { "family": "Dayarathna", "given": "Vidanelage L." },
+      { "family": "Karam", "given": "Sofia" },
+      { "family": "Jaradat", "given": "Raed" },
+      { "family": "Hamilton", "given": "Michael A." },
+      { "family": "Nagahi", "given": "Morteza" },
+      { "family": "Joshi", "given": "Sayali" },
+      { "family": "Ma", "given": "Junfeng" },
+      { "family": "Ashour", "given": "Omar" },
+      { "family": "Driouche", "given": "Bouteina" }
+    ],
+    "citation-key": "dayarathnaAssessment2020",
+    "container-title": "International Journal of Engineering Education",
+    "ISSN": "0949-149X",
+    "issue": "6",
+    "issued": { "date-parts": [["2020"]] },
+    "page": "1938-1955",
+    "source": "Penn State",
+    "title": "Assessment of the efficacy and effectiveness of virtual reality teaching module: A gender-based comparison",
+    "title-short": "Assessment of the efficacy and effectiveness of virtual reality teaching module",
+    "type": "article-journal",
+    "URL": "http://www.scopus.com/inward/record.url?scp=85096031850&partnerID=8YFLogxK",
+    "volume": "36"
   },
   {
     "id": "dejongPhysical2013",
@@ -1777,35 +1865,6 @@
     "volume": "1"
   },
   {
-    "id": "houProjectbased2023",
-    "abstract": "Purpose\nGreen building education, an important aspect of sustainability in higher education, has rapidly expanded across the world. Yet, a bespoke pedagogical model integrating the essential elements of green building knowledge into a university course is lacking. To plug this deficiency, this study aims to develop an innovative pedagogical model that incorporates four types of teaching activities, namely, lecture, virtual reality (VR)-aided site visit, physical site visit and practicum-based project.\nDesign/methodology/approach\nBased on an extensive review of the relevant literature and course materials, a pedagogical model was constructed for application to the teaching and learning activities of a university’s hospitality and real-estate programme. Using a case study approach involving in-depth interviews with green building professionals and a workshop coupled with an online survey on building professionals, the model’s transformative effectiveness was evaluated.\nFindings\nThe study finds that the pedagogical model was able to effectively equip students with the essential green building knowledge pertinent to the different stages of a building life cycle. Concerns about wider applications of the model, including barriers to implementation in other academic programmes and resources for updating the VR platform, were identified.\nOriginality/value\nThe VR-aided and project-based pedagogy model is novel and effective in delivering green building education. Future work, particularly expanding the VR platform to cover more green building cases, thereby allowing multiple case studies to be conducted, is recommended for illustrating further contributions and implications of the model.",
-    "accessed": { "date-parts": [["2024", 1, 5]] },
-    "author": [
-      { "family": "Hou", "given": "Huiying (Cynthia)" },
-      { "family": "Lai", "given": "Joseph HK" },
-      { "family": "Wu", "given": "Hao" }
-    ],
-    "citation-key": "houProjectbased2023",
-    "container-title": "International Journal of Sustainability in Higher Education",
-    "DOI": "10.1108/IJSHE-06-2022-0197",
-    "event-place": "Bradford, United Kingdom",
-    "ISSN": "14676370",
-    "issue": "6",
-    "issued": { "date-parts": [["2023"]] },
-    "language": "English",
-    "license": "© Emerald Publishing Limited.",
-    "number-of-pages": "20",
-    "page": "1308-1327",
-    "publisher": "Emerald Group Publishing Limited",
-    "publisher-place": "Bradford, United Kingdom",
-    "source": "ProQuest",
-    "title": "Project-based learning and pedagogies for virtual reality-aided green building education: case study on a university course",
-    "title-short": "Project-based learning and pedagogies for virtual reality-aided green building education",
-    "type": "article-journal",
-    "URL": "https://www.proquest.com/docview/2828329288?parentSessionId=cc0Bn1UKY1%2Bdga3pZi%2FwlVk%2FeRg2ryqmmX5PE7GoV90%3D&pq-origsite=summon&sourcetype=Scholarly%20Journals",
-    "volume": "24"
-  },
-  {
     "id": "houzangbevirtual2022",
     "abstract": "Creativity is key in the early phases of innovation processes. With the rapid evolution of technologies, designers now have access to various tools to support this activity. Virtual reality (VR) takes over multiple domains, especially during conception. However, is VR really facilitating creativity in the initial ideation phases? We compare two sketching modalities through dedicated creativity support tools (CSTs): one in VR and one on a 2D interactive whiteboard. We propose a two-part creativity task (divergent and convergent thinking) for two groups of 30 participants each. We record user experience, creative experience, and creative performance. Our results show that VR is more stimulating, attractive, and engaging. We also observe a better level of creativity for the participants using the VR CST. Our results indicate that VR is an effective and relevant tool to boost creativity and that this effect might carry over to following creative tasks.",
     "accessed": { "date-parts": [["2023", 1, 3]] },
@@ -2026,6 +2085,34 @@
     "volume": "34"
   },
   {
+    "id": "javanCT2020",
+    "abstract": "We describe the framework for capturing the internal view of complex anatomical spaces via multiple media and haptic platforms, exemplified by realistic and conceptual representations of the pterygopalatine fossa (PPF). A realistic three-dimensional (3D) mesh of the PPF was developed by segmenting the osseous anatomy on computed tomography (CT) using Materialize InPrint. Subsequently in Autodesk 3D Studio Max, the realistic mesh was enhanced with graphically designed neurovascular anatomy and additionally a conceptual representation of the PPF with its connections and contents was created. An interactive web-compatible Adobe Flash tutorial using ActionScript was developed, allowing users to advance through a series of educational slides that contained interactive rotatable interior camera views and scrollable CT cross-sectional content, incorporating both the realistic and conceptual models. Both models were also 3D printed using polyamide material. In the realistic model, the neurovasculature was colored with water-based acrylic paint. A 3-piece modular design with embedded magnets allows for internal visualization and seamless assembly. A serious gaming environment of the conceptual PPF was also developed using Truevision3D application programming interface, where users can freely move around rooms and hallways that represent various spaces. Lastly, the realistic model was incorporated into a headset-based virtual reality environment, Surgical Theater, allowing visualization and fly-through inside and outside the model. Multiple 3D techniques for visualization of complex 3D anatomical spaces from within were described, with the necessary software and skills detailed. A rough estimate of the time and cost needed to develop these tools as well as multiple supplementary source and end result files are also made available. Educators could utilize multiple advanced delivery methods to incorporate custom digital 3D models of complex anatomical spaces understood from inside.",
+    "accessed": { "date-parts": [["2024", 1, 21]] },
+    "author": [
+      { "family": "Javan", "given": "Ramin" },
+      { "family": "Rao", "given": "Aditya" },
+      { "family": "Jeun", "given": "Bryan S." },
+      { "family": "Herur-Raman", "given": "Aalap" },
+      { "family": "Singh", "given": "Neha" },
+      { "family": "Heidari", "given": "Parisa" }
+    ],
+    "citation-key": "javanCT2020",
+    "container-title": "Journal of Digital Imaging",
+    "container-title-short": "J Digit Imaging",
+    "DOI": "10.1007/s10278-019-00315-y",
+    "ISSN": "1618-727X",
+    "issue": "3",
+    "issued": { "date-parts": [["2020", 6, 1]] },
+    "language": "en",
+    "page": "776-791",
+    "source": "Springer Link",
+    "title": "From CT to 3D Printed Models, Serious Gaming, and Virtual Reality: Framework for Educational 3D Visualization of Complex Anatomical Spaces From Within—the Pterygopalatine Fossa",
+    "title-short": "From CT to 3D Printed Models, Serious Gaming, and Virtual Reality",
+    "type": "article-journal",
+    "URL": "https://doi.org/10.1007/s10278-019-00315-y",
+    "volume": "33"
+  },
+  {
     "id": "jensenreview2018",
     "abstract": "In the light of substantial improvements to the quality and availability of virtual reality (VR) hardware seen since 2013, this review seeks to update our knowledge about the use of head-mounted displays (HMDs) in education and training. Following a comprehensive search 21 documents reporting on experimental studies were identified, quality assessed, and analysed. The quality assessment shows that the study quality was below average according to the Medical Education Research Study Quality Instrument, especially for the studies that were designed as user evaluations of educational VR products. The review identified a number of situations where HMDs are useful for skills acquisition. These include cognitive skills related to remembering and understanding spatial and visual information and knowledge; psychomotor skills related to head-movement, such as visual scanning or observational skills; and affective skills related to controlling your emotional response to stressful or difficult situations. Outside of these situations the HMDs had no advantage when compared to less immersive technologies or traditional instruction and in some cases even proved counterproductive because of widespread cybersickness, technological challenges, or because the immersive experience distracted from the learning task.",
     "accessed": { "date-parts": [["2022", 10, 18]] },
@@ -2086,29 +2173,6 @@
     "type": "article-journal",
     "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0040162517300276",
     "volume": "117"
-  },
-  {
-    "id": "jinDesigning2019",
-    "abstract": "With recent breakthroughs in VR devices, new potential of CAD as a design tool is anticipated. Based on the influence of design tools in ideation, we compared the problem-solving styles of WIMP (Windows, Icons, Menus, Pointer) and VRE (Virtual Reality Environment) for an apartment flat design task. Function-Behaviour-Structure ontology analysis revealed that WIMP was problem-driven with clear divisions between problem analysis and solution building, while VRE was predominantly solution-driven with frequent modifications of solutions. Such procedural characteristics led to uneven outcomes wherein spatial efficiency was better in WIMP while arrangement was more diversified in VRE. When the key factor was high manipulability of user interface in VRE, the result suggests that higher usability does not always produce desired outcomes. Time for problem analysis and a match between the tool and given problem must be taken into account.",
-    "accessed": { "date-parts": [["2024", 1, 5]] },
-    "author": [
-      { "family": "Jin", "given": "Yan" },
-      { "family": "Lee", "given": "Sangwon" }
-    ],
-    "citation-key": "jinDesigning2019",
-    "container-title": "Digital Creativity",
-    "DOI": "10.1080/14626268.2019.1608264",
-    "ISSN": "1462-6268",
-    "issue": "2",
-    "issued": { "date-parts": [["2019", 4, 3]] },
-    "page": "107-126",
-    "publisher": "Routledge",
-    "source": "Taylor and Francis+NEJM",
-    "title": "Designing in virtual reality: a comparison of problem-solving styles between desktop and VR environments",
-    "title-short": "Designing in virtual reality",
-    "type": "article-journal",
-    "URL": "https://doi.org/10.1080/14626268.2019.1608264",
-    "volume": "30"
   },
   {
     "id": "kadirAdditive2020",
@@ -2730,6 +2794,30 @@
     "volume": "134"
   },
   {
+    "id": "malikVirtual2020",
+    "abstract": "Over the past years, the concept of human-machine interaction has received ample attention to achieve hybrid automation in manufacturing. A form of hybrid automation is taking benefit from the synergistic effect of human-robot collaboration. When used in assembly, the requirement of flexibility, adaptability and safety makes the design and redesign of human-robot collaborative (HRC) systems a complex and prone to error process. The use of time-based continuous simulations can offer safe virtual space for testing and validation thus easing the design of complex HRC systems. However, conventional simulations don’t allow to experience the future production system as an end-user in an immersive environment. This paper explores the technological development in virtual reality (VR) for design of human-centred production systems and develops a unified framework to integrate human-robot simulation with VR. The simulation as an event-driven simulation helped in estimating the human-robot cycle times, developing process-plan, layout optimisation and robot control program. The same simulation is used in VR to interact with the production equipment and particularly with the robot. Additionally, AWS Sumerian environment is used to create a virtual robot to assist VR user in the design process.",
+    "accessed": { "date-parts": [["2024", 1, 21]] },
+    "author": [
+      { "family": "Malik", "given": "Ali Ahmad" },
+      { "family": "Masood", "given": "Tariq" },
+      { "family": "Bilberg", "given": "Arne" }
+    ],
+    "citation-key": "malikVirtual2020",
+    "container-title": "International Journal of Computer Integrated Manufacturing",
+    "DOI": "10.1080/0951192X.2019.1690685",
+    "ISSN": "0951-192X",
+    "issue": "1",
+    "issued": { "date-parts": [["2020", 1, 2]] },
+    "page": "22-37",
+    "publisher": "Taylor & Francis",
+    "source": "Taylor and Francis+NEJM",
+    "title": "Virtual reality in manufacturing: immersive and collaborative artificial-reality in design of human-robot workspace",
+    "title-short": "Virtual reality in manufacturing",
+    "type": "article-journal",
+    "URL": "https://doi.org/10.1080/0951192X.2019.1690685",
+    "volume": "33"
+  },
+  {
     "id": "markowitzImmersive2018",
     "abstract": "Across four studies, two controlled lab experiments and two ﬁeld studies, we tested the efﬁcacy of immersive Virtual Reality (VR) as an education medium for teaching the consequences of climate change, particularly ocean acidiﬁcation. Over 270 participants from four different learning settings experienced an immersive underwater world designed to show the process and effects of rising sea water acidity. In all of our investigations, after experiencing immersive VR people demonstrated knowledge gains or inquisitiveness about climate science and in some cases, displayed more positive attitudes toward the environment after comparing pre- and post-test assessments. The analyses also revealed a potential post-hoc mechanism for the learning effects, as the more that people explored the spatial learning environment, the more they demonstrated a change in knowledge about ocean acidiﬁcation. This work is unique by showing distinct learning gains or an interest in learning across a variety of participants (high school, college students, adults), measures (learning gain scores, tracking data about movement in the virtual world, qualitative responses from classroom teachers), and content (multiple versions varying in length and content about climate change were tested). Our ﬁndings explicate the opportunity to use immersive VR for environmental education and to drive information-seeking about important social issues such as climate change.",
     "accessed": { "date-parts": [["2022", 10, 18]] },
@@ -3089,6 +3177,26 @@
     "volume": "5"
   },
   {
+    "id": "mourtzisSimulation2020",
+    "abstract": "As the industrial requirements change at a rapid pace due to the drastic evolution of technology, the necessity of quickly investigating potential system alternatives towards a more efficient manufacturing system design arises more intensely than ever. Manufacturing systems simulation has proven to be a powerful tool for designing and evaluating a manufacturing system due to its low cost, quick analysis, low risk and meaningful insight that it may provide, improving thus the understanding of the influence of each component. Simulation comprises an indispensable set of IT tools and methods for the successful implementation of digital manufacturing. It allows experimentation and validation of product, process, and system design and configuration. This paper investigates the major historical milestones in the evolution of manufacturing systems simulation technologies and examines recent industrial and research approaches in key fields of manufacturing. It describes how the urge towards digitalisation of manufacturing in the context of the 4th Industrial revolution has shaped simulation in the design and operation of manufacturing systems and reviews the new approaches that have arisen in the literature. Particular focus is given to technologies in the digitalised factories of the future that are gaining ground in industrial applications simulation, offering multiple advantages.",
+    "accessed": { "date-parts": [["2024", 1, 21]] },
+    "author": [{ "family": "Mourtzis", "given": "Dimitris" }],
+    "citation-key": "mourtzisSimulation2020",
+    "container-title": "International Journal of Production Research",
+    "DOI": "10.1080/00207543.2019.1636321",
+    "ISSN": "0020-7543",
+    "issue": "7",
+    "issued": { "date-parts": [["2020", 4, 2]] },
+    "page": "1927-1949",
+    "publisher": "Taylor & Francis",
+    "source": "Taylor and Francis+NEJM",
+    "title": "Simulation in the design and operation of manufacturing systems: state of the art and new trends",
+    "title-short": "Simulation in the design and operation of manufacturing systems",
+    "type": "article-journal",
+    "URL": "https://doi.org/10.1080/00207543.2019.1636321",
+    "volume": "58"
+  },
+  {
     "id": "nishapedagogic2019",
     "abstract": "Spatial design as a discipline relies on the psychological construct of space. In the light of shortcomings and challenges faced by traditional approaches to spatial design learning, this paper investigates the role and value of Virtual Reality (VR) as a pedagogic vehicle. Based on understandings informed by action-research using VR with learners in two modules, and underpinning interdisciplinary research on cognition, perception of space, and learning pedagogies; the paper works through defined research questions on both impact of learning with VR, development of spatial cognition with VR, and the differences between traditional approaches to spatial design curriculum and VR enabled approach and whether or not these differences are associated with differential outcomes. We propose VR enhanced design education pedagogical framework and argues that such an approach is needed to shape futuristic thinking in spatial design teaching and learning.",
     "accessed": { "date-parts": [["2023", 1, 1]] },
@@ -3155,29 +3263,6 @@
     "type": "article-journal",
     "URL": "http://journals.sagepub.com/doi/10.1177/1609406919899220",
     "volume": "19"
-  },
-  {
-    "id": "ojeVirtual2023",
-    "abstract": "Virtual Reality (VR) is a powerful technology that can enhance engineering education by providing immersive and interactive learning experiences. However, many VR studies in engineering education lack a clear theoretical or pedagogical framework to guide their design and evaluation. This scoping review analyzes 51 studies on VR-assisted engineering education and reveals the trends and gaps in the current research. We argue that engineering VR studies should be informed by theories of learning and instruction that address the cognitive and socio-cognitive aspects of learning. We also suggest that VR-assisted engineering education research should incorporate multimedia design and pedagogical principles to optimize the effectiveness of VR applications. Our perspective aims to inspire engineering educators, practitioners, and instructional designers to develop VR contents and formulate VR research imperatives grounded in sound educational theories and multimedia learning principles.",
-    "accessed": { "date-parts": [["2024", 1, 5]] },
-    "author": [
-      { "family": "Oje", "given": "Adurangba V." },
-      { "family": "Hunsu", "given": "Nathaniel J." },
-      { "family": "May", "given": "Dominik" }
-    ],
-    "citation-key": "ojeVirtual2023",
-    "container-title": "Computers & Education: X Reality",
-    "container-title-short": "Computers & Education: X Reality",
-    "DOI": "10.1016/j.cexr.2023.100033",
-    "ISSN": "2949-6780",
-    "issued": { "date-parts": [["2023", 12, 1]] },
-    "page": "100033",
-    "source": "ScienceDirect",
-    "title": "Virtual reality assisted engineering education: A multimedia learning perspective",
-    "title-short": "Virtual reality assisted engineering education",
-    "type": "article-journal",
-    "URL": "https://www.sciencedirect.com/science/article/pii/S2949678023000272",
-    "volume": "3"
   },
   {
     "id": "ormrodHuman2008",
@@ -3381,6 +3466,34 @@
     "volume": "101"
   },
   {
+    "id": "perezDigital2020",
+    "abstract": "Intelligent automation, including robotics, is one of the current trends in the manufacturing industry in the context of “Industry 4.0”, where cyber-physical systems control the production at automated or semi-automated factories. Robots are perfect substitutes for a skilled workforce for some repeatable, general, and strategically-important tasks. However, this transformation is not always feasible and immediate, since certain technologies do not provide the required degree of flexibility. The introduction of collaborative robots in the industry permits the combination of the advantages of manual and automated production. In some processes, it is necessary to incorporate robots from different manufacturers, thus the design of these multi-robot systems is crucial to guarantee the maximum quality and efficiency. In this context, this paper presents a novel methodology for process automation design, enhanced implementation, and real-time monitoring in operation based on creating a digital twin of the manufacturing process with an immersive virtual reality interface to be used as a virtual testbed before the physical implementation. Moreover, it can be efficiently used for operator training, real-time monitoring, and feasibility studies of future optimizations. It has been validated in a use case which provides a solution for an assembly manufacturing process.",
+    "accessed": { "date-parts": [["2024", 1, 21]] },
+    "author": [
+      { "family": "Pérez", "given": "Luis" },
+      { "family": "Rodríguez-Jiménez", "given": "Silvia" },
+      { "family": "Rodríguez", "given": "Nuria" },
+      { "family": "Usamentiaga", "given": "Rubén" },
+      { "family": "García", "given": "Daniel F." }
+    ],
+    "citation-key": "perezDigital2020",
+    "container-title": "Applied Sciences",
+    "DOI": "10.3390/app10103633",
+    "ISSN": "2076-3417",
+    "issue": "10",
+    "issued": { "date-parts": [["2020", 1]] },
+    "language": "en",
+    "license": "http://creativecommons.org/licenses/by/3.0/",
+    "number": "10",
+    "page": "3633",
+    "publisher": "Multidisciplinary Digital Publishing Institute",
+    "source": "www.mdpi.com",
+    "title": "Digital Twin and Virtual Reality Based Methodology for Multi-Robot Manufacturing Cell Commissioning",
+    "type": "article-journal",
+    "URL": "https://www.mdpi.com/2076-3417/10/10/3633",
+    "volume": "10"
+  },
+  {
     "id": "periniLearning2018",
     "accessed": { "date-parts": [["2023", 1, 1]] },
     "author": [
@@ -3428,6 +3541,32 @@
     "type": "article-journal",
     "URL": "https://www.tandfonline.com/doi/full/10.1080/713699144",
     "volume": "5"
+  },
+  {
+    "id": "peruzziniUsing2021",
+    "abstract": "Virtual reality (VR) offers a promising set of technologies to digitally simulate industrial processes and interaction between humans and machines. However, the use of immersive VR simulations is still limited in industry due to the uncertainty of benefits in respect with traditional digital tools, and the lack of structured methodologies to effectively implement immersive virtual simulations in practice. This paper deals with the application of VR to create virtual manufacturing simulations with the aim to design assembly lines in compliance with factory ergonomics. It proposes a methodology to allow the virtualization and simulation of assembly tasks using a combination of VR tools by replicating, or rather anticipating, what would happen at the shop floor. The adopted tools are Unity 3D for virtual environment generation, HTC VIVE to immerse the user in the virtual factory layout, Xsens as tracking system, and Leap Motion for gesture recognition. The paper also compares the new VR-based procedure with a more traditional desktop-based digital simulation on industrial cases. Results show that the new methodology is more precise to detect the operator’s comfort angles and more powerful to predict process criticalities and optimize factory layout design. At the same time, it is less sensitive to errors during ergonomic assessment related to the expert’s subjectivity during the analysis.",
+    "accessed": { "date-parts": [["2024", 1, 21]] },
+    "author": [
+      { "family": "Peruzzini", "given": "Margherita" },
+      { "family": "Grandi", "given": "Fabio" },
+      { "family": "Cavallaro", "given": "Sara" },
+      { "family": "Pellicciari", "given": "Marcello" }
+    ],
+    "citation-key": "peruzziniUsing2021",
+    "container-title": "The International Journal of Advanced Manufacturing Technology",
+    "container-title-short": "Int J Adv Manuf Technol",
+    "DOI": "10.1007/s00170-020-06229-2",
+    "ISSN": "1433-3015",
+    "issue": "3",
+    "issued": { "date-parts": [["2021", 7, 1]] },
+    "language": "en",
+    "page": "873-887",
+    "source": "Springer Link",
+    "title": "Using virtual manufacturing to design human-centric factories: an industrial case",
+    "title-short": "Using virtual manufacturing to design human-centric factories",
+    "type": "article-journal",
+    "URL": "https://doi.org/10.1007/s00170-020-06229-2",
+    "volume": "115"
   },
   {
     "id": "piagetPsychogenesis1980",
@@ -3908,6 +4047,37 @@
     "volume": "53"
   },
   {
+    "id": "ruttenlearning2012",
+    "abstract": "This article reviews the (quasi)experimental research of the past decade on the learning effects of computer simulations in science education. The focus is on two questions: how use of computer simulations can enhance traditional education, and how computer simulations are best used in order to improve learning processes and outcomes. We report on studies that investigated computer simulations as a replacement of or enhancement to traditional instruction. In particular, we consider the effects of variations in how information is visualized, how instructional support is provided, and how computer simulations are embedded within the lesson scenario. The reviewed literature provides robust evidence that computer simulations can enhance traditional instruction, especially as far as laboratory activities are concerned. However, in most of this research the use of computer simulations has been approached without consideration of the possible impact of teacher support, the lesson scenario, and the computer simulation’s place within the curriculum.",
+    "accessed": { "date-parts": [["2024", 1, 21]] },
+    "author": [
+      { "family": "Rutten", "given": "Nico" },
+      {
+        "family": "Joolingen",
+        "given": "Wouter R.",
+        "non-dropping-particle": "van"
+      },
+      {
+        "family": "Veen",
+        "given": "Jan T.",
+        "non-dropping-particle": "van der"
+      }
+    ],
+    "citation-key": "ruttenlearning2012",
+    "container-title": "Computers & Education",
+    "container-title-short": "Computers & Education",
+    "DOI": "10.1016/j.compedu.2011.07.017",
+    "ISSN": "0360-1315",
+    "issue": "1",
+    "issued": { "date-parts": [["2012", 1, 1]] },
+    "page": "136-153",
+    "source": "ScienceDirect",
+    "title": "The learning effects of computer simulations in science education",
+    "type": "article-journal",
+    "URL": "https://www.sciencedirect.com/science/article/pii/S0360131511001758",
+    "volume": "58"
+  },
+  {
     "id": "saabNursing2022",
     "abstract": "Aims and Objectives This study explored nursing students’ views of using virtual reality in healthcare. Background The popularity and use of virtual reality in healthcare delivery and education is on the rise. Yet, the views of future nurses regarding this technology remain underexplored. Design This is a qualitative descriptive study guided by a naturalistic inquiry and reported using the Standards for Reporting Qualitative Research checklist. Methods Nursing students (n = 26) were recruited using convenience and snowball sampling. They were first exposed to a virtual reality intervention aimed to enhance men's awareness of testicular diseases. This was attempted to familiarise participants with the technology and initiate conversations around its use in healthcare. Participants were then interviewed face-to-face, either individually or within focus groups. Data were analysed using thematic analysis. Results Four themes were identified: (i) positive experiences of virtual reality; (ii) challenges to using virtual reality; (iii) settings where virtual reality can be implemented; and (iv) blue-sky and future applications of virtual reality. Participants described this technology as novel, enjoyable, immersive, memorable and inclusive. They questioned, however, the suitability of virtual reality for older adults, reported minor technical difficulties and stressed the importance of prior preparation in the use of the technology. Virtual reality was recommended for use in outpatient healthcare settings, schools and the community. Participants suggested using virtual reality in health promotion, disease prevention and management, and to promote nurses’ empathy towards patients. Conclusions Findings highlight the potential role of virtual reality in assisting nurses in promoting health and managing disease. Future research is needed to establish the long-term effect of virtual reality interventions among more diverse participants. Relevance to clinical practice Virtual reality can be implemented in outpatient, educational and community settings in order to promote health, prevent disease, enhance disease and self-management, and increase nurses’ empathy towards patients.",
     "accessed": { "date-parts": [["2023", 2, 12]] },
@@ -4100,6 +4270,29 @@
     "URL": "https://asmedigitalcollection.asme.org/IMECE/proceedings/IMECE2014/46438/Montreal,%20Quebec,%20Canada/262408"
   },
   {
+    "id": "singhUsing2020",
+    "abstract": "This study explored virtual reality (VR) as an educational tool to offer immersive and experiential learning environments to biomedical engineering (BME) students. VR and traditional two-dimensional (2D) videos were created and used to teach required communication skills to BME students' while working with clinical partners in healthcare settings. The videos of interdisciplinary teams (engineering and nursing students) tackling medical device-related problems, similar to those commonly observed in healthcare settings, were shown to BME students. Student surveys indicated that, through VR videos, they felt more immersed in real-world clinical scenarios while learning about the clinical problems, each team-member's areas of expertise, their roles and responsibilities, and how an interdisciplinary team operated collectively to solve a problem in the presented settings. Students with a prior in-person immersion experience, in the presented settings, reported VR videos to serve as a possible alternative to in-person immersion and a useful tool for their preparedness for real-world clinical immersion. We concluded that VR holds promise as an educational tool to offer simulated clinical scenarios that are effective in training BME students for interprofessional collaborations.",
+    "accessed": { "date-parts": [["2024", 1, 21]] },
+    "author": [
+      { "family": "Singh", "given": "Anita" },
+      { "family": "Ferry", "given": "Dawn" },
+      { "family": "Ramakrishnan", "given": "Arun" },
+      { "family": "Balasubramanian", "given": "Sriram" }
+    ],
+    "citation-key": "singhUsing2020",
+    "container-title": "Journal of Biomechanical Engineering",
+    "container-title-short": "Journal of Biomechanical Engineering",
+    "DOI": "10.1115/1.4048005",
+    "ISSN": "0148-0731",
+    "issue": "111013",
+    "issued": { "date-parts": [["2020", 9, 11]] },
+    "source": "Silverchair",
+    "title": "Using Virtual Reality in Biomedical Engineering Education",
+    "type": "article-journal",
+    "URL": "https://doi.org/10.1115/1.4048005",
+    "volume": "142"
+  },
+  {
     "id": "slaterEnhancing2016",
     "abstract": "Virtual reality (VR) started about 50 years ago in a form we would recognize today [stereo ­head-mounted display (HMD), head tracking, computer graphics generated images] – although the hardware was completely different. In the 1980s and 1990s, VR emerged again based on a ­different generation of hardware (e.g., CRT displays rather than vector refresh, electromagnetic tracking instead of mechanical). This reached the attention of the public, and VR was hailed by many engineers, scientists, celebrities, and business people as the beginning of a new era, when VR would soon change the world for the better. Then, VR disappeared from public view and was rumored to be “dead.” In the intervening 25 years a huge amount of research has nevertheless been carried out across a vast range of applications – from medicine to business, from psychotherapy to industry, from sports to travel. Scientists, engineers, and people working in industry carried on with their research and applications using and exploring different forms of VR, not knowing that actually the topic had already passed away.",
     "accessed": { "date-parts": [["2022", 10, 18]] },
@@ -4216,6 +4409,30 @@
     "title-short": "An immersive virtual reality learning environment with CFD simulations",
     "type": "article-journal",
     "URL": "https://doi.org/10.1007/s10639-023-11747-z"
+  },
+  {
+    "id": "sooriVirtual2024",
+    "abstract": "Virtual manufacturing is one of the key components of Industry 4.0, the fourth industrial revolution, in improving manufacturing processes. Virtual manufacturing enables manufacturers to optimize their production processes using real-time data from sensors and other connected devices in Industry 4.0. Web-based virtual manufacturing platforms are a critical component of Industry 4.0, enabling manufacturers to design, test, and optimize their processes collaboratively and efficiently. In Industry 4.0, radio frequency identification (RFID) technology is used to provide real-time visibility and control of the supply chain as well as to enable the automation of various manufacturing processes. Big data analytics can be used in conjunction with virtual manufacturing to provide valuable insights and optimize production processes in Industry 4.0. Artificial intelligence (AI) and virtual manufacturing have the potential to enhance the effectiveness, consistency, and adaptability of manufacturing processes, resulting in faster production cycles, better-quality products, and lower prices. Recent developments in the application of virtual manufacturing systems to digital manufacturing platforms from different perspectives, such as the Internet of things, big data analytics, additive manufacturing, autonomous robots, cybersecurity, and RFID technology in Industry 4.0, are discussed in this study to analyze and develop the part manufacturing process in Industry 4.0. The limitations and advantages of virtual manufacturing systems in Industry 4.0 are discussed, and future research projects are also proposed. Thus, productivity in the part manufacturing process can be enhanced by reviewing and analyzing the applications of virtual manufacturing in Industry 4.0.",
+    "accessed": { "date-parts": [["2024", 1, 21]] },
+    "author": [
+      { "family": "Soori", "given": "Mohsen" },
+      { "family": "Arezoo", "given": "Behrooz" },
+      { "family": "Dastres", "given": "Roza" }
+    ],
+    "citation-key": "sooriVirtual2024",
+    "container-title": "Data Science and Management",
+    "container-title-short": "Data Science and Management",
+    "DOI": "10.1016/j.dsm.2023.10.006",
+    "ISSN": "2666-7649",
+    "issue": "1",
+    "issued": { "date-parts": [["2024", 3, 1]] },
+    "page": "47-63",
+    "source": "ScienceDirect",
+    "title": "Virtual manufacturing in Industry 4.0: A review",
+    "title-short": "Virtual manufacturing in Industry 4.0",
+    "type": "article-journal",
+    "URL": "https://www.sciencedirect.com/science/article/pii/S2666764923000498",
+    "volume": "7"
   },
   {
     "id": "southgateUsing2020",
@@ -4919,6 +5136,32 @@
     "URL": "http://peer.asee.org/11908"
   },
   {
+    "id": "xieLearning2018",
+    "abstract": "This paper provides a theoretical perspective of how modeling and simulation on a CAD platform can be used to teach science concepts and inform design decisions. The paper discusses the educational implications of three recent advancements in CAD technologies: system integration, machine learning, and computational design. The challenges to design energy-efficient buildings that harness solar energy are used as the engineering examples to illustrate the learning and teaching opportunities created by the modeling, simulation, and data mining capabilities of the Energy3D software, which is a CAD tool developed from scratch along the directions of the three advancements to support engineering research and education. Preliminary results from students in a physics classroom and an online course shed light on the effects of these features on guiding student to design cost-effective rooftop solar power systems for their own home buildings.",
+    "accessed": { "date-parts": [["2024", 1, 21]] },
+    "author": [
+      { "family": "Xie", "given": "Charles" },
+      { "family": "Schimpf", "given": "Corey" },
+      { "family": "Chao", "given": "Jie" },
+      { "family": "Nourian", "given": "Saeid" },
+      { "family": "Massicotte", "given": "Joyce" }
+    ],
+    "citation-key": "xieLearning2018",
+    "container-title": "Computer Applications in Engineering Education",
+    "DOI": "10.1002/cae.21920",
+    "ISSN": "1099-0542",
+    "issue": "4",
+    "issued": { "date-parts": [["2018"]] },
+    "language": "en",
+    "license": "© 2018 Wiley Periodicals, Inc.",
+    "page": "824-840",
+    "source": "Wiley Online Library",
+    "title": "Learning and teaching engineering design through modeling and simulation on a CAD platform",
+    "type": "article-journal",
+    "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1002/cae.21920",
+    "volume": "26"
+  },
+  {
     "id": "yangCognitive2020",
     "abstract": "This study focuses on identifying the cognitive impact of virtual reality (VR) sketching on the concept generation phase of the design process. For an empirical study to analyse the cognitive influence of VR sketching, we conducted a pilot study for empirical research based on the protocol analysis of designers’ cognitive activities in VR sketching and compared the results with those of traditional sketching. Spatial inspection was a key behavioural factor of VR sketching when considering its high-frequency repetitive and continuous interactions with a designer's representation activities throughout the concept generation process. The cognitive impact of VR sketching revealed the following decisive features: extension of solution space, enhancement of idea transformation and inducement to a holistic design approach for concept generation. These findings provide insight for understanding the cognitive role of advanced digital design tools for future design research.",
     "accessed": { "date-parts": [["2023", 1, 1]] },
@@ -5015,29 +5258,6 @@
     "type": "article-journal",
     "URL": "https://www.proquest.com/docview/2167789831/abstract/C80DDD4C6637459DPQ/1",
     "volume": "25"
-  },
-  {
-    "id": "zhuSensorbased2022",
-    "abstract": "Problem-solving is the process to achieve a goal when the solution path is uncertain. Recently, technological advancements have changed problems’ characteristics and their solutions in engineering fields. Strong problem-solving skills are essential to allow engineers to assess new problems and quickly implement solutions. Engineering problem-solving skills are first educated in schools and usually evaluated through written exams. However, high grades in exams do not represent sufficient problem-solving skills in real-world engineering problems. Decision making with insufficient problem-solving skills in real world may result in costly consequences. Therefore, it is imperative to evaluate and reinforce problem-solving skills of engineering students in real-world problems. With the rapid technological advancements, availability of virtual reality (VR) and eye-tracking facilitates the study of engineering problem-solving. The immersive environment created by VR enables students to better understand and solve real-world engineering problems. On the other hand, eye-tracking allows for studying fundamental cognitive processes during information processing. It is critical to integrate VR simulation with data-driven modeling of eye movements to evaluate and enhance engineering problem-solving skills. In this paper, we integrate sensing technology (i.e., eye-tracking) and virtual reality (VR) to model problem-solving in manufacturing systems. A novel data-driven model that integrates signal detection theory (SDT) with Conflict & Error (C&E) is developed to quantify engineering problem-solving skills. First, we simulate a manufacturing system in a VR game environment. Students are given an assembly problem to produce a car toy that satisfies some particular requirements in the VR manufacturing system while eye-tracking data are collected throughout the assembly process. Second, eye-tracking data are analyzed with a SDT model to quantify problem-solving skills. Third, a joint SDT-C&E model is developed to analyze eye-tracking data and benchmark with results generated from the SDT model. Experimental results show that the joint SDT-C&E model is more effective to quantify problem-solving skills of engineering students than the SDT model.",
-    "accessed": { "date-parts": [["2024", 1, 5]] },
-    "author": [
-      { "family": "Zhu", "given": "Rui" },
-      { "family": "Aqlan", "given": "Faisal" },
-      { "family": "Zhao", "given": "Richard" },
-      { "family": "Yang", "given": "Hui" }
-    ],
-    "citation-key": "zhuSensorbased2022",
-    "container-title": "Expert Systems with Applications",
-    "container-title-short": "Expert Systems with Applications",
-    "DOI": "10.1016/j.eswa.2022.117220",
-    "ISSN": "0957-4174",
-    "issued": { "date-parts": [["2022", 9, 1]] },
-    "page": "117220",
-    "source": "ScienceDirect",
-    "title": "Sensor-based modeling of problem-solving in virtual reality manufacturing systems",
-    "type": "article-journal",
-    "URL": "https://www.sciencedirect.com/science/article/pii/S0957417422006030",
-    "volume": "201"
   },
   {
     "id": "zorriassatinesurvey2003",
