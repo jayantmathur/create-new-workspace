@@ -7,14 +7,16 @@ contributes:
             mainfont: Calibri
 
             fig-pos: '!htb'
-            table-of-contents: true
+
+            toc: true
+
             csl: https://www.zotero.org/styles/chicago-author-date
 
         html:
             embed-resources: true
             fig-format: svg
             format-links: false
-            template: 'index.html'
+            
             template-partials:
                 # - 'partials/html/metadata.html'
                 - 'partials/html/title-block.html'
@@ -30,7 +32,7 @@ contributes:
                 - margin=1in
 
             pdf-engine: lualatex
-            # template: 'index.tex'
+            
             block-headings: false
 
             template-partials:
