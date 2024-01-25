@@ -5,7 +5,6 @@ import {
   ReactNode,
   useRef,
   useMemo,
-  MutableRefObject,
   useState,
 } from "react";
 import { useRouter } from "next/navigation";
@@ -17,7 +16,6 @@ import {
   Stage,
   PerspectiveCamera,
 } from "@react-three/drei";
-import tunnel from "tunnel-rat";
 
 import { cn } from "@/lib/utils";
 
@@ -25,8 +23,6 @@ type ViewProps = HTMLAttributes<HTMLDivElement> & {
   orbit?: boolean;
   camera?: PerspectiveCameraProps;
 };
-
-const r3f = tunnel();
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -37,8 +33,7 @@ const View = ({
   camera = undefined,
   ...props
 }: ViewProps) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const controlsRef = useRef<CameraControls>(null);
+  const ref = useRef<CameraControls>(null);
 
   const [isMounted, setMounted] = useState(false);
 
@@ -55,7 +50,7 @@ const View = ({
 
   const handleInActive = () => {
     if (timeout) return;
-    timeout = setTimeout(() => controlsRef?.current?.reset(true), 3000);
+    timeout = setTimeout(() => ref?.current?.reset(true), 3000);
     // console.log("inactive");
   };
 
@@ -68,9 +63,7 @@ const View = ({
   if (!isMounted) return null;
 
   return (
-    <div
-      ref={ref}
-      className={cn(
+        <ViewImpl className={cn(
         "relative w-full h-full pointer-events-auto touch-auto",
         className,
       )}
@@ -80,10 +73,7 @@ const View = ({
       onTouchStart={handleActive}
       // onTouchMove={handleActive}
       onTouchEnd={handleInActive}
-      {...props}
-    >
-      <r3f.In>
-        <ViewImpl track={ref as MutableRefObject<HTMLElement>}>
+      {...props}>
           <Stage>
             <PerspectiveCamera
               makeDefault
@@ -93,7 +83,7 @@ const View = ({
             />
             {children}
             <CameraControls
-              ref={controlsRef}
+              ref={ref}
               enabled={orbit}
               minDistance={2}
               maxDistance={5}
@@ -106,8 +96,6 @@ const View = ({
             />
           </Stage>
         </ViewImpl>
-      </r3f.In>
-    </div>
   );
 };
 
@@ -127,11 +115,10 @@ const Provider = ({ children }: { children: ReactNode }) => {
             pointerEvents: "none",
           }}
           eventSource={ref}
-          eventPrefix="client"
           dpr={[1, 2]}
         >
-          <r3f.Out />
           <Preload all />
+          <View.Port/>
         </Canvas>
       </div>
     </>
@@ -140,4 +127,4 @@ const Provider = ({ children }: { children: ReactNode }) => {
 
 export default Provider;
 export type { ViewProps };
-export { View, r3f };
+export { View };
