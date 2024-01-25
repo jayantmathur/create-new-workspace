@@ -1,6 +1,13 @@
 "use client";
 
-import { HTMLAttributes, ReactNode, useRef, useMemo, useState } from "react";
+import {
+  HTMLAttributes,
+  ReactNode,
+  useRef,
+  useMemo,
+  useState,
+  MutableRefObject,
+} from "react";
 import { useRouter } from "next/navigation";
 import { Canvas, PerspectiveCameraProps } from "@react-three/fiber";
 import {
@@ -27,7 +34,8 @@ const View = ({
   camera = undefined,
   ...props
 }: ViewProps) => {
-  const ref = useRef<CameraControls>(null);
+  const ref = useRef<HTMLDivElement>(null);
+  const controlsRef = useRef<CameraControls>(null);
 
   const [isMounted, setMounted] = useState(false);
 
@@ -44,7 +52,7 @@ const View = ({
 
   const handleInActive = () => {
     if (timeout) return;
-    timeout = setTimeout(() => ref?.current?.reset(true), 3000);
+    timeout = setTimeout(() => controlsRef?.current?.reset(true), 3000);
     // console.log("inactive");
   };
 
@@ -58,6 +66,8 @@ const View = ({
 
   return (
     <ViewImpl
+      ref={ref}
+      track={ref as MutableRefObject<HTMLElement>}
       className={cn(
         "relative w-full h-full pointer-events-auto touch-auto",
         className,
@@ -70,7 +80,7 @@ const View = ({
       onTouchEnd={handleInActive}
       {...props}
     >
-      <Stage>
+      <Stage adjustCamera={false}>
         <PerspectiveCamera
           makeDefault
           position={[2, 2, 2]}
@@ -79,7 +89,7 @@ const View = ({
         />
         {children}
         <CameraControls
-          ref={ref}
+          ref={controlsRef}
           enabled={orbit}
           minDistance={2}
           maxDistance={5}
