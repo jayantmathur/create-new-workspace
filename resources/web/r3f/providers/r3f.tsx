@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  HTMLAttributes,
-  ReactNode,
-  useRef,
-  useMemo,
-  useState,
-} from "react";
+import { HTMLAttributes, ReactNode, useRef, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Canvas, PerspectiveCameraProps } from "@react-three/fiber";
 import {
@@ -63,7 +57,8 @@ const View = ({
   if (!isMounted) return null;
 
   return (
-        <ViewImpl className={cn(
+    <ViewImpl
+      className={cn(
         "relative w-full h-full pointer-events-auto touch-auto",
         className,
       )}
@@ -73,29 +68,30 @@ const View = ({
       onTouchStart={handleActive}
       // onTouchMove={handleActive}
       onTouchEnd={handleInActive}
-      {...props}>
-          <Stage>
-            <PerspectiveCamera
-              makeDefault
-              position={[2, 2, 2]}
-              zoom={1}
-              {...camera}
-            />
-            {children}
-            <CameraControls
-              ref={ref}
-              enabled={orbit}
-              minDistance={2}
-              maxDistance={5}
-              // minPolarAngle={Math.PI / 4}
-              maxPolarAngle={Math.PI / 2.125}
-              // minAzimuthAngle={-Math.PI / 4}
-              // maxAzimuthAngle={Math.PI / 4}
-              onStart={handleActive}
-              onEnd={handleInActive}
-            />
-          </Stage>
-        </ViewImpl>
+      {...props}
+    >
+      <Stage>
+        <PerspectiveCamera
+          makeDefault
+          position={[2, 2, 2]}
+          zoom={1}
+          {...camera}
+        />
+        {children}
+        <CameraControls
+          ref={ref}
+          enabled={orbit}
+          minDistance={2}
+          maxDistance={5}
+          // minPolarAngle={Math.PI / 4}
+          maxPolarAngle={Math.PI / 2.125}
+          // minAzimuthAngle={-Math.PI / 4}
+          // maxAzimuthAngle={Math.PI / 4}
+          onStart={handleActive}
+          onEnd={handleInActive}
+        />
+      </Stage>
+    </ViewImpl>
   );
 };
 
@@ -118,7 +114,7 @@ const Provider = ({ children }: { children: ReactNode }) => {
           dpr={[1, 2]}
         >
           <Preload all />
-          <View.Port/>
+          <ViewImpl.Port />
         </Canvas>
       </div>
     </>
