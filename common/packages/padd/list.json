@@ -133,6 +133,7 @@
   "webxr": {
     "dependencies": [
       "@coconut-xr/koestlich",
+      "@coconut-xr/lucide-koestlich",
       "@coconut-xr/apfel-kruemel",
       "@coconut-xr/natuerlich",
       "@react-three/fiber",
