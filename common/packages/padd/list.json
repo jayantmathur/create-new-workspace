@@ -20,7 +20,7 @@
       "shad": "pnpm dlx shadcn-ui@latest"
     },
     "postinstalls": [
-      "pnpm dlx shadcn-ui@latest add button tabs aspect-ratio --yes --overwrite"
+      "pnpm dlx shadcn-ui@latest add button tabs aspect-ratio sheet --yes --overwrite"
     ]
   },
   "forms": {
