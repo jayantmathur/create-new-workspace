@@ -6,7 +6,7 @@ import { Metadata } from "next";
 import { cn } from "@/lib/utils";
 import { rhd, rhm, urb } from "@/config/fonts";
 import Providers from "./providers";
-import ThemeSwitch from "./theme-switch";
+import ThemeSwitch from "@/components/theme-switch";
 import Navbar from "@/components/navbar";
 // import Title from "@/components/title";
 
