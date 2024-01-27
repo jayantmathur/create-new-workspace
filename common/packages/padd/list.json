@@ -61,7 +61,7 @@
     "postinstalls": ["pnpm exec next telemetry disable"],
     "scripts": {
       "push": "pnpm version --force",
-      "postpush": "git add . & git commit -m \"save work\" & git"
+      "postpush": "git add . & git commit -m \"save work\" & git push"
     }
   },
   "mobile": {
