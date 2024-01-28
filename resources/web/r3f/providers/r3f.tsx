@@ -8,7 +8,6 @@ import {
   useState,
   MutableRefObject,
 } from "react";
-import { useRouter } from "next/navigation";
 import { Canvas, PerspectiveCameraProps } from "@react-three/fiber";
 import {
   Preload,
@@ -39,8 +38,6 @@ const View = ({
 
   const [isMounted, setMounted] = useState(false);
 
-  const router = useRouter();
-
   let timeout: NodeJS.Timeout | undefined = undefined;
 
   const handleActive = () => {
@@ -57,10 +54,9 @@ const View = ({
   };
 
   useMemo(async () => {
-    router.refresh();
     await sleep(500);
     setMounted(true);
-  }, [router]);
+  }, []);
 
   if (!isMounted) return null;
 
