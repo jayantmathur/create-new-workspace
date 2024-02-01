@@ -68,3 +68,55 @@ function Span(span)
     return span
   end
 end
+
+-- Define the colors for each tag
+local colors = {
+  REVIEW = "cyan",
+  REWRITE = "pink",
+  TODO = "yellow"
+}
+
+-- Function to process text
+function process_text(content)
+  -- Check for each tag
+  for tag, color in pairs(colors) do
+    -- If the tag is found in the content
+    if content:find('!' .. tag .. ':') then
+      -- Highlight the entire content in the appropriate color
+      return pandoc.RawInline('latex', '\\colorbox{' .. color .. '}{' .. content .. '}')
+    end
+  end
+
+  -- If no tags were found, return nil
+  return nil
+end
+
+-- Function to process each paragraph
+function Para(para)
+  -- Convert the paragraph to a string
+  local content = pandoc.utils.stringify(para)
+
+  -- Process the text
+  local result = process_text(content)
+
+  -- If a result was returned, replace the paragraph content with it
+  if result then return pandoc.Para({ result }) end
+
+  -- If no tags were found, return the paragraph unchanged
+  return para
+end
+
+-- Function to process each bullet list item
+function Plain(plain)
+  -- Convert the item to a string
+  local content = pandoc.utils.stringify(plain)
+
+  -- Process the text
+  local result = process_text(content)
+
+  -- If a result was returned, replace the item content with it
+  if result then return pandoc.Plain({ result }) end
+
+  -- If no tags were found, return the item unchanged
+  return plain
+end
