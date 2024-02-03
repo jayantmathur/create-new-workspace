@@ -8,20 +8,34 @@
 #' The resulting cleaned up data is returned.
 #'
 #' @param data A data frame to be cleaned up
+#' @param includes A character vector of column names to include in the cleaned up data
 #'
 #' @return A cleaned up data frame
 #'
 #' @importFrom dplyr select contains starts_with
 #'
 #' @examples
+#' \dontrun{
 #' data <- data.frame(matrix(1:9, nrow = 3, ncol = 3))
 #' cleaned_data <- data.clean(data)
+#' }
 #'
 #' @export
-data.clean <- function(data) {
+
+data_clean <- function(data, includes = NULL) {
     data <- select(
         data[-2, ],
-        contains(c("Q", "condition", "randomfield")) & !contains(c("NPS", "Browser", "Version", "System", "Resolution", "Click"))
+        contains(includes) & !contains(
+            c(
+                "NPS",
+                "Browser",
+                "Version",
+                "System",
+                "Resolution",
+                "First",
+                "Last"
+            )
+        )
     )
 
     # specifically to remove tutorial stuff
