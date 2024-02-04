@@ -40,6 +40,8 @@ contributes:
             # logo: 'public/icon.svg'
             # footer: '{{< meta date >}}'
 
+            output-file: digital
+
             # multiplex: true
             embed-resources: true
             # slide-tone: true
