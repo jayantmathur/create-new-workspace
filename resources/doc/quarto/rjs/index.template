@@ -35,7 +35,7 @@ $for(css)$
   <link rel="stylesheet" href="$css$"/>
 $endfor$
 
-<link rel="icon" type="image/x-icon" href="public/icons/favicon.ico">
+<link rel="icon" type="image/x-icon" href="../public/icons/favicon.ico">
 
 $if(math)$
   $math$
@@ -89,10 +89,10 @@ $endif$
         </div>
         <div style="white-space: nowrap;  width: 50%;  display: table">
             <div class="footer hide" style="vertical-align: middle;    padding: 1rem; display: table-cell;    text-align: center;">
-              <img src="public/logos/mbdl.svg" style="height: 5vh;" />
+              <img src="../public/logos/mbdl.svg" style="height: 5vh;" />
             </div>
             <div style="vertical-align: middle;    padding: 1rem; display: table-cell;    text-align: center;">
-              <img src="public/logos/sedi.svg" style="height: 5vh;" />
+              <img src="../public/logos/sedi.svg" style="height: 5vh;" />
             </div>            
         </div>
     </div>
