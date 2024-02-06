@@ -72,7 +72,7 @@ end
 -- This Lua filter will highlight sentences that start with "!REWRITE", "!REVIEW", or "!TODO"
 
 local keywords = {
-  ["!REWRITE:"] = "pink",
+  ["!FIX:"] = "red",
   ["!REVIEW:"] = "cyan",
   ["!TODO:"] = "orange"
 }
