@@ -82,7 +82,7 @@ function Para(elem)
   while i <= #elem.content do
     local keyword, color
     for k, v in pairs(keywords) do
-      if elem.content[i].tag == "Str" and elem.content[i].text:find("^" .. k) then
+      if elem.content[i] and elem.content[i].tag == "Str" and elem.content[i].text:find("^" .. k) then
         keyword = k
         color = v
         break
@@ -95,12 +95,12 @@ function Para(elem)
       end
       local highlighted = pandoc.RawInline('latex', '\\sethlcolor{' .. color .. '}\\hl{')
       for k = i, j do
-        if elem.content[k].tag == "Str" then
+        if elem.content[k] and elem.content[k].tag == "Str" then
           highlighted.text = highlighted.text .. elem.content[k].text .. ' '
         end
       end
       highlighted.text = highlighted.text .. '}'
-      table.remove(elem.content, i, j)
+      table.remove(elem.content, i)
       table.insert(elem.content, i, highlighted)
       i = j
     else
