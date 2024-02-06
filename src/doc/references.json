@@ -929,6 +929,32 @@
     "volume": "36"
   },
   {
+    "id": "dejeneCurrent2023",
+    "abstract": "Powder bed fusion (PBF) is recognized as one of the most common additive manufacturing technologies because of its attractive capability of fabricating complex geometries using many possible materials. However, the quality and reliability of parts produced by this technology are observed to be crucial aspects. In addition, the challenges of PBF-produced parts are hot issues among stakeholders because parts are still insufficient to meet the strict requirements of high-tech industries. This paper discusses the present state of the art in PBF and technological challenges, with a focus on selective laser melting (SLM). The review work focuses mainly on articles that emphasize the status and challenges of PBF metal-based AM, and the study is primarily limited to open-access sources, with special attention given to the process parameters and flaws as a determining factor for printed part quality and reliability. Moreover, the common defects due to an unstrained process parameter of SLM and those needed to monitor and sustain the quality and reliability of components are encompassed. From this review work, it has been observed that there are several factors, such as laser parameters, powder characteristics, material properties of powder and the printing chamber environments, that affect the SLM printing process and the mechanical properties of printed parts. It is also concluded that the SLM process is not only expensive and slow compared with conventional manufacturing processes, but it also suffers from key drawbacks, such as its reliability and quality in terms of dimensional accuracy, mechanical strength and surface roughness.",
+    "accessed": { "date-parts": [["2024", 2, 4]] },
+    "author": [
+      { "family": "Dejene", "given": "Naol Dessalegn" },
+      { "family": "Lemu", "given": "Hirpa G." }
+    ],
+    "citation-key": "dejeneCurrent2023",
+    "container-title": "Metals",
+    "DOI": "10.3390/met13020424",
+    "ISSN": "2075-4701",
+    "issue": "2",
+    "issued": { "date-parts": [["2023", 2]] },
+    "language": "en",
+    "license": "http://creativecommons.org/licenses/by/3.0/",
+    "number": "2",
+    "page": "424",
+    "publisher": "Multidisciplinary Digital Publishing Institute",
+    "source": "www.mdpi.com",
+    "title": "Current Status and Challenges of Powder Bed Fusion-Based Metal Additive Manufacturing: Literature Review",
+    "title-short": "Current Status and Challenges of Powder Bed Fusion-Based Metal Additive Manufacturing",
+    "type": "article-journal",
+    "URL": "https://www.mdpi.com/2075-4701/13/2/424",
+    "volume": "13"
+  },
+  {
     "id": "dejongPhysical2013",
     "abstract": "The world needs young people who are skillful in and enthusiastic about science and who view science as their future career field. Ensuring that we will have such young people requires initiatives that engage students in interesting and motivating science experiences. Today, students can investigate scientific phenomena using the tools, data collection techniques, models, and theories of science in physical laboratories that support interactions with the material world or in virtual laboratories that take advantage of simulations. Here, we review a selection of the literature to contrast the value of physical and virtual investigations and to offer recommendations for combining the two to strengthen science learning.",
     "accessed": { "date-parts": [["2022", 10, 18]] },
@@ -1091,6 +1117,34 @@
     "title": "The power of problem-based learning: a practical \"how to\" for teaching undergraduate courses in any discipline",
     "title-short": "The power of problem-based learning",
     "type": "book"
+  },
+  {
+    "id": "duraimurugancurrent2022",
+    "abstract": "Alloys such as super alloys, Aluminium, titanium alloys are employed for metal additive manufacturing significantly. These alloys are used to make aircraft components, gas turbines and other structural areas. Additive manufacturing (AM), is also known as direct digital manufacturing methods, has improved the mechanical properties of additively manufactured metals. This paper overviews about various metal additive manufacturing methods on recent development and impact of process factors on mechanical behaviour, microstructures, formation of voids, surface status and appearance with respect to various additively manufactured metal alloys. In addition, this article reviewed about the printing challenges pertaining to cracks and void formation, behaviour of material, merits and limitations and layer by layer printed material appearance. Overall, this article gives an overview of metal additive manufacturing, including its benefits and limitations as a criterion for further research in additive manufacturing.",
+    "accessed": { "date-parts": [["2024", 2, 4]] },
+    "author": [
+      { "family": "Durai Murugan", "given": "P." },
+      { "family": "Vijayananth", "given": "S." },
+      { "family": "Natarajan", "given": "M. P." },
+      { "family": "Jayabalakrishnan", "given": "D." },
+      { "family": "Arul", "given": "K." },
+      { "family": "Jayaseelan", "given": "V." },
+      { "family": "Elanchezhian", "given": "J." }
+    ],
+    "citation-key": "duraimurugancurrent2022",
+    "collection-title": "International Conference Virtual Conference on Technological Advancements in Mechanical Engineering",
+    "container-title": "Materials Today: Proceedings",
+    "container-title-short": "Materials Today: Proceedings",
+    "DOI": "10.1016/j.matpr.2021.11.503",
+    "ISSN": "2214-7853",
+    "issued": { "date-parts": [["2022", 1, 1]] },
+    "page": "1277-1283",
+    "source": "ScienceDirect",
+    "title": "A current state of metal additive manufacturing methods: A review",
+    "title-short": "A current state of metal additive manufacturing methods",
+    "type": "article-journal",
+    "URL": "https://www.sciencedirect.com/science/article/pii/S2214785321075258",
+    "volume": "59"
   },
   {
     "id": "ertmerBehaviorism1993",
@@ -1319,6 +1373,28 @@
     "type": "article-journal",
     "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1111/bjet.12135",
     "volume": "46"
+  },
+  {
+    "id": "francomHow2013",
+    "abstract": "Many recent models of learning and instruction center learning on real-world tasks and problems to support knowledge application and transfer. Among these models are problem-based learning and taskcentered learning, two different approaches to learning that are often mistaken for one another. However, there are important distinctions between these two approaches to learning with regard to epistemological influences, goals, and prescriptions. In this article the authors provide a description of task-centered learning and differentiate it from the concept of problem-based learning.",
+    "accessed": { "date-parts": [["2024", 2, 4]] },
+    "author": [
+      { "family": "Francom", "given": "Gregory M." },
+      { "family": "Gardner", "given": "Joel L." }
+    ],
+    "citation-key": "francomHow2013",
+    "container-title": "Educational Technology",
+    "ISSN": "0013-1962",
+    "issue": "3",
+    "issued": { "date-parts": [["2013"]] },
+    "page": "33-38",
+    "publisher": "Educational Technology Publications, Inc.",
+    "source": "JSTOR",
+    "title": "How Task-Centered Learning Differs from Problem-Based Learning: Epistemological Influences, Goals, and Prescriptions",
+    "title-short": "How Task-Centered Learning Differs from Problem-Based Learning",
+    "type": "article-journal",
+    "URL": "https://www.jstor.org/stable/44430150",
+    "volume": "53"
   },
   {
     "id": "frederiksenCognitive2020",
@@ -2424,6 +2500,34 @@
     "type": "article-journal",
     "URL": "https://www.cambridge.org/core/journals/proceedings-of-the-design-society/article/design-teaching-integrating-additive-manufacturing-constraints/A52FE57A04FE86ADE37CBFB7CC76B7FA",
     "volume": "3"
+  },
+  {
+    "id": "kumarMetal2023",
+    "abstract": "Metal additive manufacturing (AM) has matured and grown from its infancy in the research stage to the fabrication of new and advanced components for its supreme applications. AM is a lead for the advanced manufacturing processes with an increased and advanced potential to revolutionize the manufacturing domain. It could exhibit a progressive change in the project and design paradigms. In the past decade, the use of metal AM process in the aerospace industry to build, repair various components for military applications and several outer space vehicle fabrications have occupied higher potential among various other manufacturing industries. In addition to it, many studies have made it a more versatile, common, and safer technology for the design and fabrication of components with the introduction of novel processes, materials, technologies, cost efﬁciency, and process design. In the present review article, the use of advanced aluminum alloys in the AM of fuselage, horizontal stabilizer, and high and low wings has gained increased advantages in the aerospace industry. Various components of wings and fuselage with its merits and demerits in AM processing are discussed. The outstanding issues in AM process and steps to overcome with post-processing techniques are elaborated. Finally, the future scope and research directions of the AM process involved in the fabrication of selected components are discussed.",
+    "accessed": { "date-parts": [["2024", 2, 4]] },
+    "author": [
+      { "family": "Kumar", "given": "G. Ranjith" },
+      { "family": "Sathishkumar", "given": "M." },
+      { "family": "Vignesh", "given": "M." },
+      { "family": "Manikandan", "given": "M." },
+      { "family": "Rajyalakshmi", "given": "G." },
+      { "family": "Ramanujam", "given": "R." },
+      { "family": "Arivazhagan", "given": "N." }
+    ],
+    "citation-key": "kumarMetal2023",
+    "container-title": "Proceedings of the Institution of Mechanical Engineers, Part E: Journal of Process Mechanical Engineering",
+    "container-title-short": "Proceedings of the Institution of Mechanical Engineers, Part E: Journal of Process Mechanical Engineering",
+    "DOI": "10.1177/09544089221104070",
+    "ISSN": "0954-4089, 2041-3009",
+    "issue": "2",
+    "issued": { "date-parts": [["2023", 4]] },
+    "language": "en",
+    "page": "441-454",
+    "source": "DOI.org (Crossref)",
+    "title": "Metal additive manufacturing of commercial aerospace components – A comprehensive review",
+    "type": "article-journal",
+    "URL": "http://journals.sagepub.com/doi/10.1177/09544089221104070",
+    "volume": "237"
   },
   {
     "id": "kumkeMethods2018",
@@ -3980,6 +4084,22 @@
     "volume": "102"
   },
   {
+    "id": "reigeluthInstructionaldesign2017",
+    "citation-key": "reigeluthInstructionaldesign2017",
+    "editor": [{ "family": "Reigeluth", "given": "Charles M." }],
+    "event-place": "New York London",
+    "ISBN": "978-1-138-01293-6",
+    "issued": { "date-parts": [["2017"]] },
+    "language": "en",
+    "number-of-pages": "464",
+    "publisher": "Routledge",
+    "publisher-place": "New York London",
+    "source": "K10plus ISBN",
+    "title": "Instructional-design theories and models. volume 4: The learner-centered paradigm of education / edited by Charles M. Reigeluth, Brian J. Beatty, and Rodney D. Myers",
+    "title-short": "Instructional-design theories and models. volume 4",
+    "type": "book"
+  },
+  {
     "id": "rennerVirtual2015",
     "abstract": "The promise of cheap and widely available 3D printers may be one of the best and worst aspects of Additive Manufacturing (AM). A non-technical consumer may pay significantly more for a 3D printer with “no assembly required”. Since it is reasonable to assume that they may not understand how the printer works and what will come out of it, they may wind up returning it because it does not meet their expectations. While consumers are starting to use 3D printers, designers in industry are utilizing Rapid Prototyping (RP) machines to manufacture final products in addition to prototypes. Designers will need to know AM principles in order to communicate design specifications to a RP lab technician so that a part passes Quality Assurance inspection. Training users on fundamental layer-based manufacturing methods can assist before and after a 3D printer purchase and reduce the strain on RP labs in industry.",
     "accessed": { "date-parts": [["2022", 10, 18]] },
@@ -4145,6 +4265,26 @@
     "type": "article-journal",
     "URL": "https://doi.org/10.1023/A:1012061809603",
     "volume": "5"
+  },
+  {
+    "id": "saveryOverview2006",
+    "abstract": "Problem-based learning (PBL) is an instructional approach that has been used successfully for over 30 years and continues to gain acceptance in multiple disciplines. It is an instructional (and curricular) learner-centered approach that empowers learners to conduct research, integrate theory and practice, and apply knowledge and skills to develop a viable solution to a defined problem. This overview presents a brief history, followed by a discussion of the similarities and differences between PBL and other experiential approaches to teaching, and identifies some of the challenges that lie ahead for PBL.",
+    "accessed": { "date-parts": [["2024", 2, 4]] },
+    "author": [{ "family": "Savery", "given": "John R." }],
+    "citation-key": "saveryOverview2006",
+    "container-title": "Interdisciplinary Journal of Problem-Based Learning",
+    "container-title-short": "Interdisciplinary Journal of Problem-Based Learning",
+    "DOI": "10.7771/1541-5015.1002",
+    "ISSN": "1541-5015",
+    "issue": "1",
+    "issued": { "date-parts": [["2006", 5, 22]] },
+    "language": "en",
+    "source": "DOI.org (Crossref)",
+    "title": "Overview of Problem-based Learning: Deﬁnitions and Distinctions",
+    "title-short": "Overview of Problem-based Learning",
+    "type": "article-journal",
+    "URL": "https://docs.lib.purdue.edu/ijpbl/vol1/iss1/3",
+    "volume": "1"
   },
   {
     "id": "schauerImpact2022",
