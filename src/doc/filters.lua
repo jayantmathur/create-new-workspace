@@ -90,17 +90,17 @@ function Para(elem)
     end
     if keyword then
       local j = i
-      while j <= #elem.content and not (elem.content[j].tag == "Str" and elem.content[j].text:find("%.$")) do
+      while j <= #elem.content and not (elem.content[j].tag == "Str" and elem.content[j].text:find("%. ")) do
         j = j + 1
       end
       local highlighted = pandoc.RawInline('latex', '\\sethlcolor{' .. color .. '}\\hl{')
       for k = i, j do
         if elem.content[k] and elem.content[k].tag == "Str" then
           highlighted.text = highlighted.text .. elem.content[k].text .. ' '
+          table.remove(elem.content, k) -- remove the original element
         end
       end
       highlighted.text = highlighted.text .. '}'
-      table.remove(elem.content, i)
       table.insert(elem.content, i, highlighted)
       i = j
     else
