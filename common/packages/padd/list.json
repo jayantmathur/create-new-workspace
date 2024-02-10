@@ -147,7 +147,7 @@
     "devDependencies": ["decktape"],
     "resources": [
       {
-        "src": "docs/quarto/rjs",
+        "src": "doc/quarto/rjs",
         "dest": "_extensions/rjs"
       }
     ],
