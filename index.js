@@ -342,6 +342,8 @@ const createDocument = async (type = "doc") => {
 
   await Promise.all(promises).then(handleFullFilled, handleError);
 
+  spinner.update({ text: "Installing reveal.js...\n" });
+
   if (isRJS) {
     await exec(`pnpm padd --packs revealjs --path .\\docs\\${name}`, {
       cwd: `${space.name}`,
