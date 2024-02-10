@@ -136,7 +136,8 @@
       }
     ],
     "scripts": {
-      "postbuild": "decktape --size 480x360 .\\output\\pages\\digital.html .\\output\\pages\\print.pdf"
+      "prebuild": "quarto render",
+      "build": "decktape --size 480x360 .\\output\\pages\\digital.html .\\output\\pages\\print.pdf"
     }
   }
 }
