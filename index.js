@@ -306,8 +306,8 @@ const createDocument = async (type = "doc") => {
   spinner.update({ text: "Copying resources...\n" });
 
   await copyFolder(
-    `${__dirname}\\resources\\doc\\${isRJS && "rjs"}`,
-    `${space.name}\\packages\\padd\\resources\\doc\\${isRJS && "rjs"}`,
+    `${__dirname}\\resources\\doc\\${isRJS && "quarto\\rjs"}`,
+    `${space.name}\\packages\\padd\\resources\\doc\\${isRJS && "quarto\\rjs"}`,
   );
 
   spinner.update({ text: "Installing extensions...\n" });
