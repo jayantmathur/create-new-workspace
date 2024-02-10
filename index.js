@@ -281,9 +281,19 @@ const createDocument = async () => {
 
   await copyFolder(`${__dirname}\\src\\doc`, `${space.name}\\docs\\${name}`);
 
-  spinner.update({ text: "Copying resources...\n" });
+  spinner.update({ text: "Installing doc dependencies...\n" });
 
-  await sleep();
+  await exec(`pnpm add padd -Dw --workspace`, {
+    cwd: `${space.name}`,
+  }).then(handleFullFilled, handleError);
+
+  await appendJson(`${space.name}\\package.json`, {
+    scripts: {
+      padd: "padd",
+    },
+  });
+
+  spinner.update({ text: "Copying resources...\n" });
 
   await copyFolder(
     `${__dirname}\\resources\\doc`,
