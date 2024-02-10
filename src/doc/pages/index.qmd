@@ -5,13 +5,13 @@
 
 # Heading
 
-Content cited from @mathurEffects2023 and @cayleyCreation2023 is also with a footnote [^sample]
+Content cited from [@mathurEffects2023] and [@cayleyCreation2023] is also with a footnote [^sample]
 
 This text continues
 
 [^sample]: this is a sample footnote
 
-![Sample figure](../public/placeholder.svg){#fig-sample width=25%}
+![Sample figure](../public/placeholder.svg){#fig-sample}
 
 # Bibliography
 
