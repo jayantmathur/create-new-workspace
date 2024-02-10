@@ -27,10 +27,22 @@ const args = yargs(hideBin(process.argv))
     type: "boolean",
     default: false,
   })
+  .option("update", {
+    alias: "u",
+    description: "Flag to update an existing workspace",
+    type: "boolean",
+    default: false,
+  })
+  .option("create", {
+    alias: "n",
+    description: "Flag to create a new workspace",
+    type: "boolean",
+    default: false,
+  })
   .help()
   .alias("help", "h").argv;
 
-const { defaults } = args;
+const { defaults, update, create } = args;
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -388,7 +400,7 @@ const handleClose = async () => {
 };
 
 const main = async () => {
-  const action = await getAction();
+  const action = !update ? (!create ? await getAction() : "cnw") : "uew";
 
   switch (action) {
     case "exit":
