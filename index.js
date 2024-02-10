@@ -350,7 +350,7 @@ const createDocument = async (type = "doc") => {
     spinner.update({ text: "Installing reveal.js...\n" });
 
     await exec(`pnpm padd --packs revealjs --path .\\docs\\${name}`, {
-      cwd: `${space.name}`,
+      cwd: space.name,
     }).then(handleFullFilled, handleError);
   } else
     await copyFolder(

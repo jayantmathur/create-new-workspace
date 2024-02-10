@@ -13,7 +13,7 @@
     "devDependencies": ["@tailwindcss/typography"],
     "resources": [
       {
-        "src": "web/ui"
+        "src": "web\\ui"
       }
     ],
     "scripts": {
@@ -30,7 +30,7 @@
     "dependencies": ["next-cloudinary", "cloudinary"],
     "resources": [
       {
-        "src": "web/cloudinary"
+        "src": "web\\cloudinary"
       }
     ]
   },
@@ -38,7 +38,7 @@
     "dependencies": ["next-auth"],
     "resources": [
       {
-        "src": "web/auth"
+        "src": "web\\auth"
       }
     ]
   },
@@ -47,12 +47,12 @@
     "devDependencies": ["supabase", "prisma", "encoding"],
     "resources": [
       {
-        "src": "web/supabase",
+        "src": "web\\supabase",
         "dest": "supabase"
       }
     ],
     "scripts": {
-      "update-supatypes": "supabase gen types typescript --schema public > supabase/types.ts"
+      "update-supatypes": "supabase gen types typescript --schema public > supabase\\types.ts"
     }
   },
   "pwa": {
@@ -62,22 +62,6 @@
     "scripts": {
       "push": "pnpm version --force",
       "postpush": "git add . & git commit -m \"save work\" & git push"
-    }
-  },
-  "mobile": {
-    "dependencies": ["@capacitor/core", "@capacitor/android", "@capacitor/ios"],
-    "devDependencies": ["@capacitor/cli"],
-    "resources": [
-      {
-        "src": "web/capacitor"
-      }
-    ],
-    "postinstalls": [
-      "npx cap init Example com.example.app && npx cap add ios & npx cap add android & npx cap sync",
-      "npx @capacitor/assets generate --assetPath public --iconBackgroundColor \"#eeeeee\" --iconBackgroundColorDark \"#191919\" --splashBackgroundColor \"#eeeeee\" --splashBackgroundColorDark \"#191919\""
-    ],
-    "scripts": {
-      "android": "npx cap open android"
     }
   },
   "tauri": {
@@ -102,7 +86,7 @@
     ],
     "resources": [
       {
-        "src": "web/mdx"
+        "src": "web\\mdx"
       }
     ]
   },
@@ -118,7 +102,7 @@
     "devDependencies": [],
     "resources": [
       {
-        "src": "web/r3f"
+        "src": "web\\r3f"
       }
     ],
     "extras?": [
@@ -147,15 +131,12 @@
     "devDependencies": ["decktape"],
     "resources": [
       {
-        "src": "doc/quarto/rjs",
-        "dest": "_extensions/rjs"
-      },
-      {
-        "src": "rjs"
+        "src": "doc\\quarto\\rjs",
+        "dest": "_extensions\\rjs"
       }
     ],
     "scripts": {
-      "dev": "quarto preview pages/index.qmd --port 4000 --profile rjs",
+      "dev": "quarto preview pages\\index.qmd --port 4000 --profile rjs",
       "build": "quarto render --profile rjs",
       "postbuild": "decktape --size 480x360 .\\output\\pages\\digital.html .\\output\\pages\\print.pdf"
     }
