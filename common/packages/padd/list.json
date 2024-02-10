@@ -149,9 +149,14 @@
       {
         "src": "doc/quarto/rjs",
         "dest": "_extensions/rjs"
+      },
+      {
+        "src": "rjs"
       }
     ],
     "scripts": {
+      "dev": "quarto preview pages/index.qmd --port 4000 --profile rjs",
+      "build": "quarto render --profile rjs",
       "postbuild": "decktape --size 480x360 .\\output\\pages\\digital.html .\\output\\pages\\print.pdf"
     }
   }

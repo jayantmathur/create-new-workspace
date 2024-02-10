@@ -1,5 +1,5 @@
 function Image(el)
-  -- convert svg to pdf for latex
+  -- convert svg to pdf for typst
   if string.sub(el.src, -4) == '.svg' then
     if FORMAT:match 'latex' then
       local pdfName = string.gsub(el.src, "svg", "pdf")
@@ -21,20 +21,12 @@ function Span(span)
   -- if no color attribute, return unchange
   if color == nil then return span end
 
-  -- tranform to <span style="color: red;"></span>
-  if FORMAT:match 'html' or FORMAT:match 'revealjs' then -- Also available for revealjs
-    -- remove color attributes
-    span.attributes['color'] = nil
-    -- use style attribute instead
-    span.attributes['style'] = 'color: ' .. color .. ';'
-    -- return full span element
-    return span
-  elseif FORMAT:match 'latex' or FORMAT:match 'beamer' then -- Also available for beamer
-    -- remove color attributes
-    span.attributes['color'] = nil
+  -- remove color attributes
+  span.attributes['color'] = nil
+
+  if FORMAT:match 'latex' or FORMAT:match 'beamer' then -- Also available for beamer
     -- encapsulate in latex code
     if string.sub(color, 1, 1) == "#" and #color == 7 then
-      -- TODO: requires xcolor
       local R = tostring(tonumber(string.sub(color, 2, 3), 16))
       local G = tostring(tonumber(string.sub(color, 4, 5), 16))
       local B = tostring(tonumber(string.sub(color, 6, 7), 16))
@@ -43,7 +35,6 @@ function Span(span)
         pandoc.RawInline('latex', '\\textcolor[RGB]{' .. R .. ',' .. G .. ',' .. B .. '}{')
       )
     elseif string.sub(color, 1, 1) == "#" and #color == 4 then
-      -- TODO: requires xcolor
       local R = tostring(tonumber(string.sub(color, 2, 2), 16) * 0x11)
       local G = tostring(tonumber(string.sub(color, 3, 3), 16) * 0x11)
       local B = tostring(tonumber(string.sub(color, 4, 4), 16) * 0x11)
@@ -57,9 +48,28 @@ function Span(span)
         pandoc.RawInline('latex', '\\textcolor{' .. color .. '}{')
       )
     end
+  elseif FORMAT:match 'html' or FORMAT:match 'revealjs' then -- Also available for revealjs
+    -- use style attribute instead
+    span.attributes['style'] = 'color: ' .. color .. ';'
+    -- return full span element
+    return span
+  elseif FORMAT:match 'typst' then -- Also available for beamer
+    -- encapsulate in typst code
+    if color:match("^#?[0-9a-fA-F]+$") then
+      table.insert(
+        span.content, 1,
+        pandoc.RawInline('typst', '#text(rgb("' .. color .. '"))[')
+      )
+    else
+      table.insert(
+        span.content, 1,
+        pandoc.RawInline('typst', '#text(' .. color .. ')[')
+      )
+    end
+
     table.insert(
       span.content,
-      pandoc.RawInline('latex', '}')
+      pandoc.RawInline('typst', ']')
     )
     -- returns only span content
     return span.content
@@ -79,6 +89,8 @@ local keywords = {
 
 function Para(elem)
   local i = 1
+  local highlighted = pandoc.RawInline('html', '<span>')
+
   while i <= #elem.content do
     local keyword, color
     for k, v in pairs(keywords) do
@@ -90,17 +102,25 @@ function Para(elem)
     end
     if keyword then
       local j = i
-      while j <= #elem.content and not (elem.content[j].tag == "Str" and elem.content[j].text:find("%. ")) do
+      while j <= #elem.content and not (elem.content[j].tag == "Str" and elem.content[j].text:find("%. %s")) do
         j = j + 1
       end
-      local highlighted = pandoc.RawInline('latex', '\\sethlcolor{' .. color .. '}\\hl{')
+      if FORMAT:match 'html' or FORMAT:match 'revealjs' then
+        highlighted = pandoc.RawInline('html', '<span style="background-color:' .. color .. '">')
+      elseif FORMAT:match 'typst' then
+        highlighted = pandoc.RawInline('typst', '#highlight(fill: ' .. color .. ')[')
+      end
       for k = i, j do
         if elem.content[k] and elem.content[k].tag == "Str" then
           highlighted.text = highlighted.text .. elem.content[k].text .. ' '
           table.remove(elem.content, k) -- remove the original element
         end
       end
-      highlighted.text = highlighted.text .. '}'
+      if FORMAT:match 'html' or FORMAT:match 'revealjs' then
+        highlighted.text = highlighted.text .. '</span>'
+      elseif FORMAT:match 'typst' then
+        highlighted.text = highlighted.text .. ']'
+      end
       table.insert(elem.content, i, highlighted)
       i = j
     else

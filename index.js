@@ -86,6 +86,10 @@ const getTasks = async () =>
         name: "Create a new document",
         value: "doc",
       },
+      {
+        name: "Create a new presentation",
+        value: "rjs",
+      },
     ],
   });
 
@@ -257,18 +261,22 @@ const createApp = async () => {
   spinner.success({ text: chalk.greenBright("App repository created!\n") });
 };
 
-const createDocument = async () => {
+const createDocument = async (type = "doc") => {
+  const isRJS = type === "rjs";
+
   const name = !defaults
     ? await input({
         name: "name",
-        message: "What is the name of the document?",
+        message: `What is the name of the ${!isRJS ? "document" : "presentation"}?`,
         default: await getRandomName(4),
       })
     : await getRandomName(4);
 
   space.doc = name;
 
-  spinner.start({ text: "Creating document...\n" });
+  spinner.start({
+    text: `Creating ${!isRJS ? "document" : "presentation"}...\n`,
+  });
 
   await sleep();
 
@@ -281,7 +289,9 @@ const createDocument = async () => {
 
   await copyFolder(`${__dirname}\\src\\doc`, `${space.name}\\docs\\${name}`);
 
-  spinner.update({ text: "Installing doc dependencies...\n" });
+  spinner.update({
+    text: `Installing ${!isRJS ? "document" : "presentation"} dependencies...\n`,
+  });
 
   await exec(`pnpm add padd -Dw --workspace`, {
     cwd: `${space.name}`,
@@ -296,8 +306,8 @@ const createDocument = async () => {
   spinner.update({ text: "Copying resources...\n" });
 
   await copyFolder(
-    `${__dirname}\\resources\\doc`,
-    `${space.name}\\packages\\padd\\resources\\doc`,
+    `${__dirname}\\resources\\doc\\${isRJS && "rjs"}`,
+    `${space.name}\\packages\\padd\\resources\\doc\\${isRJS && "rjs"}`,
   );
 
   spinner.update({ text: "Installing extensions...\n" });
@@ -306,7 +316,6 @@ const createDocument = async () => {
 
   const promises = [
     ...[
-      "quarto-ext/lightbox",
       "quarto-ext/fontawesome",
       "quarto-ext/attribution",
       "shafayetShafee/material-icons",
@@ -333,19 +342,26 @@ const createDocument = async () => {
 
   await Promise.all(promises).then(handleFullFilled, handleError);
 
-  await copyFolder(
-    `${__dirname}\\resources\\doc\\quarto\\main`,
-    `${space.name}\\docs\\${name}\\_extensions\\main`,
-  );
+  if (isRJS) {
+    await exec(`pnpm padd --packs revealjs --path .\\docs\\${name}`, {
+      cwd: `${space.name}`,
+    }).then(handleFullFilled, handleError);
+  } else
+    await copyFolder(
+      `${__dirname}\\resources\\doc\\quarto\\main`,
+      `${space.name}\\docs\\${name}\\_extensions\\main`,
+    );
 
   await appendJson(`${space.name}\\docs\\${name}\\package.json`, {
     name: `@docs/${name}`,
-    description: "A new Quarto document",
+    description: `A new Quarto ${!isRJS ? "document" : "presentation"}`,
     author: author,
   });
 
   spinner.success({
-    text: chalk.greenBright("Document repository created!\n"),
+    text: chalk.greenBright(
+      `${!isRJS ? "Document" : "Presentation"} repository created!\n`,
+    ),
   });
 };
 
@@ -394,6 +410,7 @@ const main = async () => {
 
   tasks.includes("app") && (await createApp());
   tasks.includes("doc") && (await createDocument());
+  tasks.includes("rjs") && (await createDocument("rjs"));
 };
 
 process.stdout.write("\x1Bc");

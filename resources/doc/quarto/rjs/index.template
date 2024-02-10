@@ -34,9 +34,6 @@ $endif$
 $for(css)$
   <link rel="stylesheet" href="$css$"/>
 $endfor$
-
-<link rel="icon" type="image/x-icon" href="../public/icons/favicon.ico">
-
 $if(math)$
   $math$
 $endif$
@@ -66,39 +63,6 @@ $endif$
 
     </div>
   </div>
-
-
-
-    $if(mbdl)$
-    <script>
-        window.onload = () => {
-          document.querySelector('div.footer').remove();
-          document.querySelector('img.slide-logo').style.visibility = 'hidden';
-        }
-    </script>
-
-
-    <div style="position: absolute;left: 0;right: 0;bottom: 0;height: 10vh;display: flex;flex-direction: column;z-index:10;align-items:center; background-color: #bfbfbf">
-        <div style="position: absolute;top:0;height: 1vh;width:100%;display: grid;grid-template-columns: repeat(6,1fr);">
-            <div style="background-color: #42acac;"></div>
-            <div style="background-color: #703f5d;"></div>
-            <div style="background-color: #006851;"></div>
-            <div style="background-color: #f05624"></div>
-            <div style="background-color: #0871cd"></div>
-            <div style="background-color: #f99e1a"></div>
-        </div>
-        <div style="white-space: nowrap;  width: 50%;  display: table">
-            <div class="footer hide" style="vertical-align: middle;    padding: 1rem; display: table-cell;    text-align: center;">
-              <img src="public/logos/mbdl.svg" style="height: 5vh;" />
-            </div>
-            <div style="vertical-align: middle;    padding: 1rem; display: table-cell;    text-align: center;">
-              <img src="public/logos/sedi.svg" style="height: 5vh;" />
-            </div>            
-        </div>
-    </div>
-    $endif$
-
-
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
   <script src="$revealjs-url$/dist/reveal.js"></script>
@@ -344,5 +308,24 @@ $endif$
   $include-after$
   $endfor$
 
+  $if(mbdl)$
+    <footer class="mbdl-footer">
+      <div id="colors">
+          <div style="background-color: #42acac;"></div>
+          <div style="background-color: #703f5d;"></div>
+          <div style="background-color: #006851;"></div>
+          <div style="background-color: #f05624"></div>
+          <div style="background-color: #0871cd"></div>
+          <div style="background-color: #f99e1a"></div>
+      </div>
+      <div id="logos">
+        <img src="../public/logos/mbdl.svg" id="mbdl-logo" class="hide"/>
+        <img src="../public/logos/sedi.svg"/>
+      </div>
+    </footer>
+  $endif$
+
   </body>
+
+
 </html>

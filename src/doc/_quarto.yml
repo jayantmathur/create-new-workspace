@@ -17,7 +17,6 @@ revealjs-plugins:
   - attribution
 
 filters:
-  - lightbox
   - latex-environment
   - filters.lua
 
@@ -42,8 +41,8 @@ execute:
 #
 
 bibliography:
-  - references.json
-  # - extra-references.json
+  - references.yaml
+  # - extra-references.yaml
 
 colorlinks: true
 number-sections: true
@@ -58,11 +57,13 @@ mermaid:
 format:
   main-html:
     output-file: digital
-  main-pdf:
+  main-typst:
     output-file: print
-    include-before-body:
-      text: |
-        \ifdefined\thetheorem
-          \renewcommand{\thetheorem}{\arabic{theorem}}
-        \else
-        \fi
+  # main-pdf:
+  #   output-file: print
+  #   include-before-body:
+  #     text: |
+  #       \ifdefined\thetheorem
+  #         \renewcommand{\thetheorem}{\arabic{theorem}}
+  #       \else
+  #       \fi

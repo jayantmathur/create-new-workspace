@@ -10,7 +10,25 @@ contributes:
 
             toc: true
 
+            citeproc: true
+
             csl: https://www.zotero.org/styles/chicago-author-date
+
+        typst:
+            fontsize: 10pt
+            papersize: us-letter
+            margin:
+                x: 1in
+                y: 1in
+
+            columns: 1
+
+            template-partials:
+                # - 'partials/typst/biblio.typ'
+                # - 'partials/typst/definitions.typ'
+                # - 'partials/typst/notes.typ'
+                - 'partials/typst/typst-show.typ'
+                - 'partials/typst/typst-template.typ'
 
         html:
             embed-resources: true

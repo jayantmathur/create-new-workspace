@@ -121,6 +121,49 @@ $presentation-heading-color: #00B0F0;
 	writing-mode: vertical-rl;
 }
 
+footer.mbdl-footer {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 10vh;
+	display: flex;
+	flex-direction: column;
+	z-index: 10;
+	align-items: center;
+	background-color: #bfbfbf;
+
+	>#colors {
+		position: absolute;
+		top: 0;
+		height: 1vh;
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+	}
+
+	>#logos {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		width: 70%;
+		height: 100%;
+		margin-top: .5dvh;
+		// gap: 1rem;
+
+		img,
+		svg {
+			height: 100%;
+			padding: 7.5dvw;
+		}
+	}
+}
+
+.hide {
+	opacity: 0;
+}
+
 // .reveal.has-logo .slide-number {
 // 	bottom: 8px !important;
 // 	top: auto !important;
