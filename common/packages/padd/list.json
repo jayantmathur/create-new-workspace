@@ -135,7 +135,7 @@
         "dest": "_extensions\\rjs"
       },
       {
-        "src": "rjs"
+        "src": "src\\rjs"
       }
     ],
     "scripts": {
