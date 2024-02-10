@@ -347,6 +347,35 @@
     "URL": "https://asmedigitalcollection.asme.org/IDETC-CIE/proceedings/IDETC-CIE2015/57106/Boston,%20Massachusetts,%20USA/257903"
   },
   {
+    "id": "blakey-milnerMetal2021",
+    "abstract": "Metal additive manufacturing involves manufacturing techniques that add material to produce metallic components, typically layer by layer. The substantial growth in this technology is partly driven by its opportunity for commercial and performance benefits in the aerospace industry. The fundamental opportunities for metal additive manufacturing in aerospace applications include: significant cost and lead-time reductions, novel materials and unique design solutions, mass reduction of components through highly efficient and lightweight designs, and consolidation of multiple components for performance enhancement or risk management, e.g. through internal cooling features in thermally loaded components or by eliminating traditional joining processes. These opportunities are being commercially applied in a range of high-profile aerospace applications including liquid-fuel rocket engines, propellant tanks, satellite components, heat exchangers, turbomachinery, valves, and sustainment of legacy systems. This paper provides a comprehensive review of metal additive manufacturing in the aerospace industry (from industrial/popular as well as technical literature). This provides a current state of the art, while also summarizing the primary application scenarios and the associated commercial and technical benefits of additive manufacturing in these applications. Based on these observations, challenges and potential opportunities are highlighted for metal additive manufacturing for each application scenario.",
+    "accessed": { "date-parts": [["2024", 2, 7]] },
+    "author": [
+      { "family": "Blakey-Milner", "given": "Byron" },
+      { "family": "Gradl", "given": "Paul" },
+      { "family": "Snedden", "given": "Glen" },
+      { "family": "Brooks", "given": "Michael" },
+      { "family": "Pitot", "given": "Jean" },
+      { "family": "Lopez", "given": "Elena" },
+      { "family": "Leary", "given": "Martin" },
+      { "family": "Berto", "given": "Filippo" },
+      { "family": "Plessis", "given": "Anton", "non-dropping-particle": "du" }
+    ],
+    "citation-key": "blakey-milnerMetal2021",
+    "container-title": "Materials & Design",
+    "container-title-short": "Materials & Design",
+    "DOI": "10.1016/j.matdes.2021.110008",
+    "ISSN": "0264-1275",
+    "issued": { "date-parts": [["2021", 11, 1]] },
+    "page": "110008",
+    "source": "ScienceDirect",
+    "title": "Metal additive manufacturing in aerospace: A review",
+    "title-short": "Metal additive manufacturing in aerospace",
+    "type": "article-journal",
+    "URL": "https://www.sciencedirect.com/science/article/pii/S0264127521005633",
+    "volume": "209"
+  },
+  {
     "id": "bloomTaxonomy1956",
     "abstract": "Taxonomy-- 'Classification, esp. of animals and plants according to their natural relationships...'Most readers will have heard of the biological taxonomies which permit classification into such categories as phyllum, class, order, family, genus, species, variety. Biologist have found their taxonomy markedly helpful as a means of insuring accuracy of communication about their science and as a means of understanding the organization and interrelation of the various parts of the animal and plant world.",
     "author": [
