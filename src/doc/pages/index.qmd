@@ -8,9 +8,9 @@ date: today
 
 # Heading
 
-Content cited from [@mathurEffects2023] and [@cayleyCreation2023] is also with a footnote [^sample]
+[Content **cited** from [@mathurEffects2023] and]{color=blue} [@cayleyCreation2023] is [also with]{.underline} a _footnote_ [^sample]
 
-This text continues
+!TODO: This text continues
 
 [^sample]: this is a sample footnote
 
