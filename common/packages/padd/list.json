@@ -13,7 +13,7 @@
     "devDependencies": ["@tailwindcss/typography"],
     "resources": [
       {
-        "src": "resources\\web\\ui"
+        "src": "web\\ui"
       }
     ],
     "scripts": {
@@ -30,7 +30,7 @@
     "dependencies": ["next-cloudinary", "cloudinary"],
     "resources": [
       {
-        "src": "resources\\web\\cloudinary"
+        "src": "web\\cloudinary"
       }
     ]
   },
@@ -38,7 +38,7 @@
     "dependencies": ["next-auth"],
     "resources": [
       {
-        "src": "resources\\web\\auth"
+        "src": "web\\auth"
       }
     ]
   },
@@ -47,7 +47,7 @@
     "devDependencies": ["supabase", "prisma", "encoding"],
     "resources": [
       {
-        "src": "resources\\web\\supabase",
+        "src": "web\\supabase",
         "dest": "supabase"
       }
     ],
@@ -86,7 +86,7 @@
     ],
     "resources": [
       {
-        "src": "resources\\web\\mdx"
+        "src": "web\\mdx"
       }
     ]
   },
@@ -102,7 +102,7 @@
     "devDependencies": [],
     "resources": [
       {
-        "src": "resources\\web\\r3f"
+        "src": "web\\r3f"
       }
     ],
     "extras?": [
@@ -131,11 +131,7 @@
     "devDependencies": ["decktape"],
     "resources": [
       {
-        "src": "resources\\doc\\quarto\\rjs",
-        "dest": "_extensions\\rjs"
-      },
-      {
-        "src": "src\\rjs"
+        "src": "doc\\quarto\\rjs"
       }
     ],
     "scripts": {

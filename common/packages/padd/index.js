@@ -145,7 +145,7 @@ for (const pack of packs) {
 
     resources.forEach(async (resource) => {
       await copyFolder(
-        `${__dirname}\\${resource.src}`,
+        `${__dirname}\\resources\\${resource.src}`,
         `${resource.dest || "."}`,
       ).then(
         () =>
