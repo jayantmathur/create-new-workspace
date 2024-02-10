@@ -319,8 +319,8 @@ $endif$
           <div style="background-color: #f99e1a"></div>
       </div>
       <div id="logos">
-        <img src="../public/logos/mbdl.svg" id="mbdl-logo" class="hide"/>
-        <img src="../public/logos/sedi.svg"/>
+        <img src="mbdl.svg" id="mbdl-logo" class="hide"/>
+        <img src="sedi.svg"/>
       </div>
     </footer>
   $endif$

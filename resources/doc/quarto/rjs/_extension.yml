@@ -34,6 +34,8 @@ contributes:
             
             mbdl: false
 
+            format-resources:
+                - 'public/logos'
             # logo: 'public/icon.svg'
             # footer: '{{< meta date >}}'
 

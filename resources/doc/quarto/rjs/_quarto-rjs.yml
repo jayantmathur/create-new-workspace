@@ -1,5 +1,0 @@
-number-sections: false
-
-format:
-  rjs-revealjs:
-    output-file: digital
