@@ -1,7 +1,3 @@
-title: Title
-subtitle: A subtitle
-date: today
-
 author:
   - name: Eren Fukuda
     affiliations:
@@ -23,9 +19,7 @@ author:
     email: jayant@psu.edu
 
 keywords: [template, demo]
-# abstract: |
-#   This document is only a demo explaining how to use the template.
-
+#
 # affiliations:
 #   - id: edi
 #     name: The Pennsylvania State University

@@ -1,4 +1,7 @@
 ---
+title: Title
+subtitle: A subtitle
+date: today
 # abstract: |
 #   This document is only a demo explaining how to use the template.
 ---
