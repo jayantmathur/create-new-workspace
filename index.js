@@ -354,17 +354,18 @@ const createDocument = async (type = "doc") => {
 
   await Promise.all(promises).then(handleFullFilled, handleError);
 
+  await copyFolder(
+    `${__dirname}\\resources\\doc\\quarto\\main`,
+    `${space.name}\\docs\\${name}\\_extensions\\main`,
+  );
+
   if (isRJS) {
     spinner.update({ text: "Installing reveal.js...\n" });
 
     await exec(`pnpm padd --packs revealjs --path .\\docs\\${name}`, {
       cwd: space.name,
     }).then(handleFullFilled, handleError);
-  } else
-    await copyFolder(
-      `${__dirname}\\resources\\doc\\quarto\\main`,
-      `${space.name}\\docs\\${name}\\_extensions\\main`,
-    );
+  }
 
   await appendJson(`${space.name}\\docs\\${name}\\package.json`, {
     name: `@docs/${name}`,
