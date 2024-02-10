@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A quarto document",
   "scripts": {
-    "dev": "quarto preview pages/index.qmd --port 4000",
+    "dev": "quarto preview pages\\index.qmd --port 4000",
     "build": "quarto render",
     "postbuild": "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/prepress -dNOPAUSE -dQUIET -dBATCH -sOutputFile=.\\output\\pages\\compressed.pdf .\\output\\pages\\print.pdf && echo Saved a compressed version too!",
     "save": "pnpm version --force"
