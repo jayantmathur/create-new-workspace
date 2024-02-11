@@ -1,2 +1,4 @@
 /.luarc.json
-/node_modules
+node_modules
+.backup
+.vscode
