@@ -43,58 +43,43 @@ $presentation-heading-color: #00B0F0;
 // $dark-bg-link-color: #42affa;
 // $dark-bg-code-color: #ffa07a;
 
+$footer-height: 10vh;
 /*-- scss:rules --*/
 
-.reveal .slide p {
-	padding: 1rem 1rem;
-	// border: 1px solid #ccc;
-}
+// .reveal .slide p {
+// 	padding: 1rem 1rem;
+// 	// border: 1px solid #ccc;
+// }
 
-.reveal .slide svg {
-	width: 100%;
-	height: 100%;
-}
 
-.reveal .slide img {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
+// .reveal .slide .cell {
+// 	width: 100%;
+// }
 
-.reveal .slide .columns .column {
-	vertical-align: middle;
-	text-align: center;
-}
+// .callout {
+// 	font-size: 0.875em !important;
+// }
 
-.reveal .slide .cell {
-	width: 100%;
-}
+// .reveal .slide aside {
+// 	padding: 1rem 0;
+// }
 
-.callout {
-	font-size: 0.875em !important;
-}
-
-.reveal .slide aside {
-	padding: 1rem 0;
-}
-
-.reveal .slide aside .aside-footnotes>li {
-	margin-top: -2.25rem;
-}
+// .reveal .slide aside .aside-footnotes>li {
+// 	margin-top: -2.25rem;
+// }
 
 .reveal section.slide {
-	width: 100%;
-	height: 100%;
-	display: flex !important;
-	flex-direction: column;
-	justify-content: start;
-	align-items: center;
-
+	top: 2*$footer-height !important;
+	bottom: 0.5*$footer-height !important;
+	// background-color: aquamarine;
+	display: grid !important;
+	place-items: center;
 
 	>h1 {
-		// position: absolute;
-		// top: 0;
-		width: 100%;
+		position: absolute;
+		top: 0;
+		z-index: 10;
+		transform: translateY(-2*$footer-height);
 		font-size: 2.75rem !important;
 		font-weight: normal !important;
 		overflow: hidden;
@@ -107,8 +92,25 @@ $presentation-heading-color: #00B0F0;
 		-webkit-line-clamp: 2;
 		/* number of lines to show */
 		-webkit-box-orient: vertical;
-		z-index: 10;
-		padding-bottom: 1rem;
+	}
+
+	img,
+	svg {
+		width: 100%;
+		height: 100%;
+	}
+
+	.callout {
+		p {
+			padding: .5rem 0;
+		}
+
+		font-size: 0.875em !important;
+	}
+
+	aside {
+		width: 100%;
+		text-align: left;
 	}
 }
 
@@ -126,7 +128,7 @@ footer.mbdl-footer {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	height: 10vh;
+	height: $footer-height;
 	display: flex;
 	flex-direction: column;
 	z-index: 10;
@@ -163,14 +165,3 @@ footer.mbdl-footer {
 .hide {
 	opacity: 0;
 }
-
-// .reveal.has-logo .slide-number {
-// 	bottom: 8px !important;
-// 	top: auto !important;
-// 	z-index: 10;
-// }
-
-// .reveal img.slide-logo {
-// 	left: 50%;
-// 	translate: -50%;
-// }
