@@ -1,18 +1,4 @@
 <script>
-    Reveal.configure({
-        slideNumber: slide => {
-            // Ignore numbering of vertical slides
-            return [Reveal.getIndices(slide).h];
-        }
-    });
-
-    const slideNo = document.querySelector('div.slide-number');
-
-    // const mbdlLogo = document.getElementById('mbdl-logo');
-
-    // mbdlLogo.classList.add('hide');
-    slideNo.classList.add('hide');
-
     const toggleSlideNo = (event) => {
         const toHide = Reveal.isFirstSlide() || Reveal.isLastSlide();
 
@@ -25,7 +11,44 @@
         mbdlLogo.classList.toggle('hide', toHide);
     }
 
+    const playPauseVideos = (event) => {
+        Reveal.getPreviousSlide().querySelectorAll('video').forEach(video => {
+            video.pause();
+        });
+
+        const videos = Reveal.getCurrentSlide().querySelectorAll('video');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.play();
+                    }, 1000);
+                } else {
+                    entry.target.pause();
+                }
+            });
+        });
+        videos.forEach(video => {
+            observer.observe(video);
+        });
+    }
+</script>
+
+
+<script>
+    Reveal.configure({
+        slideNumber: slide => {
+            // Ignore numbering of vertical slides
+            return [Reveal.getIndices(slide).h];
+        }
+    });
+
+    const slideNo = document.querySelector('div.slide-number');
+
+    slideNo.classList.add('hide');
 
     Reveal.on('slidechanged', toggleSlideNo);
+
+    Reveal.on('slidechanged', playPauseVideos);
 
 </script>

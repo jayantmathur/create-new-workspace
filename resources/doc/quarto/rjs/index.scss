@@ -54,6 +54,10 @@ $footer-height: 10dvh;
 	display: grid !important;
 	place-items: center;
 
+	* {
+		max-height: calc(var(--slide-height) - 3 * $footer-height);
+	}
+
 	>h1 {
 		position: absolute;
 		top: 0;
@@ -74,11 +78,10 @@ $footer-height: 10dvh;
 		-webkit-box-orient: vertical;
 	}
 
-	:where(img, svg, video) {
+	:where(img, svg) {
 		object-fit: contain;
 		width: 100% !important;
 		height: auto !important;
-		max-height: calc(var(--slide-height) - 3 * $footer-height);
 	}
 
 
