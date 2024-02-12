@@ -137,7 +137,7 @@
     ],
     "scripts": {
       "prebuild": "quarto render",
-      "build": "decktape --size 480x360 .\\output\\pages\\digital.html .\\output\\pages\\print.pdf"
+      "build": "decktape --size 960x720 .\\output\\pages\\digital.html .\\output\\pages\\print.pdf"
     }
   }
 }

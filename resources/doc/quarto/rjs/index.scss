@@ -43,34 +43,13 @@ $presentation-heading-color: #00B0F0;
 // $dark-bg-link-color: #42affa;
 // $dark-bg-code-color: #ffa07a;
 
-$footer-height: 10vh;
+$footer-height: 10dvh;
 /*-- scss:rules --*/
 
-// .reveal .slide p {
-// 	padding: 1rem 1rem;
-// 	// border: 1px solid #ccc;
-// }
-
-
-// .reveal .slide .cell {
-// 	width: 100%;
-// }
-
-// .callout {
-// 	font-size: 0.875em !important;
-// }
-
-// .reveal .slide aside {
-// 	padding: 1rem 0;
-// }
-
-// .reveal .slide aside .aside-footnotes>li {
-// 	margin-top: -2.25rem;
-// }
 
 .reveal section.slide {
-	top: 2*$footer-height !important;
-	bottom: 0.5*$footer-height !important;
+	top: 2 * $footer-height !important;
+	bottom: 0.5 * $footer-height !important;
 	// background-color: aquamarine;
 	display: grid !important;
 	place-items: center;
@@ -79,6 +58,7 @@ $footer-height: 10vh;
 		position: absolute;
 		top: 0;
 		z-index: 10;
+		width: 100%;
 		transform: translateY(-2*$footer-height);
 		font-size: 2.75rem !important;
 		font-weight: normal !important;
@@ -94,11 +74,13 @@ $footer-height: 10vh;
 		-webkit-box-orient: vertical;
 	}
 
-	img,
-	svg {
-		width: 100%;
-		height: 100%;
+	:where(img, svg, video) {
+		object-fit: contain;
+		width: 100% !important;
+		height: auto !important;
+		max-height: calc(var(--slide-height) - 3 * $footer-height);
 	}
+
 
 	.callout {
 		p {
@@ -108,14 +90,14 @@ $footer-height: 10vh;
 		font-size: 0.875em !important;
 	}
 
-	aside {
-		width: 100%;
-		text-align: left;
+	.columns .column {
+		vertical-align: middle;
+		text-align: center;
 	}
-}
 
-.reveal figure figcaption {
-	text-align: center;
+	figcaption {
+		text-align: center;
+	}
 }
 
 .attribution .content p {
