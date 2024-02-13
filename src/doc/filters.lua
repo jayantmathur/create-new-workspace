@@ -3,14 +3,14 @@ function Image(el)
   if string.sub(el.src, -4) == '.svg' then
     if FORMAT:match 'latex' then
       local pdfName = string.gsub(el.src, "svg", "pdf")
-      pandoc.pipe('inkscape', { el.src, '--export-filename', pdfName }, '')
+      pandoc.pipe('magick', { 'convert', el.src, pdfName }, '')
       el.src = pdfName
       return el
     end
     -- convert tif to png for html and revealjs
   elseif string.sub(el.src, -4) == '.tif' then
     local pngName = string.gsub(el.src, "tif", "png")
-    pandoc.pipe('inkscape', { el.src, '--export-filename', pngName }, '')
+    pandoc.pipe('magick', { 'convert', el.src, pngName }, '')
     el.src = pngName
     return el
   end

@@ -20,7 +20,7 @@ filters:
   - latex-environment
   - filters.lua
 
-lightbox: auto
+# lightbox: auto
 
 commands: [hl]
 
