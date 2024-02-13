@@ -46,13 +46,19 @@ $presentation-heading-color: #00B0F0;
 $footer-height: 10dvh;
 /*-- scss:rules --*/
 
+.reveal section.slide.uncentered {
+	justify-content: start;
+}
 
 .reveal section.slide {
 	top: 2 * $footer-height !important;
 	bottom: 0.5 * $footer-height !important;
 	// background-color: aquamarine;
-	display: grid !important;
-	place-items: center;
+	display: flex !important;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
 
 	* {
 		max-height: calc(var(--slide-height) - 3 * $footer-height);
@@ -94,8 +100,10 @@ $footer-height: 10dvh;
 	}
 
 	.columns .column {
-		vertical-align: middle;
-		text-align: center;
+		height: 100%;
+		display: inline-flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 
 	figcaption {
@@ -103,8 +111,9 @@ $footer-height: 10dvh;
 	}
 }
 
-.attribution .content p {
-	margin: 12rem 0rem;
+.attribution span.content {
+	margin: 5rem 0 0 1dvw;
+	padding: 5rem 0;
 	writing-mode: vertical-rl;
 }
 

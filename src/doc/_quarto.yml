@@ -54,6 +54,8 @@ crossref:
 mermaid:
   theme: neutral
 
+callout-appearance: simple
+
 format:
   main-html:
     output-file: digital
