@@ -51,7 +51,7 @@ $footer-height: 10dvh;
 }
 
 .reveal section.slide {
-	top: 1.5 * $footer-height !important;
+	top: 1.75 * $footer-height !important;
 	bottom: 0.5 * $footer-height !important;
 	// background-color: aquamarine;
 	display: flex !important;
@@ -69,7 +69,7 @@ $footer-height: 10dvh;
 		top: 0;
 		z-index: 10;
 		width: 100%;
-		transform: translateY(-1.5 * $footer-height);
+		transform: translateY(-1.75 * $footer-height);
 		font-size: 2.75rem !important;
 		font-weight: normal !important;
 		overflow: hidden;

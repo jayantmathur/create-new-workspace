@@ -1,6 +1,7 @@
 <script>
     const toggleSlideNo = (event) => {
-        const toHide = Reveal.isFirstSlide() || Reveal.isLastSlide();
+        // const toHide = Reveal.isFirstSlide() || Reveal.isLastSlide();
+        const toHide = Reveal.getCurrentSlide().classList.contains('quarto-title-block');
 
         const slideNo = document.querySelector('div.slide-number');
 
