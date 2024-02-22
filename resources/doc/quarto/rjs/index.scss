@@ -3,7 +3,7 @@
 // $font-family-sans-serif: Calibri, Verdana, Helvetica, sans-serif;
 // $font-family-monospace: monospace;
 $presentation-font-size-root: 18pt;
-// $presentation-font-smaller: 0.7;
+// $presentation-font-smaller: .7;
 // $presentation-line-height: 1.3;
 // $body-bg: #fff;
 // $body-color: #222;
@@ -32,7 +32,7 @@ $presentation-heading-color: #00B0F0;
 // $presentation-title-slide-text-align: center;
 // $code-block-bg: $body-bg;
 // $code-block-border-color: lighten($body-color, 60%);
-// $code-block-font-size: 0.55em;
+// $code-block-font-size: .55em;
 // $code-color: var(–quarto-hl-fu-color);
 // $code-bg: transparent;
 // $tabset-border-color: $code-block-border-color;
@@ -46,13 +46,18 @@ $presentation-heading-color: #00B0F0;
 $footer-height: 10dvh;
 /*-- scss:rules --*/
 
+.reveal .slide.emphasize {
+	background-color: #0e1424;
+	// color: whitesmoke;
+}
+
 .reveal section.slide.uncentered {
 	justify-content: start;
 }
 
 .reveal section.slide {
 	top: 1.75 * $footer-height !important;
-	bottom: 0.5 * $footer-height !important;
+	bottom: .5 * $footer-height !important;
 	// background-color: aquamarine;
 	display: flex !important;
 	flex-direction: column;
@@ -90,13 +95,22 @@ $footer-height: 10dvh;
 		height: auto !important;
 	}
 
+	aside:has(ol.aside-footnotes) {
+		font-size: 55%;
+		margin-bottom: -.375rem;
+
+		li {
+			margin-bottom: -.5rem;
+		}
+	}
+
 
 	.callout {
 		p {
 			padding: .5rem 0;
 		}
 
-		font-size: 0.875em !important;
+		font-size: .875em !important;
 	}
 
 	.columns .column {
@@ -113,7 +127,7 @@ $footer-height: 10dvh;
 
 .attribution span.content {
 	margin: 5rem 0 0 1dvw;
-	padding: 5rem 0;
+	padding: 1rem 0;
 	writing-mode: vertical-rl;
 }
 
@@ -158,4 +172,8 @@ footer.mbdl-footer {
 
 .hide {
 	opacity: 0;
+}
+
+.slide-number {
+	color: $text-muted !important;
 }

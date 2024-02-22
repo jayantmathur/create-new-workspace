@@ -35,7 +35,6 @@
     }
 </script>
 
-
 <script>
     Reveal.configure({
         slideNumber: slide => {
@@ -46,7 +45,7 @@
 
     const slideNo = document.querySelector('div.slide-number');
 
-    slideNo.classList.add('hide');
+    Reveal.getCurrentSlide().classList.contains('quarto-title-block') && slideNo.classList.add('hide');
 
     Reveal.on('slidechanged', toggleSlideNo);
 
