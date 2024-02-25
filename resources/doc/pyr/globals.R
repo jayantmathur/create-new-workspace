@@ -6,6 +6,7 @@ library(myrutils)
 
 packages <- c(
     "tidyverse",
+    "tinytable",
     "ggpubr",
     # "ggeffects",
     "lmerTest",

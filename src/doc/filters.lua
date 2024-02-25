@@ -85,11 +85,15 @@ end
 
 -- This Lua filter will highlight sentences that start with "!REWRITE", "!REVIEW", or "!TODO"
 
-local keywords = {
-  ["!FIX:"] = "red",
-  ["!REVIEW:"] = "cyan",
-  ["!TODO:"] = "orange"
-}
+local keywords = {}
+for _, keyword in ipairs({ "!FIX:", "!FIXME:", "!BUG:", "!UGLY:", "!DEBUG:", "!HACK:" }) do
+  keywords[keyword] = "red"
+end
+for _, keyword in ipairs({ "!REVIEW:", "!OPTIMIZE:", "!TSC:" }) do
+  keywords[keyword] = "aqua"
+end
+keywords["!TODO:"] = "orange"
+keywords["!IDEA:"] = "fuschia"
 
 function Para(elem)
   local i = 1
@@ -113,6 +117,13 @@ function Para(elem)
         highlighted = pandoc.RawInline('html', '<span style="background-color:' .. color .. '">')
       elseif FORMAT:match 'typst' then
         highlighted = pandoc.RawInline('typst', '#highlight(fill: ' .. color .. ')[')
+      elseif FORMAT:match 'latex' then
+        if color:match("aqua") then
+          color = "cyan"
+        elseif color:match("fuschia") then
+          color = "magenta"
+        end
+        highlighted = pandoc.RawInline('latex', '\\colorbox{' .. color .. '}{\\parbox{\\dimexpr\\linewidth-2\\fboxsep}{')
       end
       for k = i, j do
         if elem.content[k] and elem.content[k].tag == "Str" then
@@ -124,6 +135,8 @@ function Para(elem)
         highlighted.text = highlighted.text .. '</span>'
       elseif FORMAT:match 'typst' then
         highlighted.text = highlighted.text .. ']'
+      elseif FORMAT:match 'latex' then
+        highlighted.text = highlighted.text .. '}}'
       end
       table.insert(elem.content, i, highlighted)
       i = j
