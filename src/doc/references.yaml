@@ -709,6 +709,41 @@ references:
   URL: >-
     https://asmedigitalcollection.asme.org/IDETC-CIE/proceedings/IDETC-CIE2015/57106/Boston,%20Massachusetts,%20USA/257903
 
+- id: bioccaCommunication1995
+  abstract: >-
+    This volume addresses virtual reality (VR) -- a tantalizing communication
+    medium whose essence challenges our most deeply held notions of what
+    communication is or can be. The editors have gathered an expert team of
+    engineers, social scientists, and cultural theorists for the first extensive
+    treatment of human communication in this exciting medium. The first part
+    introduces the reader to VR's state-of-the-art as well as future trends. In
+    the next section, leading research scientists discuss how knowledge of
+    communication can be used to build more effective and exciting communication
+    applications of virtual reality. Looking ahead, the authors explore
+    pioneering approaches to VR narratives, interpersonal communication, the use
+    of 3D sound, and the building of VR entertainment complexes. In the final
+    section, the authors zoom out to view the big picture -- the psychological,
+    social, and cultural implications of virtual reality. Thought-provoking
+    discussions consider important communication issues such as: * How will
+    virtual reality influence perception of reality? * What are the legal issues
+    defining communication in virtual reality? * What kind of cultural trends
+    will this technology encourage?
+  author:
+    - family: Biocca
+      given: Frank
+    - family: Levy
+      given: Mark R.
+  citation-key: bioccaCommunication1995
+  ISBN: 978-0-8058-1549-8
+  issued:
+    - year: 1995
+  language: en
+  number-of-pages: '402'
+  publisher: Routledge
+  source: Google Books
+  title: Communication in the Age of Virtual Reality
+  type: book
+
 - id: blakey-milnerMetal2021
   abstract: >-
     Metal additive manufacturing involves manufacturing techniques that add
@@ -4233,7 +4268,9 @@ references:
   title: >-
     ISO/ASTM 52900:2021(en), Additive manufacturing - General principles -
     Fundamentals and vocabulary
-  title-short: Additive manufacturing - General principles - Fundamentals and vocabulary
+  title-short: >-
+    ISO/ASTM 52900:2021(en), Additive manufacturing - General principles -
+    Fundamentals and vocabulary
   type: standard
   URL: https://www.iso.org/obp/ui/#iso:std:iso-astm:52900:ed-2:v1:en
   version: '2'
@@ -5979,7 +6016,7 @@ references:
   URL: https://www.sciencedirect.com/science/article/pii/S2214860423004888
   volume: '78'
 
-- id: mathurDesigning2023a
+- id: mathurDesigning2023c
   abstract: >-
     Adopting additive manufacturing (AM) in product design is a challenge for
     organizations due to a shortage of skilled designers who can effectively use
@@ -6018,7 +6055,7 @@ references:
       given: Timothy W.
     - family: Meisel
       given: Nicholas A.
-  citation-key: mathurDesigning2023a
+  citation-key: mathurDesigning2023c
   container-title: 'Volume 4: 20th International Conference on Design Education (DEC)'
   DOI: 10.1115/DETC2023-116690
   event-place: Boston, Massachusetts, USA
