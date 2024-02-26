@@ -62,7 +62,10 @@ get_lm_writeup <- function(model, variable = NA, type = "statement") {
                 1
             )
         ),
-        F.value = anova[1, "F value"],
+        F.value = filter(
+            as.data.frame(anova[, "F value"]),
+            !is.na(as.data.frame(anova[, "F value"]))
+        ),
         t.ratio = summary[, "t value"],
         p.value = summary[, "Pr(>|t|)"]
     )
