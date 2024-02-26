@@ -1,15 +1,15 @@
 <script>
     const toggleSlideNo = (event) => {
         // const toHide = Reveal.isFirstSlide() || Reveal.isLastSlide();
-        const toHide = Reveal.getCurrentSlide().classList.contains('quarto-title-block');
+        const toHide = Reveal.getCurrentSlide()?.classList?.contains('quarto-title-block');
 
         const slideNo = document.querySelector('div.slide-number');
 
         const mbdlLogo = document.getElementById('mbdl-logo');
 
-        slideNo.classList.toggle('hide', toHide);
+        slideNo?.classList?.toggle('hide', toHide);
 
-        mbdlLogo.classList.toggle('hide', toHide);
+        mbdlLogo?.classList?.toggle('hide', toHide);
     }
 
     const playPauseVideos = (event) => {
@@ -45,10 +45,33 @@
 
     const slideNo = document.querySelector('div.slide-number');
 
-    Reveal.getCurrentSlide().classList.contains('quarto-title-block') && slideNo.classList.add('hide');
+    Reveal.getCurrentSlide()?.classList?.contains('quarto-title-block') && slideNo?.classList?.add('hide');
 
     Reveal.on('slidechanged', toggleSlideNo);
 
     Reveal.on('slidechanged', playPauseVideos);
 
+</script>
+
+<script>
+    const slides = Reveal.getSlides();
+
+    const appendix = slides.find(slide =>
+        slide?.classList?.contains('appendix') || slide.id === 'appendix'
+    );
+
+    if (!appendix) {
+        console.log('No appendix slide found');
+    } else {
+        console.log('Appendix slide found');
+        const end = slides.find(slide =>
+            slide.id === 'end-slide'
+        );
+
+        // console.log(appendix, end);
+
+        appendix.parentNode.replaceChild(end.cloneNode(true), appendix);
+
+        end.remove();
+    }
 </script>
