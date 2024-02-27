@@ -16,6 +16,12 @@ contributes:
             height: 720
             transition: fade
             progress: false
+
+            navigation-mode: vertical
+            controls: false
+
+            pdf-separate-fragments: true
+
             theme: [default, index.scss]
 
             include-after-body: 
