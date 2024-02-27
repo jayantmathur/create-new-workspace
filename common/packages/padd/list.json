@@ -137,7 +137,7 @@
     ],
     "scripts": {
       "prebuild": "quarto render",
-      "build": "decktape --chrome-path \"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --size 960x720 .\\output\\pages\\digital.html .\\output\\pages\\print.pdf & echo Taped the deck..."
+      "build": "decktape generic --chrome-path \"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --size 960x720 .\\output\\pages\\digital.html .\\output\\pages\\print.pdf & echo Taped the deck..."
     }
   }
 }
