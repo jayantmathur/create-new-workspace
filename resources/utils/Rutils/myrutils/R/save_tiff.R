@@ -5,6 +5,8 @@
 #'
 #' @param object The object to be saved.
 #' @param filename The name of the file to be saved.
+#' @param width The width of the image in inches.
+#' @param height The height of the image in inches.
 #'
 #' @importFrom grDevices tiff dev.off
 #'
@@ -16,11 +18,15 @@
 #' }
 #' @export
 
-save_tiff <- function(object, filename = "tiff_object.tif") {
+save_tiff <- function(
+    object,
+    filename = "tiff_object.tif",
+    width = 6.67,
+    height = 6.67) {
     tiff(
         filename = filename,
-        width = 6.67,
-        height = 6.67,
+        width = width,
+        height = height,
         units = "in",
         res = 1200,
         type = "cairo"

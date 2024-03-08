@@ -4,12 +4,16 @@
 \alias{save_tiff}
 \title{Save rendered object as TIFF Image}
 \usage{
-save_tiff(object, filename = "tiff_object.tif")
+save_tiff(object, filename = "tiff_object.tif", width = 6.67, height = 6.67)
 }
 \arguments{
 \item{object}{The object to be saved.}
 
 \item{filename}{The name of the file to be saved.}
+
+\item{width}{The width of the image in inches.}
+
+\item{height}{The height of the image in inches.}
 }
 \value{
 NULL. The function is called for its side effect of saving an image.
