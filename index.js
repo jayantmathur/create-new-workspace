@@ -274,7 +274,7 @@ const createApp = async () => {
 };
 
 const createDocument = async (type = "doc") => {
-  const isRJS = type === "rjs";
+  const isRJS = type == "rjs";
 
   const name = !defaults
     ? await input({
