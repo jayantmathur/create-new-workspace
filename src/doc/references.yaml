@@ -1127,6 +1127,54 @@ references:
   URL: http://www.tandfonline.com/doi/abs/10.1080/0034340052000320887
   volume: '39'
 
+- id: bossardTransfer2008
+  abstract: >-
+    The aim of all education is to apply what we learn in different contexts and
+    to recognise and extend this learning to new situations. Virtual learning
+    environments can be used to build skills. Recent research in cognitive
+    psychology and education has shown that acquisitions are linked to the
+    initial context. This provides a challenge for virtual reality in education
+    or training. A brief overview of transfer issues highlights five main ideas:
+    (1) the type of transfer enables the virtual environment (VE) to be
+    classified according to what is learned; (2) the transfer process can create
+    conditions within the VE to facilitate transfer of learning; (3) specific
+    features of VR must match and comply with transfer of learning; (4) transfer
+    can be used to assess a VE’s effectiveness; and (5) future research on
+    transfer of learning must examine the singular context of learning. This
+    paper discusses how new perspectives in cognitive psychology influence and
+    promote transfer of learning through the use of VEs.
+  accessed:
+    - year: 2024
+      month: 3
+      day: 14
+  author:
+    - family: Bossard
+      given: Cyril
+    - family: Kermarrec
+      given: Gilles
+    - family: Buche
+      given: Cédric
+    - family: Tisseau
+      given: Jacques
+  citation-key: bossardTransfer2008
+  container-title: Virtual Reality
+  container-title-short: Virtual Reality
+  DOI: 10.1007/s10055-008-0093-y
+  ISSN: 1434-9957
+  issue: '3'
+  issued:
+    - year: 2008
+      month: 9
+      day: 1
+  language: en
+  page: 151-161
+  source: Springer Link
+  title: 'Transfer of learning in virtual environments: a new challenge?'
+  title-short: Transfer of learning in virtual environments
+  type: article-journal
+  URL: https://doi.org/10.1007/s10055-008-0093-y
+  volume: '12'
+
 - id: brackenDesign2020
   abstract: >-
     In industry, Design for Additive Manufacturing (DfAM) is currently
@@ -1214,6 +1262,43 @@ references:
   URL: http://www.tandfonline.com/doi/abs/10.1080/01621459.1958.10501456
   volume: '53'
 
+- id: bucciarellithought2002
+  abstract: >-
+    If one accepts that engineering design is the business of a collective or
+    team and that different participants, with different competencies,
+    responsibilities and interest ‘see’ the object of design differently, then
+    the question arises: how do they harmonize their claims and proposals
+    throughout the course of design? For that matter, how does any one
+    participant, working alone, exercising his or her expertise, transform ideas
+    of function into plans which ultimately fix the form and structure of the
+    product? We explore the possibility of extending the scope of language to
+    include artifacts of process – sketches, bits and pieces of hardware – to
+    see how they might serve to bridge thought and object.
+  accessed:
+    - year: 2024
+      month: 3
+      day: 15
+  author:
+    - family: Bucciarelli
+      given: Louis L.
+  citation-key: bucciarellithought2002
+  collection-title: Philosophy of Design
+  container-title: Design Studies
+  container-title-short: Design Studies
+  DOI: 10.1016/S0142-694X(01)00035-7
+  ISSN: 0142-694X
+  issue: '3'
+  issued:
+    - year: 2002
+      month: 5
+      day: 1
+  page: 219-231
+  source: ScienceDirect
+  title: Between thought and object in engineering design
+  type: article-journal
+  URL: https://www.sciencedirect.com/science/article/pii/S0142694X01000357
+  volume: '23'
+
 - id: budinoffWill2021
   abstract: >-
     This study presents the development of a novel MATLAB-based virtual
@@ -1259,6 +1344,62 @@ references:
   type: article-journal
   URL: https://link.springer.com/10.1007/s12008-021-00786-w
   volume: '15'
+
+- id: buehlerInclusion2015
+  abstract: >-
+    Over 60% of adults with intellectual disabilities (ID) in the U.S. are
+    unemployed; this is more than twice the unemployment rate of the general
+    population [19]. Of the adults with ID who are employed, only half receive
+    competitive wages alongside co-workers without disabilities. While the
+    enactment of IDEA [20] has helped to promote access to education for people
+    with ID and other disabilities, there are still obstacles to employment.
+    Misconceptions about ability and lack of opportunities to learn and practice
+    employability skills contribute to this problem. Our research explores
+    employability and integration through the lens of 3D printing, an innovative
+    technology touted as a means to self-employment. We successfully taught
+    young adults with intellectual disabilities many technical skills required
+    for 3D printing through an integrated, post-secondary course on 3D printing
+    for entrepreneurship. In this paper we report on our methods for designing
+    this course and discuss the benefits, challenges, and strategies for
+    teaching 3D printing to an integrated cohort of students. We offer
+    recommendations for educators and describe technology obstacles unique to
+    this user demographic, and the impact of integrated, postsecondary courses
+    on employment outcomes for students with ID.
+  accessed:
+    - year: 2024
+      month: 3
+      day: 9
+  author:
+    - family: Buehler
+      given: Erin
+    - family: Easley
+      given: William
+    - family: McDonald
+      given: Samantha
+    - family: Comrie
+      given: Niara
+    - family: Hurst
+      given: Amy
+  citation-key: buehlerInclusion2015
+  collection-title: ASSETS '15
+  container-title: >-
+    Proceedings of the 17th International ACM SIGACCESS Conference on Computers
+    & Accessibility
+  DOI: 10.1145/2700648.2809844
+  event-place: New York, NY, USA
+  ISBN: 978-1-4503-3400-6
+  issued:
+    - year: 2015
+      month: 10
+      day: 26
+  page: 281–290
+  publisher: Association for Computing Machinery
+  publisher-place: New York, NY, USA
+  source: ACM Digital Library
+  title: 'Inclusion and Education: 3D Printing for Integrated Classrooms'
+  title-short: Inclusion and Education
+  type: paper-conference
+  URL: https://dl.acm.org/doi/10.1145/2700648.2809844
 
 - id: buxtonSketching2007
   abstract: >-
@@ -3612,6 +3753,66 @@ references:
   title: Learning Theory and Online Technologies
   type: book
 
+- id: harrisFramework2020
+  abstract: >-
+    <p>New computer technologies, like virtual reality (VR), have created
+    opportunities to study human behavior and train skills in novel ways. VR
+    holds significant promise for maximizing the efficiency and effectiveness of
+    skill learning in a variety of settings (e.g., sport, medicine,
+    safety-critical industries) through immersive learning and augmentation of
+    existing training methods. In many cases the adoption of VR for training
+    has, however, preceded rigorous testing and validation of the simulation
+    tool. In order for VR to be implemented successfully for both training and
+    psychological experimentation it is necessary to first establish whether the
+    simulation captures fundamental features of the real task and environment,
+    and elicits realistic behaviors. Unfortunately evaluation of VR environments
+    too often confuses presentation and function, and relies on superficial
+    visual features that are not the key determinants of successful training
+    outcomes. Therefore evidence-based methods of establishing the fidelity and
+    validity of VR environments are required. To this end, we outline a taxonomy
+    of the subtypes of fidelity and validity, and propose a variety of practical
+    methods for testing and validating VR training simulations. Ultimately, a
+    successful VR environment is one that enables transfer of learning to the
+    real-world. We propose that key elements of psychological, affective and
+    ergonomic fidelity, are the real determinants of successful transfer. By
+    adopting an evidence-based approach to VR simulation design and testing it
+    is possible to develop valid environments that allow the potential of VR
+    training to be maximized.</p>
+  accessed:
+    - year: 2024
+      month: 3
+      day: 14
+  author:
+    - family: Harris
+      given: David J.
+    - family: Bird
+      given: Jonathan M.
+    - family: Smart
+      given: Philip A.
+    - family: Wilson
+      given: Mark R.
+    - family: Vine
+      given: Samuel J.
+  citation-key: harrisFramework2020
+  container-title: Frontiers in Psychology
+  container-title-short: Front. Psychol.
+  DOI: 10.3389/fpsyg.2020.00605
+  ISSN: 1664-1078
+  issued:
+    - year: 2020
+      month: 3
+      day: 30
+  language: English
+  publisher: undefined
+  source: Frontiers
+  title: >-
+    A Framework for the Testing and Validation of Simulated Environments in
+    Experimentation and Training
+  type: article-journal
+  URL: >-
+    https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2020.00605/full
+  volume: '11'
+
 - id: hartikainenConcept2019
   abstract: >-
     Active learning has gained growing political, instructional, and research
@@ -4564,6 +4765,52 @@ references:
   type: article-journal
   URL: https://link.springer.com/10.1007/s00170-020-05262-5
   volume: '107'
+
+- id: kaneTracking2014
+  abstract: >-
+    Introductory programming activities for students often include graphical
+    user interfaces or other visual media that are inaccessible to students with
+    visual impairments. Digital fabrication techniques such as 3D printing offer
+    an opportunity for students to write programs that produce tactile objects,
+    providing an accessible way of exploring program output. This paper
+    describes the planning and execution of a four-day computer science
+    education workshop in which blind and visually impaired students wrote Ruby
+    programs to analyze data from Twitter regarding a fictional ecological
+    crisis. Students then wrote code to produce accessible tactile
+    visualizations of that data. This paper describes outcomes from our workshop
+    and suggests future directions for integrating data analysis and 3D printing
+    into programming instruction for blind students.
+  accessed:
+    - year: 2024
+      month: 3
+      day: 9
+  author:
+    - family: Kane
+      given: Shaun K.
+    - family: Bigham
+      given: Jeffrey P.
+  citation-key: kaneTracking2014
+  collection-title: SIGCSE '14
+  container-title: >-
+    Proceedings of the 45th ACM technical symposium on Computer science
+    education
+  DOI: 10.1145/2538862.2538975
+  event-place: New York, NY, USA
+  ISBN: 978-1-4503-2605-6
+  issued:
+    - year: 2014
+      month: 3
+      day: 5
+  page: 247–252
+  publisher: Association for Computing Machinery
+  publisher-place: New York, NY, USA
+  source: ACM Digital Library
+  title: >-
+    Tracking @stemxcomet: teaching programming to blind students via 3D
+    printing, crisis management, and twitter
+  title-short: Tracking @stemxcomet
+  type: paper-conference
+  URL: https://dl.acm.org/doi/10.1145/2538862.2538975
 
 - id: kenwardSmall1997
   abstract: >-
@@ -5708,6 +5955,60 @@ references:
   type: article-journal
   URL: https://linkinghub.elsevier.com/retrieve/pii/S0959475217303274
   volume: '60'
+
+- id: makranskyDevelopment2017
+  abstract: >-
+    Presence is one of the most important psychological constructs for
+    understanding human-computer interaction. However, different terminology and
+    operationalizations of presence across fields have plagued the comparability
+    and generalizability of results across studies. Lee's (2004) unified
+    understanding of presence as a multidimensional construct made up of
+    physical, social, and self-presence, has created a unified theory of
+    presence; nevertheless, there are still no psychometrically valid
+    measurement instruments based on the theory. Two studies were conducted that
+    describe the development of a standardized multidimensional measure of
+    presence (the MPS) for a VR learning context based on this theory, and its
+    validation using confirmatory factor analysis and item response theory. The
+    results from Study 1 which included 161 medical students from Denmark
+    indicated that the items used in the MPS measure a three dimensional
+    theoretical model of presence: physical, social, and self-presence.
+    Furthermore, IRT analyses indicated that it was possible to limit the number
+    of items in the MPS to 15 (five items per sub-dimension) while maintaining
+    the construct validity and reliability of the measure. The results of Study
+    2, which included 118 biology students from Scotland, supported the validity
+    and generalizability of the MPS in a new context.
+  accessed:
+    - year: 2024
+      month: 3
+      day: 14
+  author:
+    - family: Makransky
+      given: Guido
+    - family: Lilleholt
+      given: Lau
+    - family: Aaby
+      given: Anders
+  citation-key: makranskyDevelopment2017
+  container-title: Computers in Human Behavior
+  container-title-short: Computers in Human Behavior
+  DOI: 10.1016/j.chb.2017.02.066
+  ISSN: 0747-5632
+  issued:
+    - year: 2017
+      month: 7
+      day: 1
+  page: 276-285
+  source: ScienceDirect
+  title: >-
+    Development and validation of the Multimodal Presence Scale for virtual
+    reality environments: A confirmatory factor analysis and item response
+    theory approach
+  title-short: >-
+    Development and validation of the Multimodal Presence Scale for virtual
+    reality environments
+  type: article-journal
+  URL: https://www.sciencedirect.com/science/article/pii/S0747563217301474
+  volume: '72'
 
 - id: makranskyImmersive2021
   abstract: >-
@@ -9807,6 +10108,43 @@ references:
   type: article-journal
   URL: https://www.mdpi.com/2076-3417/9/21/4625
   volume: '9'
+
+- id: vinckTaking2011
+  abstract: >-
+    This article shows that the equipping of intermediary objects is a central
+    concern of engineers and technicians. Through the process of equipping, new
+    properties are conferred on the intermediary object and this contributes to
+    the shaping of the design space and collective work. I follow in particular
+    how equipping is used in practices of mediation, temporal set-up and
+    framework outlining and how it creates spaces of exchange. The argument
+    developed is based on ethnographic studies of engineering design activities
+    in the manufacturing industry and in a design office in charge of developing
+    a large instrument for the CERN cyclotron.
+  accessed:
+    - year: 2024
+      month: 3
+      day: 15
+  author:
+    - family: Vinck
+      given: Dominique
+  citation-key: vinckTaking2011
+  container-title: Engineering Studies
+  DOI: 10.1080/19378629.2010.547989
+  ISSN: 1937-8629
+  issue: '1'
+  issued:
+    - year: 2011
+      month: 4
+      day: 1
+  page: 25-44
+  publisher: Routledge
+  source: Taylor and Francis+NEJM
+  title: >-
+    Taking intermediary objects and equipping work into account in the study of
+    engineering practices
+  type: article-journal
+  URL: https://doi.org/10.1080/19378629.2010.547989
+  volume: '3'
 
 - id: violanteHow2019
   abstract: >-
