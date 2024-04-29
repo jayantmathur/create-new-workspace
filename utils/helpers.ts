@@ -36,16 +36,17 @@ export const copyDirectory = async (src: string, dest: string) => {
 export const initWorkspace = async (name: string, action: string) => {
   const path = resolve(__cwd, name);
 
-  action === "create" && (await $`mkdir ${path}`);
-
   spinner.start(
     ((action === "update" && "Reinitializing") || "Initializing") +
       " workspace...",
   );
 
-  spawnSync(["bun", "init", "--yes"], { cwd: path, stdout: "ignore" });
+  if (action === "create") {
+    await $`mkdir ${path}`.nothrow();
+    spawnSync(["bun", "init", "--yes"], { cwd: path, stdout: "ignore" });
 
-  await $`rm -rf ${resolve(path, "index.ts")} ${resolve(path, "node_modules")}`;
+    await $`rm -rf ${resolve(path, "index.ts")}`;
+  }
 
   await write(
     resolve(path, ".prettierrc"),
