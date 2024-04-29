@@ -157,15 +157,15 @@ isCancel(tasks) && handleCancel();
 console.log(
   boxen(
     `
-    Action: ${action}\n
-    Name: ${name}\n
+    Action: ${action}
+    Name: ${name}
     Tasks: ${tasks.length ? tasks.join(", ") : "none"}
-    
     `,
     {
       title: "Workspace Configuration",
       titleAlignment: "left",
-      margin: 0.5,
+      textAlignment: "left",
+      padding: 0.5,
       // borderStyle: "round",
     },
   ),
