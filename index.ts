@@ -93,7 +93,7 @@ switch (action) {
 
     if (workspaces.includes(name)) {
       const overwrite = await confirm({
-        message: chalk.yellow("Workspace already exists. Overwrite?"),
+        message: chalk.redBright("Workspace already exists. Overwrite?"),
         initialValue: false,
       });
 
