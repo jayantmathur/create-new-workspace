@@ -109,13 +109,6 @@ export const initWorkspace = async (name: string, action: string) => {
     ),
   );
 
-  // spinner.message("Copying packages...");
-
-  // await copyDirectory(
-  //   resolve(__dirname, "packages"),
-  //   resolve(path, "packages"),
-  // );
-
   spinner.stop("Workspace " + action + "d.");
 
   return true;
