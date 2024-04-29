@@ -90,4 +90,13 @@ console.log(
   }),
 );
 
+await $`which git`
+  .quiet()
+  .then(
+    async () =>
+      await exists(resolve(src, ".git")).then(() =>
+        spawnSync(["git", "push", "--quiet"]),
+      ),
+  );
+
 process.exit(0);

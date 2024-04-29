@@ -26,7 +26,7 @@
     "format": "prettier --write \"./**/*.{js,ts,jsx,tsx,json}\" --log-level silent",
     "push": "bun backup",
     "prepush": "bun format && bun bundle.ts",
-    "postpush": "npm install --global && git push --quiet"
+    "postpush": "npm install --global"
   },
   "devDependencies": {
     "@types/bun": "latest",
