@@ -228,8 +228,8 @@ if (tasks.length > 0) {
   console.log("Tasks completed.");
 }
 
-// await $`rm -rf ${resolve(__cwd, name, "node_modules")}`;
-// spawnSync(["bun", "install"], { cwd: name });
+await $`rm -rf ${resolve(__cwd, name, "node_modules")}`;
+spawnSync(["bun", "install"], { cwd: name });
 
 const vscode = await $`which code`.quiet();
 
