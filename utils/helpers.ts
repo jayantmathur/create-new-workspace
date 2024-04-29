@@ -43,7 +43,7 @@ export const initWorkspace = async (name: string, action: string) => {
 
   action === "create" && (await $`mkdir ${path}`.nothrow());
 
-  // spawnSync(["bun", "init", "--yes"], { cwd: path, stdout: "ignore" });
+  spawnSync(["bun", "init", "--yes"], { cwd: path, stdout: "ignore" });
 
   // await $`rm -rf ${resolve(path, "index.ts")}`;
 
