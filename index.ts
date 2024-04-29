@@ -75,7 +75,7 @@ action === "exit" && handleCancel("Exiting...");
 // Get workspace name
 //
 
-let name: string;
+let name: string = "";
 
 switch (action) {
   case "create": {
@@ -165,7 +165,7 @@ console.log(
     {
       title: "Workspace Configuration",
       titleAlignment: "left",
-      padding: 0.5,
+      margin: 0.5,
       // borderStyle: "round",
     },
   ),
