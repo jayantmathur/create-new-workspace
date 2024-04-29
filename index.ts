@@ -84,13 +84,23 @@ switch (action) {
       placeholder: "my-workspace",
       validate(input) {
         if (!input.length) return "This is required";
-        if (workspaces.includes(input)) return "Workspace already exists";
       },
     });
 
     isCancel(input) && handleCancel();
 
     name = input as string;
+
+    if (workspaces.includes(name)) {
+      const overwrite = await confirm({
+        message: chalk.yellow("Workspace already exists. Overwrite?"),
+        initialValue: false,
+      });
+
+      isCancel(overwrite) && handleCancel();
+
+      overwrite && (await $`rm -rf ${resolve(__cwd, name)}`);
+    }
 
     break;
   }
