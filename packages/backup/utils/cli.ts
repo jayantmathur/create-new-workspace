@@ -4,19 +4,12 @@ import { hideBin } from "yargs/helpers";
 import type { Options } from "yargs";
 
 export type CLIOptions = {
-  include?: string[];
   exclude?: string[];
   sync?: boolean;
   tag?: "major" | "minor" | "patch";
 };
 
 export const options: Record<string, Options> = {
-  i: {
-    alias: "include",
-    describe: "Specific inclusions during backup",
-    type: "array",
-    // demandOption: false,
-  },
   e: {
     alias: "exclude",
     describe: "Additional exclusions during backup",

@@ -20,6 +20,8 @@ const defaultExcludes = [
   ".vscode",
   ".backup",
   ".lockb",
+  ".prettierrc",
+  ".prettierignore",
 ];
 
 const gitExcludes =
@@ -37,7 +39,6 @@ gitExcludes && defaultExcludes.push(...gitExcludes);
 export const mirrorDirectories = async (
   src: string,
   dest: string,
-  includes?: string[],
   excludes?: string[],
   sync = false,
 ) => {
@@ -55,19 +56,11 @@ export const mirrorDirectories = async (
         ? defaultExcludes
         : [...new Set([...defaultExcludes, ...excludes])];
 
-      const included = !includes
-        ? elements
-        : elements.filter((file) =>
-            [...new Set([...defaultIncludes, ...includes])].some((inclusion) =>
-              file.includes(inclusion),
-            ),
-          );
-
-      const minusExcluded = included.filter(
+      const included = elements.filter(
         (file) => !excluded.some((exclusion) => file.includes(exclusion)),
       );
 
-      const set = new Set(minusExcluded);
+      const set = new Set(included);
       return set;
     }),
   );

@@ -208,7 +208,7 @@ action === "create" &&
       do: "bun run --filter",
       "do:all": "bun run --filter='*'",
       prepush: "bun format",
-      push: "cnwx backup --include docs apps",
+      push: "cnwx backup",
       // postpush: "git push",
     },
     devDependencies: {

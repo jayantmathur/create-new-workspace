@@ -10,12 +10,7 @@ import cli from "./utils/cli";
 import type { CLIOptions } from "./utils/cli";
 import { mirrorDirectories } from "./utils/helpers";
 
-const {
-  include: includes,
-  exclude: excludes,
-  sync = false,
-  tag,
-} = cli as unknown as CLIOptions;
+const { exclude: excludes, sync = false, tag } = cli as unknown as CLIOptions;
 
 const src = process.cwd();
 const repo = basename(src);
@@ -67,7 +62,6 @@ const [to, from] = sync
 const messages: void | string[] = await mirrorDirectories(
   to,
   from,
-  includes,
   excludes,
   sync,
 );
