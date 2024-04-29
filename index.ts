@@ -69,12 +69,13 @@ const action = (await select({
 })) as string;
 
 isCancel(action) && handleCancel();
+action === "exit" && handleCancel("Exiting...");
 
 //
 // Get workspace name
 //
 
-const name: string = "";
+let name: string;
 
 switch (action) {
   case "create": {
@@ -89,7 +90,7 @@ switch (action) {
 
     isCancel(input) && handleCancel();
 
-    Object.assign(name, input);
+    name = input as string;
 
     break;
   }
@@ -101,9 +102,9 @@ switch (action) {
         initialValue: true,
       });
 
-      (isCancel(name) || !input) && handleCancel();
+      (isCancel(input) || !input) && handleCancel();
 
-      Object.assign(name, "./");
+      name = "./";
 
       break;
     }
@@ -121,7 +122,7 @@ switch (action) {
 
     isCancel(input) && handleCancel();
 
-    Object.assign(name, input);
+    name = input as string;
 
     break;
   }
