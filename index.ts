@@ -165,10 +165,10 @@ console.log(
       title: "Workspace Configuration",
       titleAlignment: "left",
       textAlignment: "left",
-      padding: {
-        top: 0.5,
-        bottom: 0.5,
-      },
+      // padding: {
+      //   top: 0.5,
+      //   bottom: 0.5,
+      // },
       // borderStyle: "round",
     },
   ),
