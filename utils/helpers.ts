@@ -45,7 +45,7 @@ export const initWorkspace = async (name: string, action: string) => {
 
   spawnSync(["bun", "init", "--yes"], { cwd: path, stdout: "ignore" });
 
-  await $`rm -rf ${resolve(path, "index.ts")}`;
+  await $`rm ${resolve(path, "index.ts")}`;
 
   await write(
     resolve(path, ".prettierrc"),
