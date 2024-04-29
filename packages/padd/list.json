@@ -1,0 +1,46 @@
+{
+  "rjs": {
+    "type": "doc",
+    "folder": "rjs"
+  },
+  "main": {
+    "type": "doc",
+    "folder": "main"
+  },
+  "elsevier": {
+    "type": "doc",
+    "folder": "journals/elsevier"
+  },
+  "3dpam": {
+    "type": "doc",
+    "folder": "journals/3dpam"
+  },
+  "jmd": {
+    "type": "doc",
+    "folder": "journals/jmd"
+  },
+  "idetc": {
+    "type": "doc",
+    "folder": "journals/idetc"
+  },
+  "psu": {
+    "type": "doc",
+    "folder": "journals/psu"
+  },
+  "resume": {
+    "type": "doc",
+    "folder": "portfolio/resume"
+  },
+  "vitae": {
+    "type": "doc",
+    "folder": "portfolio/vitae"
+  },
+  "letter": {
+    "type": "doc",
+    "folder": "portfolio/letter"
+  },
+  "pyr": {
+    "type": "doc",
+    "folder": "pyr"
+  }
+}

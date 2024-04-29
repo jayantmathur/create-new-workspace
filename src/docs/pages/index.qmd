@@ -1,0 +1,22 @@
+---
+title: Title
+subtitle: A subtitle
+date: today
+# abstract: |
+#   This document is only a demo explaining how to use the template.
+---
+
+# Heading
+
+[Content **cited** from [@mathurmixedmethods2024; @mathurEffects2023] and]{color=blue} [@cayleyCreation2023] is [also with]{.underline} a _footnote_ [^sample]
+
+!TODO: This text continues
+
+[^sample]: this is a sample footnote
+
+![Sample figure](../public/placeholder.svg){#fig-sample}
+
+# Bibliography
+
+:::{#refs}
+:::

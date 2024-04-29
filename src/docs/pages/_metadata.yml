@@ -1,0 +1,54 @@
+author:
+  - name: Eren Fukuda
+    roles:
+      - Leader
+      - Mentor
+      - Advisor
+    affiliations:
+      - name: University of Wisconsin-Madison
+        department: Department of Psychology
+        city: Madison
+        region: WI
+        postal-code: 53703
+        # - Member of ASME
+
+  - name: Jayant Mathur
+    orcid: 0000-0003-3147-7234
+    roles:
+      - Writing
+      - Reviewing
+      - Editing
+    affiliations:
+      # - ref: me
+      # - ref: edi
+      - name: The Pennsylvania State University
+        department: Engineering Design and Innovation
+        city: University Park
+        region: PA
+        postal-code: 16802
+    corresponding: true
+    email: jayant@psu.edu
+
+keywords:
+  - template
+  - demo
+
+affiliations:
+  - id: edi
+    name: The Pennsylvania State University
+    department: Engineering Design and Innovation
+    city: University Park
+    region: PA
+    postal-code: 16802
+  - id: me
+    name: The Pennsylvania State University
+    department: Department of Mechanical Engineering
+    city: University Park
+    region: PA
+    postal-code: 16802
+#   - id: ie
+#     name: The Pennsylvania State University
+#     department: Department of Industrial Engineering
+#     city: University Park
+#     region: PA
+#     postal-code: 16802

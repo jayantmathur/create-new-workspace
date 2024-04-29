@@ -1,0 +1,21 @@
+{
+  "name": "backup",
+  "version": "1.0.0",
+  "module": "index.ts",
+  "type": "module",
+  "bin": {
+    "backup": "index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/yargs": "^17.0.32"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "boxen": "^7.1.1",
+    "chalk": "^5.3.0",
+    "yargs": "^17.7.2"
+  }
+}

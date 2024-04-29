@@ -1,0 +1,45 @@
+{
+  "name": "create-new-workspace",
+  "version": "1.0.0",
+  "description": "A CLI tool to create a new workspace or update an existing one. Allows creating new web applications and documentation or manuscripts",
+  "module": "index.ts",
+  "type": "module",
+  "bin": {
+    "create-new-workspace": "index.ts",
+    "cnw": "index.ts",
+    "cnwx": "packages/index.ts"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "files": [
+    "index.ts",
+    "bundle.ts",
+    "resources",
+    "packages",
+    "public",
+    "src",
+    "utils"
+  ],
+  "scripts": {
+    "dev": "bun index.ts",
+    "format": "prettier --write \"./**/*.{js,ts,jsx,tsx,json}\" --log-level silent",
+    "push": "bun backup",
+    "prepush": "bun format && bun bundle.ts",
+    "postpush": "npm install --global && git push --quiet"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/yargs": "^17.0.32",
+    "prettier": "^3.2.5"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.7.0",
+    "boxen": "^7.1.1",
+    "chalk": "^5.3.0",
+    "yargs": "^17.7.2"
+  }
+}

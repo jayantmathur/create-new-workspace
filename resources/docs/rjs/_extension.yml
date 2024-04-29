@@ -1,0 +1,52 @@
+title: Reveal.js Template
+version: 0.1.0
+contributes:
+    formats:
+        common:
+            date-format: long
+            mainfont: Calibri
+
+            suppress-bibliography: true
+
+            # remember to put the citation in [] to actually make it work
+            csl: chicago-note-author-date.csl
+
+        revealjs:
+            width: 960
+            height: 720
+            transition: fade
+            progress: false
+
+            navigation-mode: vertical
+            controls: false
+
+            pdf-separate-fragments: true
+
+            theme: [default, index.scss]
+
+            include-after-body: 
+                - 'partials/after-body.html'
+                
+            fig-format: svg
+            # slideNumber: c # check after-body.html for modified numbering
+            template: 'index.template'
+
+            template-partials:
+                - 'partials/_affiliations.html'
+                - 'partials/_authors.html'
+                - 'partials/_title-block.html'
+                - 'partials/title-slide.html'
+                - 'partials/end-slide.html'
+            
+            mbdl: false
+
+            format-resources:
+                - 'public/logos'
+            # logo: 'public/icon.svg'
+            # footer: '{{< meta date >}}'
+
+            output-file: digital
+
+            # multiplex: true
+            embed-resources: true
+            # slide-tone: true

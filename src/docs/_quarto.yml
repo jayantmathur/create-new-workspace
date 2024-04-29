@@ -1,0 +1,59 @@
+#
+#
+#
+# Project settings
+#
+#
+#
+
+project:
+  execute-dir: file
+  output-dir: output
+  render:
+    - pages
+  resources:
+    - public/icons
+
+revealjs-plugins:
+  - attribution
+
+filters:
+  - filters.lua
+
+execute:
+  echo: false
+  output: false
+  enabled: true
+
+#
+#
+#
+# Shared document settings
+#
+#
+#
+
+bibliography:
+  - references.bib
+  # - extra-references.yaml
+
+colorlinks: true
+number-sections: true
+
+crossref:
+  thm-prefix: "RQ"
+  thm-title: "Research Question"
+
+mermaid:
+  theme: neutral
+
+callout-appearance: simple
+
+cite-method: citeproc
+
+format:
+  main-html:
+    embed-resources: true
+    output-file: digital
+  main-typst:
+    output-file: print

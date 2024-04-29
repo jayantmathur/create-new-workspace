@@ -1,0 +1,11 @@
+{
+  "name": "docs",
+  "version": "0.0.1",
+  "description": "A quarto document",
+  "scripts": {
+    "dev": "quarto preview pages/index.qmd --port 4000",
+    "render": "quarto render",
+    "postrender": "gs -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -dNOPAUSE -dQUIET -dBATCH -sOutputFile=./output/pages/compressed.pdf ./output/pages/print.pdf && echo Saved a compressed version too!",
+    "push": "npm version"
+  }
+}
