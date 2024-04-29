@@ -97,7 +97,7 @@ switch (action) {
         initialValue: false,
       });
 
-      isCancel(overwrite) && handleCancel();
+      (isCancel(overwrite) || !overwrite) && handleCancel();
 
       overwrite && (await $`rm -rf ${resolve(__cwd, name)}`);
     }
