@@ -117,8 +117,8 @@ export const paddApps = async (
       cwd: resolve(__cwd, path),
     });
 
-    (success && console.log(chalk.dim("Installed dependencies"))) ||
-      console.log(chalk.dim("Failed to install dependencies"));
+    if (success) console.log(chalk.dim("Installed dependencies"));
+    else console.log(chalk.dim("Failed to install dependencies"));
   }
 
   if (devDependencies) {
@@ -132,8 +132,8 @@ export const paddApps = async (
       cwd: resolve(__cwd, path),
     });
 
-    (success && console.log(chalk.dim("Installed devDependencies"))) ||
-      console.log(chalk.dim("Failed to install devDependencies"));
+    if (success) console.log(chalk.dim("Installed devDependencies"));
+    else console.log(chalk.dim("Failed to install devDependencies"));
   }
 
   if (postinstalls) {
@@ -145,8 +145,12 @@ export const paddApps = async (
         );
   }
 
-  if (scripts)
-    ((await editJson(resolve(__cwd, path, "package.json"), { scripts })) &&
-      console.log(chalk.dim("Added scripts"))) ||
-      console.log(chalk.dim("Failed to add scripts"));
+  if (scripts) {
+    const success =
+      (await editJson(resolve(__cwd, path, "package.json"), {
+        scripts,
+      })) || false;
+    if (success) console.log(chalk.dim("Added scripts"));
+    else console.log(chalk.dim("Failed to add scripts"));
+  }
 };
