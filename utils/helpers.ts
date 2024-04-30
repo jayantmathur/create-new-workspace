@@ -178,6 +178,7 @@ export const createApp = async (parent: string) => {
       "--eslint",
       "--tailwind",
       // "--src-dir",
+      "--no-src-dir",
       "--app",
       "--import-alias",
       "@/*",
