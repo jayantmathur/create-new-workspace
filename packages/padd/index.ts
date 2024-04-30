@@ -1,12 +1,10 @@
 #!/usr/bin/env bun
-import { resolve, dirname } from "node:path";
-
 import chalk from "chalk";
 import boxen from "boxen";
 
 import cli from "./utils/cli";
 import type { CLIOptions } from "./utils/cli";
-import { copyDirectory, paddDocs } from "./utils/helpers";
+import { paddDocs } from "./utils/helpers";
 import list from "./list.json";
 
 import type { ListType, DocType, AppType } from "./utils/types";
@@ -18,15 +16,15 @@ const { path, packs } = cli as unknown as CLIOptions;
 const messages: string[] = [];
 
 for (let pack of packs) {
-  const current = {
-    ...packages[pack.toLowerCase()],
-    name: pack.toLowerCase(),
-  };
+  const name = pack.toLowerCase();
+  const current = packages[name];
 
   if (!current) {
-    console.error(`Pack not found: ${current}. Skipping...`);
+    messages.push(chalk.red(`Not found: ${name}. Skipping...`));
     continue;
   }
+
+  Object.assign(current, { name });
 
   current.type === "doc" &&
     (await paddDocs(path, current as DocType).then((message) =>

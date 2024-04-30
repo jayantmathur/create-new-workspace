@@ -35,7 +35,11 @@ export const paddDocs = async (path: string, pack: DocType) => {
 
   await copyDirectory(src, dest);
 
-  const message = chalk`Copied {green ${name}} to {dim ${dirname(path)}}`;
+  const message = [
+    chalk.dim("Installed"),
+    chalk.bold.green(name),
+    chalk.dim(`to doc ${dirname(path)}`),
+  ].join(" ");
 
   return message;
 };
