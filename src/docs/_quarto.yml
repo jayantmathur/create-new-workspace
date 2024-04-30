@@ -50,10 +50,9 @@ mermaid:
 callout-appearance: simple
 
 cite-method: citeproc
-
-format:
-  main-html:
-    embed-resources: true
-    output-file: digital
-  main-typst:
-    output-file: print
+# format:
+#   main-html:
+#     embed-resources: true
+#     output-file: digital
+#   main-typst:
+#     output-file: print
