@@ -1,12 +1,8 @@
 import { argv } from "bun";
 import yargs from "yargs/yargs";
 import { hideBin } from "yargs/helpers";
-import type { Options } from "yargs";
 
-export type CLIOptions = {
-  path: string;
-  packs: string[];
-};
+import type { Options } from "yargs";
 
 export const options: Record<string, Options> = {
   i: {
@@ -20,6 +16,12 @@ export const options: Record<string, Options> = {
     describe: "List of packs to add",
     type: "array",
     demandOption: true,
+  },
+  e: {
+    alias: "extras",
+    describe: "Include extra files",
+    type: "boolean",
+    default: false,
   },
 };
 

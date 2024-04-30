@@ -1,0 +1,14 @@
+<section id="$idprefix$title-slide" $for(title-slide-attributes/pairs)$ $it.key$="$it.value$" $endfor$
+  class="quarto-title-block" $if(mbdl)$style="text-align: left" data-background-color=#0e1424
+  $else$style="text-align: right" $endif$>
+
+  <div>
+    $_title-block.html()$
+  </div>
+
+  $if(abstract)$
+  <aside class="notes">
+    $abstract$
+  </aside>
+  $endif$
+</section>

@@ -1,3 +1,9 @@
+export type CLIOptions = {
+  path: string;
+  packs: string[];
+  extras: boolean;
+};
+
 export type AppType = {
   name: string;
   type: "app";
@@ -8,7 +14,10 @@ export type AppType = {
   dependencies?: string[];
   devDependencies?: string[];
   postinstalls?: string[];
-  extras?: string[];
+  extras: {
+    dependencies?: string[];
+    devDependencies?: string[];
+  };
 };
 
 export type DocType = {
