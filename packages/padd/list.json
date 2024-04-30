@@ -47,7 +47,6 @@
     "type": "app",
     "folder": "ui",
     "dependencies": [
-      "@heroicons/react",
       "framer-motion",
       "next-themes",
       "tailwindcss-animate",
@@ -58,10 +57,10 @@
     ],
     "devDependencies": ["@tailwindcss/typography"],
     "scripts": {
-      "shad": "bun dlx shadcn-ui@latest"
+      "shad": "bunx shadcn-ui@latest"
     },
     "postinstalls": [
-      "bun dlx shadcn-ui@latest add button tabs aspect-ratio sheet --yes --overwrite"
+      "bunx shadcn-ui@latest add button tabs aspect-ratio sheet --yes --overwrite"
     ]
   },
   "forms": {
@@ -102,7 +101,7 @@
     "type": "app",
     "devDependencies": ["@tauri-apps/cli"],
     "postinstalls": [
-      "npx tauri init && npx tauri icon .\\public\\icons\\icon.ico"
+      "bunx tauri init && bunx tauri icon .\\public\\icons\\icon.ico"
     ],
     "scripts": {
       "taurize": "bun exec tauri build"
