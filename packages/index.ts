@@ -1,8 +1,9 @@
 #!/usr/bin/env bun
-import { argv, spawnSync } from "bun";
+import { argv, spawnSync, sleep } from "bun";
 
 import { readdir } from "node:fs/promises";
 import { resolve } from "node:path";
+import { clear as clearConsole } from "console";
 
 import yargs from "yargs/yargs";
 import { hideBin } from "yargs/helpers";
@@ -22,10 +23,11 @@ const instance = yargs(hideBin(argv));
 
 const cli = instance
   .wrap(instance.terminalWidth())
+  .scriptName("cnwx")
   .usage(
     boxen(
       `
-        ${chalk.bold.inverse("cnwx <command> [args...]")}
+        ${chalk.bold.inverse("cnwx <command> (...args)")}
 
         Execute a package command from the create-new-workspace repository. 
         
@@ -35,36 +37,23 @@ const cli = instance
       { padding: 0.5, title: "Usage", titleAlignment: "left" },
     ),
   )
-  .command("$0 <command> [args...]", "Package command to execute", (yargs) => {
-    yargs.positional("command", {
-      describe: "The command to execute",
-      type: "string",
-      demandOption: true,
-    });
-  })
+  .command("$0 <command>", "Package command to execute")
   .help("h")
   .alias("h", "help")
   .alias("v", "version")
   .parse();
 
-const { command, ...args } = cli as unknown as {
+const { command } = cli as unknown as {
   command: string;
-  [key: string]: string | boolean | string[];
 };
 
-["_", "$0", "args"].forEach((key) => delete args[key]);
+const flags = argv.slice(3);
 
-const flags: string[] = [];
+clearConsole();
 
-Object.keys(args).forEach((key) => {
-  flags.push(`--${key}`);
+console.log(`Running: bun ${command} ${flags.join(" ")}`);
 
-  const value = args[key];
-
-  if (Array.isArray(value)) flags.push(value.join(" "));
-  else if (typeof value === "boolean") flags.push(`--${key}`);
-  else flags.push(value);
-});
+await sleep(2000);
 
 const script = resolve(__dirname, command, "index.ts");
 

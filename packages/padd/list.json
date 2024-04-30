@@ -56,9 +56,7 @@
       "tailwind-merge",
       "lucide-react"
     ],
-    "devDependencies": [
-      "@tailwindcss/typography"
-    ],
+    "devDependencies": ["@tailwindcss/typography"],
     "scripts": {
       "shad": "bun dlx shadcn-ui@latest"
     },
@@ -68,54 +66,32 @@
   },
   "forms": {
     "type": "app",
-    "dependencies": [
-      "react-dropzone",
-      "react-hook-form"
-    ]
+    "dependencies": ["react-dropzone", "react-hook-form"]
   },
   "cloudinary": {
     "type": "app",
     "folder": "cloudinary",
-    "dependencies": [
-      "next-cloudinary",
-      "cloudinary"
-    ]
+    "dependencies": ["next-cloudinary", "cloudinary"]
   },
   "auth": {
     "type": "app",
     "folder": "auth",
-    "dependencies": [
-      "next-auth"
-    ]
+    "dependencies": ["next-auth"]
   },
   "database": {
     "type": "app",
     "folder": "supabase",
-    "dependencies": [
-      "@supabase/supabase-js",
-      "@prisma/client"
-    ],
-    "devDependencies": [
-      "supabase",
-      "prisma",
-      "encoding"
-    ],
+    "dependencies": ["@supabase/supabase-js", "@prisma/client"],
+    "devDependencies": ["supabase", "prisma", "encoding"],
     "scripts": {
       "update-supatypes": "supabase gen types typescript --schema public > supabase\\types.ts"
     }
   },
   "pwa": {
     "type": "app",
-    "dependencies": [
-      "@vercel/analytics",
-      "@vercel/speed-insights"
-    ],
-    "devDependencies": [
-      "vercel"
-    ],
-    "postinstalls": [
-      "bun exec next telemetry disable"
-    ],
+    "dependencies": ["@vercel/analytics", "@vercel/speed-insights"],
+    "devDependencies": ["vercel"],
+    "postinstalls": ["bun exec next telemetry disable"],
     "scripts": {
       "prepush": "git add . & git commit -m \"save work\"",
       "push": "npm version",
@@ -124,9 +100,7 @@
   },
   "tauri": {
     "type": "app",
-    "devDependencies": [
-      "@tauri-apps/cli"
-    ],
+    "devDependencies": ["@tauri-apps/cli"],
     "postinstalls": [
       "npx tauri init && npx tauri icon .\\public\\icons\\icon.ico"
     ],
@@ -136,10 +110,7 @@
   },
   "api": {
     "type": "app",
-    "dependencies": [
-      "axios",
-      "swr"
-    ]
+    "dependencies": ["axios", "swr"]
   },
   "mdx": {
     "type": "app",
@@ -184,9 +155,7 @@
       "zustand"
     ],
     "extras": {
-      "dependencies": [
-        "@react-three/xr"
-      ]
+      "dependencies": ["@react-three/xr"]
     }
   }
 }
