@@ -123,7 +123,7 @@
       "@types/mdx"
     ]
   },
-  "three": {
+  "r3f": {
     "type": "app",
     "folder": "r3f",
     "dependencies": [
