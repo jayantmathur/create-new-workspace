@@ -9,19 +9,7 @@ import type { CLIOptions } from "./utils/cli";
 import { copyDirectory } from "./utils/helpers";
 import list from "./list.json";
 
-type ListType = {
-  [key: string]: {
-    type: "app" | "doc";
-    folder: string;
-  };
-};
-
-const __dirname = resolve(import.meta.dir, "../..");
-const __cwd = process.cwd();
-
-const [docsPath, appsPath] = ["docs", "app"].map((dir) =>
-  resolve(__dirname, "resources", dir),
-);
+import type { ListType } from "./utils/types";
 
 const packages = list as ListType;
 
@@ -30,27 +18,19 @@ const { path, packs } = cli as unknown as CLIOptions;
 const messages: string[] = [];
 
 for (let pack of packs) {
-  const current = pack.toLowerCase();
+  const current = {
+    ...packages[pack.toLowerCase()],
+    name: pack.toLowerCase(),
+  };
 
-  if (!packages[current]) {
+  if (!current) {
     console.error(`Pack not found: ${current}. Skipping...`);
     continue;
   }
 
-  const { type, folder } = packages[current];
-
-  const src = resolve(type === "doc" ? docsPath : appsPath, folder);
-  const dest = resolve(
-    resolve(__cwd, path),
-    type === "doc" ? "_extensions" : "components",
-    current,
-  );
-
-  await copyDirectory(src, dest);
-
   messages.push(
     chalk.dim("Copied"),
-    chalk.bold.green(current),
+    chalk.bold.green(pack.toLowerCase()),
     chalk.dim(`to ${dirname(path)}`),
   );
 }

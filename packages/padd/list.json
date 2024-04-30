@@ -42,5 +42,39 @@
   "pyr": {
     "type": "doc",
     "folder": "pyr"
+  },
+  "three": {
+    "type": "app",
+    "folder": "r3f",
+    "dependencies": [
+      "@react-three/drei",
+      "@react-three/fiber",
+      "@react-three/uikit",
+      "r3f-perf",
+      "@types/three",
+      "three",
+      "three-stdlib"
+    ],
+    "extras": [
+      "@react-three/flex",
+      "@react-three/rapier",
+      "@react-three/offscreen",
+      "@react-three/csg",
+      "@react-three/postprocessing",
+      "three-bvh-csg"
+    ]
+  },
+  "webxr": {
+    "type": "app",
+    "dependencies": [
+      "@coconut-xr/natuerlich",
+      "@react-three/fiber",
+      "three",
+      "zustand"
+    ],
+    "devDependencies": [],
+    "extras": [
+      "@react-three/xr"
+    ]
   }
 }
