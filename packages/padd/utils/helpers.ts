@@ -1,6 +1,9 @@
 import { $, write, file } from "bun";
+
 import { readdir } from "node:fs/promises";
-import { resolve } from "node:path";
+import { resolve, dirname } from "node:path";
+
+import chalk from "chalk";
 
 import type { AppType, DocType } from "./types";
 
@@ -25,8 +28,14 @@ export const copyDirectory = async (src: string, dest: string) => {
 };
 
 export const paddDocs = async (path: string, pack: DocType) => {
-  const { folder } = pack;
+  const { name, folder } = pack;
+
   const src = resolve(__dirname, "resources", "docs", folder);
-  const dest = resolve(resolve(__cwd, path), "_extensions");
+  const dest = resolve(resolve(__cwd, path), "_extensions", name);
+
   await copyDirectory(src, dest);
+
+  const message = chalk`Copied {green ${name}} to {dim ${dirname(path)}}`;
+
+  return message;
 };

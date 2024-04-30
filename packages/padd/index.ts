@@ -6,10 +6,10 @@ import boxen from "boxen";
 
 import cli from "./utils/cli";
 import type { CLIOptions } from "./utils/cli";
-import { copyDirectory } from "./utils/helpers";
+import { copyDirectory, paddDocs } from "./utils/helpers";
 import list from "./list.json";
 
-import type { ListType } from "./utils/types";
+import type { ListType, DocType, AppType } from "./utils/types";
 
 const packages = list as ListType;
 
@@ -28,11 +28,10 @@ for (let pack of packs) {
     continue;
   }
 
-  messages.push(
-    chalk.dim("Copied"),
-    chalk.bold.green(pack.toLowerCase()),
-    chalk.dim(`to ${dirname(path)}`),
-  );
+  current.type === "doc" &&
+    (await paddDocs(path, current as DocType).then((message) =>
+      messages.push(message),
+    ));
 }
 
 console.log(

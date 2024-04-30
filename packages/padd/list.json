@@ -73,8 +73,6 @@
       "zustand"
     ],
     "devDependencies": [],
-    "extras": [
-      "@react-three/xr"
-    ]
+    "extras": ["@react-three/xr"]
   }
 }

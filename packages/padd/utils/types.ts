@@ -18,5 +18,5 @@ export type DocType = {
 };
 
 export type ListType = {
-  [key: string]: AppType | DocType;
+  [key: string]: Omit<AppType | DocType, "name">;
 };
