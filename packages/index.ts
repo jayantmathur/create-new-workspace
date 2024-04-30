@@ -3,7 +3,6 @@ import { argv, spawnSync, sleep } from "bun";
 
 import { readdir } from "node:fs/promises";
 import { resolve } from "node:path";
-import { clear as clearConsole } from "console";
 
 import yargs from "yargs/yargs";
 import { hideBin } from "yargs/helpers";
@@ -49,9 +48,7 @@ const { command } = cli as unknown as {
 
 const flags = argv.slice(3);
 
-clearConsole();
-
-console.log(`Running: bun ${command} ${flags.join(" ")}`);
+// console.log(`\nRunning: bun ${command} ${flags.join(" ")}\n`);
 
 await sleep(2000);
 
