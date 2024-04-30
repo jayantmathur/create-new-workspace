@@ -227,7 +227,7 @@ export const deepMerge = (
   for (let key in target) {
     if (target.hasOwnProperty(key)) {
       if (Array.isArray(target[key]) && Array.isArray(result[key])) {
-        result[key] = [...result[key], ...target[key]];
+        result[key] = Array.from(new Set([...result[key], ...target[key]]));
       } else if (
         typeof target[key] === "object" &&
         target[key] !== null &&
