@@ -1,4 +1,4 @@
-import { file, write, $, spawnSync } from "bun";
+import { file, write, $, spawnSync, sleep } from "bun";
 
 import { readdir } from "node:fs/promises";
 import { resolve } from "node:path";
@@ -108,6 +108,12 @@ export const initWorkspace = async (name: string, action: string) => {
       2,
     ),
   );
+
+  spinner.message("Copying resources...");
+
+  await copyDirectory(resolve(__dirname, "public"), resolve(path));
+
+  await sleep(1000);
 
   spinner.stop("Workspace " + action + "d.");
 
