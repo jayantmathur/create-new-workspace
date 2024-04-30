@@ -109,10 +109,6 @@ export const initWorkspace = async (name: string, action: string) => {
     ),
   );
 
-  spinner.message("Copying resources...");
-
-  await copyDirectory(resolve(__dirname, "public"), resolve(path));
-
   await sleep(1000);
 
   spinner.stop("Workspace " + action + "d.");
@@ -137,6 +133,11 @@ export const createDocs = async (parent: string) => {
 
   await copyDirectory(resolve(__dirname, "src", "docs"), resolve(path, name));
 
+  await copyDirectory(
+    resolve(__dirname, "public"),
+    resolve(path, name, "public"),
+  );
+
   await editJson(resolve(path, name, "package.json"), {
     name: name,
   });
@@ -144,6 +145,8 @@ export const createDocs = async (parent: string) => {
   await editJson(resolve(__cwd, parent, "package.json"), {
     workspaces: ["docs/*"],
   });
+
+  await sleep(1000);
 
   spinner.stop("Documents repo created.");
 
@@ -191,6 +194,11 @@ export const createApp = async (parent: string) => {
   await $`rm -rf ${["package-lock.json", "node_modules", "README.md", ".git"].map((element) => resolve(path, name, element)).join(" ")}`
     .quiet()
     .nothrow();
+
+  await copyDirectory(
+    resolve(__dirname, "public"),
+    resolve(path, name, "public"),
+  );
 
   // await $`bun create next-app ${parent}/apps/${name} --typescript --eslint --tailwind --src-dir --app --import-alias "@/*" --no-git`.quiet();
 
