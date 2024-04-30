@@ -50,6 +50,7 @@ mermaid:
 callout-appearance: simple
 
 cite-method: citeproc
+#
 # format:
 #   main-html:
 #     embed-resources: true
