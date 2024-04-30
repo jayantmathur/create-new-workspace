@@ -146,11 +146,9 @@ export const createDocs = async (parent: string) => {
     workspaces: ["docs/*"],
   });
 
-  await sleep(1000);
-
   spinner.stop("Documents repo created.");
 
-  return true;
+  await sleep(1000);
 };
 
 export const createApp = async (parent: string) => {
@@ -215,7 +213,7 @@ export const createApp = async (parent: string) => {
 
   spinner.stop("App repo created.");
 
-  return true;
+  await sleep(1000);
 };
 
 export const deepMerge = (
