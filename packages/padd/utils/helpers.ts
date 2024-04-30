@@ -101,7 +101,7 @@ export const paddApps = async (
 
   if (folder) {
     const src = resolve(__dirname, "resources", "apps", folder);
-    const dest = resolve(resolve(__cwd, path), "components", name);
+    const dest = resolve(__cwd, path);
 
     await copyDirectory(src, dest)
       .then(() =>

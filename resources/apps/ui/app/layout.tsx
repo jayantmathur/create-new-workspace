@@ -41,7 +41,10 @@ export default function RootLayout({
       >
         <Providers>
           <header
-            className={cn(hfclass, "top-0 place-content-between pb-4 sm:pb-2 z-40")}
+            className={cn(
+              hfclass,
+              "top-0 place-content-between pb-4 sm:pb-2 z-40",
+            )}
           >
             {/* <Title className="origin-top-left" /> */}
             <ThemeSwitch className="origin-top-right" />
