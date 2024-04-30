@@ -212,6 +212,8 @@ export const createApp = async (parent: string) => {
     workspaces: ["apps/*"],
   });
 
+  await $`rm -rf ${resolve(path, name, "package-lock.json")} ${resolve(path, name, "node_modules")}`;
+
   spinner.stop("App repo created.");
 
   await sleep(1000);
