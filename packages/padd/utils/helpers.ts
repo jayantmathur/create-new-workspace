@@ -64,14 +64,19 @@ export const copyDirectory = async (src: string, dest: string) => {
 };
 
 export const paddDocs = async (path: string, pack: DocType) => {
+  const messages: string[] = [];
   const { name, folder } = pack;
 
   const src = resolve(__dirname, "resources", "docs", folder);
   const dest = resolve(resolve(__cwd, path), "_extensions", name);
 
-  await copyDirectory(src, dest);
+  await copyDirectory(src, dest)
+    .then(() => messages.push(chalk.dim("Installed ") + chalk.bold.green(name)))
+    .catch(() =>
+      messages.push(chalk.dim("Failed to install ") + chalk.bold.red(name)),
+    );
 
-  const message = chalk.dim("Installed ") + chalk.bold.green(name);
+  const message = messages.join("\n");
 
   return message;
 };
@@ -98,11 +103,15 @@ export const paddApps = async (
     const src = resolve(__dirname, "resources", "apps", folder);
     const dest = resolve(resolve(__cwd, path), "components", name);
 
-    await copyDirectory(src, dest);
-
-    messages.push(
-      chalk.dim("Copied components from ") + chalk.bold.green(folder),
-    );
+    await copyDirectory(src, dest)
+      .then(() =>
+        messages.push(
+          chalk.dim("Copied components from ") + chalk.bold.green(folder),
+        ),
+      )
+      .catch(() =>
+        messages.push(chalk.dim("Failed to copy ") + chalk.bold.red(folder)),
+      );
   }
 
   if (dependencies) {
@@ -110,11 +119,12 @@ export const paddApps = async (
 
     withExtras && extras.dependencies && packs.push(...extras.dependencies);
 
-    spawnSync(["bun", "add", ...packs], {
+    const { success } = spawnSync(["bun", "add", ...packs], {
       cwd: resolve(__cwd, path),
     });
 
-    messages.push(chalk.dim("Installed dependencies"));
+    (success && messages.push(chalk.dim("Installed dependencies"))) ||
+      messages.push(chalk.dim("Failed to install dependencies"));
   }
 
   if (devDependencies) {
@@ -124,21 +134,27 @@ export const paddApps = async (
       extras.devDependencies &&
       packs.push(...extras.devDependencies);
 
-    spawnSync(["bun", "add", "--dev", ...packs], {
+    const { success } = spawnSync(["bun", "add", "--dev", ...packs], {
       cwd: resolve(__cwd, path),
     });
 
-    messages.push(chalk.dim("Installed devDependencies"));
+    (success && messages.push(chalk.dim("Installed devDependencies"))) ||
+      messages.push(chalk.dim("Failed to install devDependencies"));
   }
 
   if (postinstalls) {
-    for (let installation of postinstalls) await $`${installation}`;
-    messages.push(chalk.dim("Ran post installations for"));
+    for (let installation of postinstalls)
+      await $`${installation}`
+        .then(() => messages.push(chalk.dim("Ran post installations")))
+        .catch(() =>
+          messages.push(chalk.dim("Failed running post installations")),
+        );
   }
 
   if (scripts)
-    (await editJson(resolve(__cwd, path, "package.json"), { scripts })) &&
-      messages.push(chalk.dim("Added scripts"));
+    ((await editJson(resolve(__cwd, path, "package.json"), { scripts })) &&
+      messages.push(chalk.dim("Added scripts"))) ||
+      messages.push(chalk.dim("Failed to add scripts"));
 
   const message = messages.join("\n");
 
