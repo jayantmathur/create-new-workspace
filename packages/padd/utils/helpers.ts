@@ -64,21 +64,16 @@ export const copyDirectory = async (src: string, dest: string) => {
 };
 
 export const paddDocs = async (path: string, pack: DocType) => {
-  const messages: string[] = [];
   const { name, folder } = pack;
 
   const src = resolve(__dirname, "resources", "docs", folder);
   const dest = resolve(resolve(__cwd, path), "_extensions", name);
 
   await copyDirectory(src, dest)
-    .then(() => messages.push(chalk.dim("Installed ") + chalk.bold.green(name)))
+    .then(() => console.log(chalk.dim("Installed ") + chalk.bold.green(name)))
     .catch(() =>
-      messages.push(chalk.dim("Failed to install ") + chalk.bold.red(name)),
+      console.log(chalk.dim("Failed to install ") + chalk.bold.red(name)),
     );
-
-  const message = messages.join("\n");
-
-  return message;
 };
 
 export const paddApps = async (
@@ -86,7 +81,6 @@ export const paddApps = async (
   pack: AppType,
   withExtras = false,
 ) => {
-  const messages: string[] = [];
   const {
     name,
     folder,
@@ -97,7 +91,7 @@ export const paddApps = async (
     extras,
   } = pack;
 
-  messages.push("\nWorking on " + chalk.bold.green(name) + "...\n");
+  console.log("\nWorking on " + chalk.bold.green(name) + "...\n");
 
   if (folder) {
     const src = resolve(__dirname, "resources", "apps", folder);
@@ -105,12 +99,12 @@ export const paddApps = async (
 
     await copyDirectory(src, dest)
       .then(() =>
-        messages.push(
+        console.log(
           chalk.dim("Copied components from ") + chalk.bold.green(folder),
         ),
       )
       .catch(() =>
-        messages.push(chalk.dim("Failed to copy ") + chalk.bold.red(folder)),
+        console.log(chalk.dim("Failed to copy ") + chalk.bold.red(folder)),
       );
   }
 
@@ -123,8 +117,8 @@ export const paddApps = async (
       cwd: resolve(__cwd, path),
     });
 
-    (success && messages.push(chalk.dim("Installed dependencies"))) ||
-      messages.push(chalk.dim("Failed to install dependencies"));
+    (success && console.log(chalk.dim("Installed dependencies"))) ||
+      console.log(chalk.dim("Failed to install dependencies"));
   }
 
   if (devDependencies) {
@@ -138,25 +132,21 @@ export const paddApps = async (
       cwd: resolve(__cwd, path),
     });
 
-    (success && messages.push(chalk.dim("Installed devDependencies"))) ||
-      messages.push(chalk.dim("Failed to install devDependencies"));
+    (success && console.log(chalk.dim("Installed devDependencies"))) ||
+      console.log(chalk.dim("Failed to install devDependencies"));
   }
 
   if (postinstalls) {
     for (let installation of postinstalls)
       await $`${installation}`
-        .then(() => messages.push(chalk.dim("Ran post installations")))
+        .then(() => console.log(chalk.dim("Ran post installations")))
         .catch(() =>
-          messages.push(chalk.dim("Failed running post installations")),
+          console.log(chalk.dim("Failed running post installations")),
         );
   }
 
   if (scripts)
     ((await editJson(resolve(__cwd, path, "package.json"), { scripts })) &&
-      messages.push(chalk.dim("Added scripts"))) ||
-      messages.push(chalk.dim("Failed to add scripts"));
-
-  const message = messages.join("\n");
-
-  return message;
+      console.log(chalk.dim("Added scripts"))) ||
+      console.log(chalk.dim("Failed to add scripts"));
 };
