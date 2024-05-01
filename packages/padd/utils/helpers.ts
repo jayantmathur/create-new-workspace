@@ -118,7 +118,7 @@ export const paddApps = async (
     });
 
     if (success) console.log(chalk.dim("Installed dependencies"));
-    else console.warn("Failed to install dependencies");
+    else console.warn("Failed to install some dependencies");
   }
 
   if (devDependencies) {
@@ -133,7 +133,7 @@ export const paddApps = async (
     });
 
     if (success) console.log(chalk.dim("Installed devDependencies"));
-    else console.warn("Failed to install devDependencies");
+    else console.warn("Failed to install some devDependencies");
   }
 
   if (postinstalls) {
