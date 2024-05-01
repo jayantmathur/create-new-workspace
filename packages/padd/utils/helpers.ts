@@ -118,7 +118,7 @@ export const paddApps = async (
     });
 
     if (success) console.log(chalk.dim("Installed dependencies"));
-    else console.log(chalk.dim("Failed to install dependencies"));
+    else console.warn("Failed to install dependencies");
   }
 
   if (devDependencies) {
@@ -133,7 +133,7 @@ export const paddApps = async (
     });
 
     if (success) console.log(chalk.dim("Installed devDependencies"));
-    else console.log(chalk.dim("Failed to install devDependencies"));
+    else console.warn("Failed to install devDependencies");
   }
 
   if (postinstalls) {
@@ -146,17 +146,11 @@ export const paddApps = async (
       success && successes++;
     }
 
-    console.log(
-      chalk.dim(
-        `Successfully ran ${successes} post installation${successes > 1 ? "s" : ""}`,
-      ),
-    );
-
-    successes < postinstalls.length &&
-      console.log(
-        chalk.dim(
-          `Failed to run ${postinstalls.length - successes} post installations`,
-        ),
+    if (successes === postinstalls.length)
+      console.log(chalk.dim("Successfully ran all post installations"));
+    else
+      console.warn(
+        `Successfully ran ${successes} out of ${postinstalls.length} post installations`,
       );
   }
 
