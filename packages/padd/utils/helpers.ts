@@ -146,7 +146,11 @@ export const paddApps = async (
       success && successes++;
     }
 
-    console.log(chalk.dim(`Successfully ran ${successes} post installations`));
+    console.log(
+      chalk.dim(
+        `Successfully ran ${successes} post installation${successes > 1 ? "s" : ""}`,
+      ),
+    );
 
     successes < postinstalls.length &&
       console.log(
