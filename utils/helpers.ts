@@ -204,6 +204,7 @@ export const createApp = async (parent: string) => {
   await editJson(resolve(path, name, "package.json"), {
     name: name,
     scripts: {
+      dev: "next dev --turbo",
       push: "npm version",
     },
   });

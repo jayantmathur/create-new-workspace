@@ -137,12 +137,23 @@ export const paddApps = async (
   }
 
   if (postinstalls) {
-    for (let installation of postinstalls)
-      await $`${installation}`
-        .then(() => console.log(chalk.dim("Ran post installations")))
-        .catch(() =>
-          console.log(chalk.dim("Failed running post installations")),
-        );
+    let successes = 0;
+    for (let installation of postinstalls) {
+      const commands = installation.split(" ");
+      const { success } = spawnSync([...commands], {
+        cwd: resolve(__cwd, path),
+      });
+      success && successes++;
+    }
+
+    console.log(chalk.dim(`Successfully ran ${successes} post installations`));
+
+    successes < postinstalls.length &&
+      console.log(
+        chalk.dim(
+          `Failed to run ${postinstalls.length - successes} post installations`,
+        ),
+      );
   }
 
   if (scripts) {
