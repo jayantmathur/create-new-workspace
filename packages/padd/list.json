@@ -134,6 +134,9 @@
       "three",
       "three-stdlib"
     ],
+    "scripts": {
+      "r3add": "bunx uikit component add --overwrite --path components/r3f default"
+    },
     "extras": {
       "dependencies": [
         "@react-three/flex",
