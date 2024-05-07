@@ -97,7 +97,6 @@ export const mirrorDirectories = async (
 
     try {
       await write(resolve(dest, entry), file(resolve(src, entry)));
-      console.log(`Updated ${entry}`);
       updated++;
     } catch {
       // skip
