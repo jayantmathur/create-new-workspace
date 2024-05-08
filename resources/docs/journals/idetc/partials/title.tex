@@ -16,7 +16,8 @@ $if(title)$
   \bfseries\sffamily\normalsize
   \begin{flushright}
     \vspace*{-2\baselineskip}
-    {\fontsize{11pt}{12pt}\selectfont Proceedings of the ASME~\the\year\\International Design Engineering Technical Conference \& Computers and Information in Engineering Conference\\
+    {\fontsize{11pt}{12pt}\selectfont Proceedings of the ASME~\the\year\\International Design Engineering Technical Conference annd\\
+      Computers and Information in Engineering Conference\\
       IDETC-CIE~\the\year\\
       \daterange, $if(venue)$$venue$$else$City, ST, USA$endif$\\}
 
@@ -25,6 +26,10 @@ $if(title)$
     \vspace*{2.5\baselineskip}
   \end{flushright}
   \large\MakeUppercase{$title$}
+  $if(subtitle)$
+  \vspace*{0.5\baselineskip}
+  \normalsize{$subtitle$}
+  $endif$
 }
 $endif$
 
