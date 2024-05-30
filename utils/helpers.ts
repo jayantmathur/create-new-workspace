@@ -19,19 +19,16 @@ export const copyDirectory = async (src: string, dest: string) => {
   !src && console.error("Copy:source not provided");
   !dest && console.error("Copy:destination not provided");
 
-  const entries = await readdir(src, {
-    withFileTypes: true,
+  await readdir(src, {
     recursive: true,
-  }).then((elements) => elements.filter((entry) => entry.isFile()));
+  }).then(async (entries) => {
+    for (let entry of entries) {
+      const source = resolve(src, entry);
+      const destination = resolve(dest, entry);
 
-  for (let entry of entries) {
-    const { name, path } = entry;
-    const srcPath = resolve(path, name);
-    const destPath = join(dest, name);
-
-    (entry.isDirectory() && (await copyDirectory(srcPath, destPath))) ||
-      (await write(destPath, file(srcPath)));
-  }
+      await write(destination, file(source));
+    }
+  });
 };
 
 export const initWorkspace = async (name: string, action: string) => {
