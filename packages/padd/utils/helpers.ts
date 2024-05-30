@@ -1,7 +1,7 @@
 import { $, spawnSync, write, file } from "bun";
 
 import { readdir } from "node:fs/promises";
-import { resolve, dirname } from "node:path";
+import { resolve, join } from "node:path";
 
 import chalk from "chalk";
 
@@ -58,7 +58,7 @@ export const copyDirectory = async (src: string, dest: string) => {
   });
 
   for (let entry of entries)
-    await write(resolve(dest, entry), file(resolve(src, entry)));
+    await write(join(dest, entry), file(resolve(src, entry)));
 };
 
 export const paddDocs = async (path: string, pack: DocType) => {
