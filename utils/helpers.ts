@@ -26,8 +26,8 @@ export const copyDirectory = async (src: string, dest: string) => {
 
   for (let entry of entries) {
     const { name, path } = entry;
-    const srcPath = resolve(src, path, name);
-    const destPath = join(dest, path, name);
+    const srcPath = resolve(path, name);
+    const destPath = join(dest, name);
 
     await write(destPath, file(srcPath));
   }
