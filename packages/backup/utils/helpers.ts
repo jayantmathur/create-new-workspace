@@ -1,6 +1,6 @@
 import { file, write, $ } from "bun";
 
-import { resolve } from "node:path";
+import { resolve, join } from "node:path";
 import { readdir, stat } from "node:fs/promises";
 
 import chalk from "chalk";
@@ -75,7 +75,7 @@ export const mirrorDirectories = async (
 
   for (let entry of unsynced)
     try {
-      await write(resolve(dest, entry), file(resolve(src, entry)));
+      await write(join(dest, entry), file(resolve(src, entry)));
       news++;
     } catch {
       // skip
@@ -101,7 +101,7 @@ export const mirrorDirectories = async (
     if (!yesCopy) continue;
 
     try {
-      await write(resolve(dest, entry), file(resolve(src, entry)));
+      await write(join(dest, entry), file(resolve(src, entry)));
       updated++;
     } catch {
       // skip
