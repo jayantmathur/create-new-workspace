@@ -81,31 +81,27 @@ export const mirrorDirectories = async (
       // skip
     }
 
-  for (let entry of synced) {
-    const [srcStats, destStats] = await Promise.all(
-      [src, dest].map(async (element) => {
-        const size = file(resolve(element, entry)).size;
-        const time = await stat(resolve(element, entry)).then(
-          (stats) => stats.mtimeMs,
-        );
+  // for (let entry of synced) {
+  //   const [srcStats, destStats] = await Promise.all(
+  //     [src, dest].map(async (element) => ({
+  //       size: file(resolve(element, entry)).size,
+  //       time: await stat(resolve(element, entry)).then(
+  //         (stats) => stats.mtimeMs,
+  //       ),
+  //     })),
+  //   );
 
-        if (!size || !time) console.error("Copy:file not found", entry);
+  //   const yesCopy = destStats.size === 0 || destStats.time < srcStats.time;
 
-        return { size, time };
-      }),
-    );
+  //   if (!yesCopy) continue;
 
-    const yesCopy = destStats.size === 0 || destStats.time < srcStats.time;
-
-    if (!yesCopy) continue;
-
-    try {
-      await write(resolve(dest, entry), file(resolve(src, entry)));
-      updated++;
-    } catch {
-      // skip
-    }
-  }
+  //   try {
+  //     await write(resolve(dest, entry), file(resolve(src, entry)));
+  //     updated++;
+  //   } catch {
+  //     // skip
+  //   }
+  // }
 
   if (!sync)
     for (let file of extraFiles) {
