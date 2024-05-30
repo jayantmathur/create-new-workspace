@@ -28,8 +28,7 @@ export const copyDirectory = async (src: string, dest: string) => {
     const srcPath = resolve(src, entry.name);
     const destPath = resolve(dest, entry.name);
 
-    (entry.isDirectory() && (await copyDirectory(srcPath, destPath))) ||
-      (await write(destPath, file(srcPath)));
+    file(srcPath).size > 0 && (await write(destPath, file(srcPath)));
   }
 };
 
