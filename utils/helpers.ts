@@ -26,6 +26,8 @@ export const copyDirectory = async (src: string, dest: string) => {
       const source = resolve(src, entry);
       const destination = resolve(dest, entry);
 
+      file(destination).size === 0 && $`mkdir -p ${destination}`;
+
       await write(file(destination), file(source));
     }
   });
