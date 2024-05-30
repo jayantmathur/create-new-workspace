@@ -53,11 +53,9 @@ export const copyDirectory = async (src: string, dest: string) => {
   await $`mkdir -p ${dest}`.quiet().nothrow();
 
   const entries = await readdir(src, {
-    withFileTypes: true,
+    // withFileTypes: true,
     recursive: true,
-  }).then((entries) =>
-    entries.filter((entry) => entry.isFile()).map((entry) => entry.name),
-  );
+  });
 
   for (let entry of entries)
     await write(resolve(dest, entry), file(resolve(src, entry)));
