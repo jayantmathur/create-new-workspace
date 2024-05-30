@@ -1,7 +1,7 @@
 import { file, write, $, spawnSync, sleep } from "bun";
 
 import { readdir } from "node:fs/promises";
-import { resolve } from "node:path";
+import { resolve, join } from "node:path";
 
 import { spinner as clkSpinner, cancel, text } from "@clack/prompts";
 
@@ -27,7 +27,7 @@ export const copyDirectory = async (src: string, dest: string) => {
   for (let entry of entries) {
     const { name, path } = entry;
     const srcPath = resolve(src, path, name);
-    const destPath = resolve(dest, path, name);
+    const destPath = join(dest, path, name);
 
     await write(destPath, file(srcPath));
   }
