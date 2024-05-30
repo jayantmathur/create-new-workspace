@@ -1,7 +1,6 @@
 import { $, spawnSync, write, file } from "bun";
 
-import { readdir } from "node:fs/promises";
-import { resolve, join } from "node:path";
+import { resolve } from "node:path";
 import { copy } from "fs-extra";
 
 import chalk from "chalk";
@@ -45,21 +44,6 @@ const editJson = async (path: string, data: { [key: string]: any }) => {
   await write(resolve(path), JSON.stringify(payload, null, 2));
 
   return true;
-};
-
-export const copyDirectory = async (src: string, dest: string) => {
-  !src && console.error("Copy:source not provided");
-  !dest && console.error("Copy:destination not provided");
-
-  await $`mkdir -p ${dest}`.quiet().nothrow();
-
-  const entries = await readdir(src, {
-    // withFileTypes: true,
-    recursive: true,
-  });
-
-  for (let entry of entries)
-    await write(join(dest, entry), file(resolve(src, entry)));
 };
 
 export const paddDocs = async (path: string, pack: DocType) => {

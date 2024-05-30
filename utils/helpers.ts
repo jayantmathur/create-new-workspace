@@ -2,6 +2,7 @@ import { file, write, $, spawnSync, sleep } from "bun";
 
 import { readdir, stat } from "node:fs/promises";
 import { resolve, join } from "node:path";
+import { copy } from "fs-extra";
 
 import { spinner as clkSpinner, cancel, text } from "@clack/prompts";
 
@@ -13,24 +14,6 @@ const spinner = clkSpinner();
 export const handleCancel = (message = "Operation cancelled. Exiting") => {
   cancel(message);
   process.exit(1);
-};
-
-export const copyDirectory = async (src: string, dest: string) => {
-  !src && console.error("Copy:source not provided");
-  !dest && console.error("Copy:destination not provided");
-
-  const entries = await readdir(src, {
-    recursive: true,
-  });
-
-  for (let entry of entries) {
-    const source = resolve(src, entry);
-    const destination = join(dest, entry);
-
-    const isFile = (await stat(source)).isFile();
-
-    isFile && (await write(destination, file(source)));
-  }
 };
 
 export const initWorkspace = async (name: string, action: string) => {
@@ -131,12 +114,9 @@ export const createDocs = async (parent: string) => {
 
   spinner.start("Creating documents repo...");
 
-  await copyDirectory(resolve(__dirname, "src", "docs"), resolve(path, name));
+  await copy(resolve(__dirname, "src", "docs"), resolve(path, name));
 
-  await copyDirectory(
-    resolve(__dirname, "public"),
-    resolve(path, name, "public"),
-  );
+  await copy(resolve(__dirname, "public"), resolve(path, name, "public"));
 
   await editJson(resolve(path, name, "package.json"), {
     name: name,
@@ -194,10 +174,7 @@ export const createApp = async (parent: string) => {
     .quiet()
     .nothrow();
 
-  await copyDirectory(
-    resolve(__dirname, "public"),
-    resolve(path, name, "public"),
-  );
+  await copy(resolve(__dirname, "public"), resolve(path, name, "public"));
 
   // await $`bun create next-app ${parent}/apps/${name} --typescript --eslint --tailwind --src-dir --app --import-alias "@/*" --no-git`.quiet();
 
