@@ -1,6 +1,6 @@
 import { file, write, $, spawnSync, sleep } from "bun";
 
-import { readdir } from "node:fs/promises";
+import { readdir, stat } from "node:fs/promises";
 import { resolve, join } from "node:path";
 
 import { spinner as clkSpinner, cancel, text } from "@clack/prompts";
@@ -27,7 +27,9 @@ export const copyDirectory = async (src: string, dest: string) => {
     const source = resolve(src, entry);
     const destination = join(dest, entry);
 
-    file(source).size > 0 && (await write(destination, file(source)));
+    const isFile = (await stat(source)).isFile();
+
+    isFile && (await write(destination, file(source)));
   }
 };
 
