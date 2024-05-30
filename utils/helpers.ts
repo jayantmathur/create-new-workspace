@@ -20,14 +20,13 @@ export const copyDirectory = async (src: string, dest: string) => {
   !dest && console.error("Copy:destination not provided");
 
   const entries = await readdir(src, {
-    withFileTypes: true,
+    // withFileTypes: true,
     recursive: true,
-  }).then((elements) => elements.filter((entry) => entry.isFile()));
+  });
+  // .then((elements) => elements.filter((entry) => entry.isFile()));
 
   for (let entry of entries)
-    await write(resolve(dest, entry.name), file(resolve(src, entry.name)), {
-      createPath: true,
-    });
+    await write(resolve(dest, entry), file(resolve(src, entry)));
 };
 
 export const initWorkspace = async (name: string, action: string) => {
