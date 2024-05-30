@@ -175,6 +175,5 @@ dist
 .DS_Store
 
 # Miscellaneous
-.vscode
 node_modules
 .backup
