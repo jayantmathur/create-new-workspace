@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "quarto preview pages/index.qmd --port 4000",
     "render": "quarto render",
-    "postrender": "gs -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -dNOPAUSE -dQUIET -dBATCH -sOutputFile=./output/pages/compressed.pdf ./output/pages/print.pdf && echo Saved a compressed version too!",
+    "postrender": "gs -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -dNOPAUSE -dQUIET -dBATCH -sOutputFile=./render/pages/compressed.pdf ./render/pages/print.pdf && echo Saved a compressed version too!",
     "push": "npm version"
   }
 }
