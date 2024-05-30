@@ -89,6 +89,8 @@ export const mirrorDirectories = async (
           (stats) => stats.mtimeMs,
         );
 
+        if (!size || !time) console.error("Copy:file not found", entry);
+
         return { size, time };
       }),
     );
