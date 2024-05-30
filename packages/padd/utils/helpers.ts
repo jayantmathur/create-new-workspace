@@ -2,6 +2,7 @@ import { $, spawnSync, write, file } from "bun";
 
 import { readdir } from "node:fs/promises";
 import { resolve, join } from "node:path";
+import { copy } from "fs-extra";
 
 import chalk from "chalk";
 
@@ -67,7 +68,7 @@ export const paddDocs = async (path: string, pack: DocType) => {
   const src = resolve(__dirname, "resources", "docs", folder);
   const dest = resolve(resolve(__cwd, path), "_extensions", name);
 
-  await copyDirectory(src, dest)
+  await copy(src, dest)
     .then(() => console.log(chalk.dim("Installed ") + chalk.bold.green(name)))
     .catch(() =>
       console.log(chalk.dim("Failed to install ") + chalk.bold.red(name)),
@@ -95,7 +96,7 @@ export const paddApps = async (
     const src = resolve(__dirname, "resources", "apps", folder);
     const dest = resolve(__cwd, path);
 
-    await copyDirectory(src, dest)
+    await copy(src, dest)
       .then(() =>
         console.log(
           chalk.dim("Copied components from ") + chalk.bold.green(folder),

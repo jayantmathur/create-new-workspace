@@ -13,8 +13,10 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "@types/fs-extra": "^11.0.4",
     "boxen": "^7.1.1",
     "chalk": "^5.3.0",
+    "fs-extra": "^11.2.0",
     "yargs": "^17.7.2"
   }
 }
