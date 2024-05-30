@@ -83,12 +83,14 @@ export const mirrorDirectories = async (
 
   for (let entry of synced) {
     const [srcStats, destStats] = await Promise.all(
-      [src, dest].map(async (element) => ({
-        size: file(resolve(element, entry)).size,
-        time: await stat(resolve(element, entry)).then(
+      [src, dest].map(async (element) => {
+        const size = file(resolve(element, entry)).size;
+        const time = await stat(resolve(element, entry)).then(
           (stats) => stats.mtimeMs,
-        ),
-      })),
+        );
+
+        return { size, time };
+      }),
     );
 
     const yesCopy = destStats.size === 0 || destStats.time < srcStats.time;
