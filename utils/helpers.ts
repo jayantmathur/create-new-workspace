@@ -25,7 +25,9 @@ export const copyDirectory = async (src: string, dest: string) => {
   }).then((elements) => elements.filter((entry) => entry.isFile()));
 
   for (let entry of entries)
-    await write(resolve(dest, entry.name), file(resolve(src, entry.name)));
+    await write(resolve(dest, entry.name), file(resolve(src, entry.name)), {
+      createPath: true,
+    });
 };
 
 export const initWorkspace = async (name: string, action: string) => {
