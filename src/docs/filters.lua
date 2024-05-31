@@ -4,7 +4,7 @@ function Image(el)
     if FORMAT:match 'latex' then
       local pdfName = string.gsub(el.src, "svg", "pdf")
       if os.execute('if not exist "' .. pdfName .. '" exit 1') ~= 0 then
-        pandoc.pipe('magick', { 'convert', el.src, pdfName }, '')
+        pandoc.pipe('magick', { el.src, pdfName }, '')
       end
       el.src = pdfName
       return el
@@ -13,7 +13,7 @@ function Image(el)
   elseif string.sub(el.src, -4) == '.tif' then
     local pngName = string.gsub(el.src, "tif", "png")
     if os.execute('if not exist "' .. pngName .. '" exit 1') ~= 0 then
-      pandoc.pipe('magick', { 'convert', el.src, pngName }, '')
+      pandoc.pipe('magick', { el.src, pngName }, '')
     end
     el.src = pngName
     return el

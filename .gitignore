@@ -177,3 +177,4 @@ dist
 # Miscellaneous
 node_modules
 .backup
+/.luarc.json
