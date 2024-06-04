@@ -24,6 +24,7 @@ export type DocType = {
   name: string;
   type: "doc";
   folder: string;
+  postinstalls?: string[];
 };
 
 export type ListType = {

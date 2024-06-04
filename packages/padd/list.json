@@ -1,7 +1,8 @@
 {
   "rjs": {
     "type": "doc",
-    "folder": "rjs"
+    "folder": "rjs",
+    "postinstalls": ["quarto add quarto-ext/attribution"]
   },
   "main": {
     "type": "doc",

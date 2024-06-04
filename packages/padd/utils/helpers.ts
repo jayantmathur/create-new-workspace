@@ -47,16 +47,34 @@ const editJson = async (path: string, data: { [key: string]: any }) => {
 };
 
 export const paddDocs = async (path: string, pack: DocType) => {
-  const { name, folder } = pack;
+  const { name, folder, postinstalls } = pack;
 
   const src = resolve(__dirname, "resources", "docs", folder);
   const dest = resolve(resolve(__cwd, path), "_extensions", name);
 
   await copy(src, dest)
-    .then(() => console.log(chalk.dim("Installed ") + chalk.bold.green(name)))
+    .then(() => console.log(chalk.dim("Copied ") + chalk.bold.green(name)))
     .catch(() =>
-      console.log(chalk.dim("Failed to install ") + chalk.bold.red(name)),
+      console.log(chalk.dim("Failed to copy ") + chalk.bold.red(name)),
     );
+
+  if (postinstalls) {
+    let successes = 0;
+    for (let installation of postinstalls) {
+      const commands = installation.split(" ");
+      const { success } = spawnSync([...commands], {
+        cwd: resolve(__cwd, path),
+      });
+      success && successes++;
+    }
+
+    if (successes === postinstalls.length)
+      console.log(chalk.dim("Successfully ran all post installations"));
+    else
+      console.warn(
+        `Successfully ran ${successes} out of ${postinstalls.length} post installations`,
+      );
+  }
 };
 
 export const paddApps = async (
