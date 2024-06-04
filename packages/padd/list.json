@@ -2,7 +2,7 @@
   "rjs": {
     "type": "doc",
     "folder": "rjs",
-    "postinstalls": ["quarto add quarto-ext/attribution"]
+    "postinstalls": ["quarto add quarto-ext/attribution --quiet --no-prompt"]
   },
   "main": {
     "type": "doc",
