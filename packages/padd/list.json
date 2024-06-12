@@ -8,6 +8,10 @@
     "type": "doc",
     "folder": "main"
   },
+  "springernature": {
+    "type": "doc",
+    "folder": "journals/springernature"
+  },
   "elsevier": {
     "type": "doc",
     "folder": "journals/elsevier"
