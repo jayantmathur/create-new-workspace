@@ -7,6 +7,7 @@ contributes:
     common:
       toc: false
     pdf:
+      pdf-engine: lualatex
       include-in-header: header.tex
       format-resources:
         - sn-jnl.cls
