@@ -1,4 +1,8 @@
 {
+  "gtiletter": {
+    "type": "doc",
+    "folder": "gti/gtiletter"
+  },
   "rjs": {
     "type": "doc",
     "folder": "rjs",
