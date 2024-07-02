@@ -12,17 +12,4 @@ contributes:
 
     docx:
       fontsize: 10pt
-      reference-doc: 'partials/docx/template.docx'
-
-    html:
-      embed-resources: true
-      fig-format: svg
-      #   format-links: false
-
-      template-partials:
-        # - 'partials/html/metadata.html'
-        - "partials/html/title-block.html"
-        # - 'partials/html/toc.html'
-      theme:
-        dark: darkly
-        light: flatly
+      reference-doc: "partials/docx/template.docx"
