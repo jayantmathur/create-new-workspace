@@ -14,7 +14,13 @@ date: today
 
 [^sample]: this is a sample footnote
 
-![Sample figure](../public/placeholder.svg){#fig-sample}
+::: {#fig-sample}
+
+{{< placeholder 400 200 format=svg >}}
+
+Sample figure
+
+:::
 
 # Bibliography
 
