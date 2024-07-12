@@ -21,31 +21,31 @@ author:
     affiliations:
       # - ref: me
       # - ref: edi
-      - name: The Pennsylvania State University
-        department: Engineering Design and Innovation
-        city: University Park
-        region: PA
-        postal-code: 16802
+      - name: GTI Energy
+        department: Education and Training
+        city: Des Plaines
+        region: IL
+        postal-code: 60018
     corresponding: true
-    email: jayant@psu.edu
+    email: jmathur@gti.energy
 
 keywords:
   - template
   - demo
-
-affiliations:
-  - id: edi
-    name: The Pennsylvania State University
-    department: Engineering Design and Innovation
-    city: University Park
-    region: PA
-    postal-code: 16802
-  - id: me
-    name: The Pennsylvania State University
-    department: Department of Mechanical Engineering
-    city: University Park
-    region: PA
-    postal-code: 16802
+#
+# affiliations:
+#   - id: edi
+#     name: The Pennsylvania State University
+#     department: Engineering Design and Innovation
+#     city: University Park
+#     region: PA
+#     postal-code: 16802
+#   - id: me
+#     name: The Pennsylvania State University
+#     department: Department of Mechanical Engineering
+#     city: University Park
+#     region: PA
+#     postal-code: 16802
 #   - id: ie
 #     name: The Pennsylvania State University
 #     department: Department of Industrial Engineering
