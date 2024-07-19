@@ -50,7 +50,8 @@
   },
   "pyr": {
     "type": "doc",
-    "folder": "pyr"
+    "folder": "pyr",
+    "destination": "data"
   },
   "ui": {
     "type": "app",

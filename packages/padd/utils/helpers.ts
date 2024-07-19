@@ -47,10 +47,14 @@ const editJson = async (path: string, data: { [key: string]: any }) => {
 };
 
 export const paddDocs = async (path: string, pack: DocType) => {
-  const { name, folder, postinstalls } = pack;
+  const { name, folder, postinstalls, destination } = pack;
 
   const src = resolve(__dirname, "resources", "docs", folder);
-  const dest = resolve(resolve(__cwd, path), "_extensions", name);
+  const dest = resolve(
+    resolve(__cwd, path),
+    destination || "_extensions",
+    name,
+  );
 
   await copy(src, dest)
     .then(() => console.log(chalk.dim("Copied ") + chalk.bold.green(name)))
