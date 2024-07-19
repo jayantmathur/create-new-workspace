@@ -131,10 +131,11 @@
       "@types/mdx"
     ]
   },
-  "r3f": {
+  "r3fxr": {
     "type": "app",
     "folder": "r3f",
     "dependencies": [
+      "@react-three/xr@latest",
       "@react-three/drei",
       "@react-three/fiber",
       "@react-three/uikit",
@@ -155,18 +156,6 @@
         "@react-three/postprocessing",
         "three-bvh-csg"
       ]
-    }
-  },
-  "webxr": {
-    "type": "app",
-    "dependencies": [
-      "@coconut-xr/natuerlich",
-      "@react-three/fiber",
-      "three",
-      "zustand"
-    ],
-    "extras": {
-      "dependencies": ["@react-three/xr"]
     }
   }
 }
