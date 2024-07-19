@@ -5,14 +5,6 @@ import { readdir, stat } from "node:fs/promises";
 
 import chalk from "chalk";
 
-const defaultIncludes = [
-  "README.md",
-  "LICENSE",
-  "package.json",
-  "tsconfig.json",
-  ".gitignore",
-];
-
 const defaultExcludes = [
   ".git",
   ".DS_Store",
