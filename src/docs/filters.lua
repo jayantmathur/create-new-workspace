@@ -52,6 +52,13 @@ function Span(span)
         pandoc.RawInline('latex', '\\textcolor{' .. color .. '}{')
       )
     end
+
+    table.insert(
+      span.content,
+      pandoc.RawInline('latex', '}')
+    )
+    -- returns only span content
+    return span.content
   elseif FORMAT:match 'html' or FORMAT:match 'revealjs' then -- Also available for revealjs
     -- use style attribute instead
     span.attributes['style'] = 'color: ' .. color .. ';'
