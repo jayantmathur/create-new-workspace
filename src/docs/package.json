@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "A quarto document",
   "scripts": {
+    "dev": "quarto preview pages/index.qmd",
     "render": "quarto render",
     "postrender": "gs -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -dNOPAUSE -dQUIET -dBATCH -sOutputFile=./render/pages/compressed.pdf ./render/pages/print.pdf && echo Saved a compressed version too!",
     "push": "npm version"
