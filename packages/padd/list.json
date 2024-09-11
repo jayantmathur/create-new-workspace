@@ -67,10 +67,10 @@
     ],
     "devDependencies": ["@tailwindcss/typography"],
     "scripts": {
-      "shad": "bunx shadcnui@latest"
+      "shad": "bunx shadcn@latest"
     },
     "postinstalls": [
-      "bunx shadcnui@latest add button tabs aspect-ratio sheet --yes --overwrite"
+      "bunx shadcn@latest add button tabs aspect-ratio sheet --yes --overwrite"
     ]
   },
   "forms": {
