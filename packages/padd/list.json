@@ -1,7 +1,8 @@
 {
-  "gtiletter": {
+  "gti": {
     "type": "doc",
-    "folder": "gti/gtiletter"
+    "folder": "gti",
+    "postinstalls": ["quarto add quarto-ext/attribution --quiet --no-prompt"]
   },
   "rjs": {
     "type": "doc",

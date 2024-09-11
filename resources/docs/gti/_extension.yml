@@ -1,0 +1,52 @@
+title: GTI Energy Templates
+version: 0.1.0
+contributes:
+  formats:
+    common:
+      date-format: long
+      mainfont: Calibri
+
+      fig-pos: "!htb"
+
+      csl: https://www.zotero.org/styles/chicago-author-date
+
+    docx:
+      fontsize: 10pt
+      reference-doc: "partials/docx/template.docx"
+      output-file: print
+
+    revealjs:
+      mainfont: Segoe UI
+      suppress-bibliography: true
+      # remember to put the citation in [] to actually make it work
+      csl: "partials/rjs/chicago-note-author-date.csl"
+
+      preload-iframes: true
+
+      width: 1280
+      height: 720
+
+      theme: dark
+      transition: fade
+      backgroundTransition: fade
+
+      progress: false
+
+      navigation-mode: vertical
+      controls: false
+      autoPlayMedia: false
+
+      pdf-separate-fragments: true
+
+      fig-format: svg
+
+      template-partials:
+        - "partials/rjs/title-slide.html"
+
+      output-file: digital
+
+      # multiplex: true
+
+      preloadIframes: true
+      embed-resources: true # this breaks any iframes in the slide!
+      # slide-tone: true
