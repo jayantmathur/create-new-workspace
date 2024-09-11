@@ -170,6 +170,8 @@ export const createApp = async (parent: string) => {
     },
   );
 
+  await $`bun --cwd ${path}/${name} next telemetry disable`.quiet().nothrow();
+
   await $`rm -rf ${["package-lock.json", "node_modules", "README.md", ".git"].map((element) => resolve(path, name, element)).join(" ")}`
     .quiet()
     .nothrow();
