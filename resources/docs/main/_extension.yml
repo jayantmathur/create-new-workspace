@@ -27,7 +27,6 @@ contributes:
         - "partials/typst/typst-template.typ"
 
     html:
-      embed-resources: true
       fig-format: svg
       #   format-links: false
 
@@ -38,3 +37,8 @@ contributes:
       theme:
         dark: darkly
         light: flatly
+
+      output-file: digital
+
+      preload-iframes: true
+      embed-resources: true
