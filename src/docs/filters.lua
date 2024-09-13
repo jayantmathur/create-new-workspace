@@ -84,6 +84,18 @@ function Span(span)
     )
     -- returns only span content
     return span.content
+  elseif FORMAT:match 'docx' then -- For Word documents
+    -- encapsulate in Word code
+    table.insert(
+      span.content, 1,
+      pandoc.RawInline('openxml', '<w:r><w:rPr><w:color w:val="' .. color .. '"/></w:rPr><w:t>')
+    )
+    table.insert(
+      span.content,
+      pandoc.RawInline('openxml', '</w:t></w:r>')
+    )
+    -- return full span element
+    return span.content
   else
     -- for other format return unchanged
     return span
