@@ -4,7 +4,7 @@ contributes:
   formats:
     common:
       date-format: long
-      mainfont: Calibri
+      mainfont: Segoe UI
 
       fig-pos: "!htb"
 
@@ -16,7 +16,6 @@ contributes:
       output-file: print
 
     revealjs:
-      mainfont: Segoe UI
       suppress-bibliography: true
       # remember to put the citation in [] to actually make it work
       csl: "partials/rjs/chicago-note-author-date.csl"
