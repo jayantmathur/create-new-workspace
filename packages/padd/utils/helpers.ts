@@ -47,7 +47,7 @@ const editJson = async (path: string, data: { [key: string]: any }) => {
 };
 
 export const paddDocs = async (path: string, pack: DocType) => {
-  const { name, folder, postinstalls, destination } = pack;
+  const { name, folder, scripts, postinstalls, destination } = pack;
 
   const src = resolve(__dirname, "resources", "docs", folder);
   const dest = resolve(
@@ -61,6 +61,15 @@ export const paddDocs = async (path: string, pack: DocType) => {
     .catch(() =>
       console.log(chalk.dim("Failed to copy ") + chalk.bold.red(name)),
     );
+
+  if (scripts) {
+    const success =
+      (await editJson(resolve(__cwd, path, "package.json"), {
+        scripts,
+      })) || false;
+    if (success) console.log(chalk.dim("Added scripts"));
+    else console.log(chalk.dim("Failed to add scripts"));
+  }
 
   if (postinstalls) {
     let successes = 0;

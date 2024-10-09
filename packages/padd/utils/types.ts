@@ -24,6 +24,9 @@ export type DocType = {
   name: string;
   type: "doc";
   folder: string;
+  scripts?: {
+    [key: string]: string;
+  };
   postinstalls?: string[];
   destination?: string;
 };
