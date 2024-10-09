@@ -10,7 +10,8 @@
     "cnwx": "packages/index.ts"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "docs/*"
   ],
   "files": [
     "index.ts",
