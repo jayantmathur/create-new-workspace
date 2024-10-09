@@ -13,7 +13,7 @@ contributes:
     docx:
       fontsize: 10pt
       reference-doc: "partials/docx/template.docx"
-      output-file: print
+      output-file: word
 
     revealjs:
       suppress-bibliography: true

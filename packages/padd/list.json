@@ -2,7 +2,10 @@
   "gti": {
     "type": "doc",
     "folder": "gti",
-    "postinstalls": ["quarto add quarto-ext/attribution --quiet --no-prompt"]
+    "postinstalls": ["quarto add quarto-ext/attribution --quiet --no-prompt"],
+    "scripts": {
+      "postrender": "./_extensions/gti/docxmerge -i ./_extensions/gti/partials/docx/title.docx ./render/pages/word.docx -o ./render/pages/print.docx -f"
+    }
   },
   "rjs": {
     "type": "doc",
